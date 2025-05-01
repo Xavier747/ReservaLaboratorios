@@ -1,0 +1,24 @@
+﻿/*Estilo par demostrar campos requeridos en un formulario*/
+.mensaje{
+    color:Red;
+    font-size:Larger;
+    font-weight:bold;
+}
+
+input[type=checkbox]{
+    margin-right: 10px !important;
+}
+
+.softwareContainer{
+    max-height: 75px; 
+    overflow-y: auto; 
+    border: 1px solid #cccccc; 
+    border-radius: 5px;
+}
+
+.softwareContainer .item{
+    width:100%; 
+    border:none; 
+    box-shadow:none;
+}
+

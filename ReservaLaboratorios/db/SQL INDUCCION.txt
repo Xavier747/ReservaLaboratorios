@@ -1,0 +1,154 @@
+-- =====INSERT==================================
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:  Desarrollo UTC
+-- Create date: 29/05/24
+-- =============================================
+CREATE PROCEDURE SIGUTC_AddPruebas
+  @intCod_prueb INT
+ ,@strNombre_prueb NVARCHAR
+ ,@dtFechaNac_prueb DATETIME
+ ,@decSalario_prueb DECIMAL(7, 2)
+ ,@bitActivo_prueb BIT
+AS
+SET NOCOUNT OFF;
+ BEGIN
+    INSERT INTO PRUEBAS(
+     intCod_prueb
+    ,strNombre_prueb
+    ,dtFechaNac_prueb
+    ,decSalario_prueb
+    ,bitActivo_prueb
+ )
+ VALUES(
+     @intCod_prueb
+    ,@strNombre_prueb
+    ,@dtFechaNac_prueb
+    ,@decSalario_prueb
+    ,@bitActivo_prueb
+ )
+ END
+
+-- =====DELETE==================================
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:  Desarrollo UTC
+-- Create date: 29/05/24
+-- =============================================
+CREATE PROCEDURE SIGUTC_DelPruebas
+  @Comodin VARCHAR(100)
+ ,@FILTRO1 VARCHAR(100)
+ ,@FILTRO2 VARCHAR(100)
+ ,@FILTRO3 VARCHAR(100)
+ ,@FILTRO4 VARCHAR(100)
+
+AS
+ SET NOCOUNT OFF;
+ BEGIN
+	IF @Comodin = 'xPK'
+	begin
+    DELETE FROM PRUEBAS
+    WHERE (intCod_prueb = @FILTRO1)
+	end
+   
+ END
+-- =====UPDATE==================================
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:  Desarrollo UTC
+-- Create date: 29/05/24
+-- =============================================
+CREATE PROCEDURE SIGUTC_UpdatePruebas
+  @intCod_prueb INT
+ ,@strNombre_prueb NVARCHAR
+ ,@dtFechaNac_prueb DATETIME
+ ,@decSalario_prueb DECIMAL(7, 2)
+ ,@bitActivo_prueb BIT
+AS
+ SET NOCOUNT OFF;
+ BEGIN
+    UPDATE PRUEBAS SET 
+      intCod_prueb = @intCod_prueb
+     ,strNombre_prueb = @strNombre_prueb
+     ,dtFechaNac_prueb = @dtFechaNac_prueb
+     ,decSalario_prueb = @decSalario_prueb
+     ,bitActivo_prueb = @bitActivo_prueb
+    WHERE (intCod_prueb = @intCod_prueb)
+  END
+-- =====SELECT==================================
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:  Desarrollo UTC
+-- Create date: 29/05/24
+-- =============================================
+CREATE PROCEDURE SIGUTC_GetPruebas
+  @Comodin VARCHAR(100)
+ ,@FILTRO1 VARCHAR(100)
+ ,@FILTRO2 VARCHAR(100)
+ ,@FILTRO3 VARCHAR(100)
+ ,@FILTRO4 VARCHAR(100)
+
+AS
+ SET NOCOUNT OFF;
+ BEGIN --SP
+ IF @Comodin = 'ALL'
+    begin --ALL
+    SELECT intCod_prueb
+    ,strNombre_prueb
+    ,dtFechaNac_prueb
+    ,decSalario_prueb
+    ,bitActivo_prueb
+    FROM PRUEBAS
+    end --All
+ ELSE IF @Comodin = 'xPK'
+    begin --xPK
+	SELECT intCod_prueb
+    ,strNombre_prueb
+    ,dtFechaNac_prueb
+    ,decSalario_prueb
+    ,bitActivo_prueb
+    FROM PRUEBAS
+    WHERE (intCod_prueb = @FILTRO1)
+	end --xPK
+ ELSE IF @Comodin = 'xSalario'
+    begin --xSalario
+	SELECT intCod_prueb
+    ,strNombre_prueb
+    ,dtFechaNac_prueb
+    ,decSalario_prueb
+    ,bitActivo_prueb
+    FROM PRUEBAS
+    WHERE (decSalario_prueb  BETWEEN @FILTRO1 and @FILTRO2)
+	end --xSalario
+ END --SP
+
+
+SELECT strCod_Sede
+      ,strNombre_Sede
+      ,strTipo_Sede
+      ,strCod_OrgC
+      ,strDir_sede
+      ,strSubDir_sede
+      ,strSubDirAdm_sede
+      ,strObs1_sede
+      ,strObs2_sede
+      ,strObs3_sede
+      ,dtFecha_log
+      ,strUser_log
+      ,bitEstado_sede
+FROM SIGUTC.dbo.UB_SEDES
+
+
+

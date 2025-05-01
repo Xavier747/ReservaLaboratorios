@@ -1,0 +1,132 @@
+﻿/*Contenedor de imagenes*/
+.conten-img{
+    height:200px;
+    overflow:hidden;
+    border-radius: 25px 25px 0 0;
+}
+
+/*imagen*/
+.lab-image{
+    width:100%;
+}
+
+/*Contendor de imagenes de responsable*/
+.resp-image{
+    height:50px;
+    width:50px;
+    border-radius: 50%;
+    border: 3px solid #000;
+    overflow:hidden;
+    margin:auto;
+}
+
+/*Imagen de responsable*/
+.imgRespAcad{
+    height: 100%;
+}
+
+.card{
+    border: 1px solid #dfdfdf;
+    border-radius: 25px;
+    margin-bottom: 25px;
+}
+
+.list_laboratorio{
+    margin-top: 10px;
+}
+
+.titulo_pagina{
+    font-size: 17px;
+    font-weight: bold;
+    padding: 15px 20px;
+    text-align: center;
+}
+
+.content_consolidado{
+    border: 1px solid #3d348a;
+    border-radius: 25px;
+    background-color: #3d348a;
+    padding: 6px 15px;
+    width: 160px;
+    margin:auto;
+    cursor:pointer;
+}
+
+.link_consolidado{
+    color: #fff;    
+    display: flex;
+}
+
+.link_consolidado:hover{
+    color: #fff;
+    text-decoration:none;
+}
+
+.image-text-button {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    margin-right: 5px; /* Espacio entre la imagen y el texto */
+}
+
+.search{
+    margin: 50px 0 70px 0;
+    display:flex;
+    border: 1px solid #ced4da;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.txtSearch{
+    width: calc(100% - 100px) !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important; 
+}
+
+.txtSearch:focus{
+    outline: none !important;
+    box-shadow: none !important; 
+}
+
+.lblBuscar{
+    font-weight:bold;
+}
+
+.btn_search{
+    display:flex;
+    background-color: #e9ecef;
+    font-weight: bold;
+    align-items:center;
+    padding: 0 10px;
+}
+
+
+.card-title{
+    color: #312783;
+    font-weight: bold;
+    font-size: 20px;
+    text-align:center;
+}
+
+.card-body__{
+    margin: 5px;
+    text-align:center;
+}
+
+.btnReservar{
+    margin:10px auto 0 auto;
+    border-radius: 25px !important;
+    border: 1px solid #504896 !important;
+    background-color: #fff;
+    color: #312783 !important;
+    margin-bottom: 20px !important;
+}
+
+.btnReservar:hover{
+    border: 1px solid #504896 !important;
+    background-color: #504896;
+    color: #fff !important;
+}

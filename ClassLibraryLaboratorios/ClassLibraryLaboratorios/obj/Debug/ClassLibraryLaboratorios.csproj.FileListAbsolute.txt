@@ -1,0 +1,10 @@
+c:\users\user\onedrive\documents\visual studio 2015\Projects\ClassLibraryLaboratorios\ClassLibraryLaboratorios\bin\Debug\ClassLibraryLaboratorios.dll
+c:\users\user\onedrive\documents\visual studio 2015\Projects\ClassLibraryLaboratorios\ClassLibraryLaboratorios\bin\Debug\ClassLibraryLaboratorios.pdb
+c:\users\user\onedrive\documents\visual studio 2015\Projects\ClassLibraryLaboratorios\ClassLibraryLaboratorios\obj\Debug\ClassLibraryLaboratorios.csprojResolveAssemblyReference.cache
+c:\users\user\onedrive\documents\visual studio 2015\Projects\ClassLibraryLaboratorios\ClassLibraryLaboratorios\obj\Debug\ClassLibraryLaboratorios.dll
+c:\users\user\onedrive\documents\visual studio 2015\Projects\ClassLibraryLaboratorios\ClassLibraryLaboratorios\obj\Debug\ClassLibraryLaboratorios.pdb
+C:\Users\User\OneDrive\Documents\Visual Studio 2015\Projects\reservalaboratorios\ClassLibraryLaboratorios\ClassLibraryLaboratorios\bin\Debug\ClassLibraryLaboratorios.dll
+C:\Users\User\OneDrive\Documents\Visual Studio 2015\Projects\reservalaboratorios\ClassLibraryLaboratorios\ClassLibraryLaboratorios\bin\Debug\ClassLibraryLaboratorios.pdb
+C:\Users\User\OneDrive\Documents\Visual Studio 2015\Projects\reservalaboratorios\ClassLibraryLaboratorios\ClassLibraryLaboratorios\obj\Debug\ClassLibraryLaboratorios.csprojResolveAssemblyReference.cache
+C:\Users\User\OneDrive\Documents\Visual Studio 2015\Projects\reservalaboratorios\ClassLibraryLaboratorios\ClassLibraryLaboratorios\obj\Debug\ClassLibraryLaboratorios.dll
+C:\Users\User\OneDrive\Documents\Visual Studio 2015\Projects\reservalaboratorios\ClassLibraryLaboratorios\ClassLibraryLaboratorios\obj\Debug\ClassLibraryLaboratorios.pdb

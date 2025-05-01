@@ -1,0 +1,86 @@
+﻿.contenedor-imagen{
+    width: 100%;        /* o el ancho que necesites */
+    height: 300px;      /* o cualquier alto que desees */
+    overflow: hidden;   /* corta la imagen que se sale */
+    position: relative;
+}
+
+.contenedor-imagen .img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;        /* hace que la imagen se escale y recorte sin deformarse */
+    object-position: center;  /* centra la imagen dentro del contenedor */
+    display: block;
+}
+
+.img-responsable {
+    object-fit: cover; /* Evita deformaciones */
+    height: 100%;
+}
+
+.resp-image {
+    margin: auto;
+    border-radius: 50%; /* Hace la imagen redonda */
+    border: 3px solid #007BFF; /* Borde azul */
+    width: 100px; /* Ajusta el tamaño de la imagen */
+    height: 100px; /* Mantén el tamaño uniforme */
+    overflow:hidden;
+}
+
+.img-fluid {
+    height: 380px;
+    width: 100%;
+}
+
+.verde {
+    font-size: 13px;
+    margin: 5px 0;
+    padding: 0 10px;
+    background-color: #A4E4AE;
+    border-radius: 100px;
+    color: #3A647E;
+}
+
+.rojo {
+    font-size: 13px;
+    margin: 3px 10px;
+    padding: 10px;
+    background-color: #F1F3F4;
+    border-radius: 100px;
+}
+
+.pull-right {
+    letter-spacing: 1px;
+    color: #312783;
+}
+
+.card-body .bar-left {
+    border-left: 2px solid #312783;
+}
+
+
+.section-heading {
+    text-align: center;
+}
+
+.section-heading h2 {
+    margin-bottom: 50px;
+    position: relative;
+    font-size: 18px;
+    font-weight: 500;
+    color: #312783;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    border: 2px solid rgba(250, 250, 250, 0.1);
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight:bold;
+}
+
+.morado {
+    color: #6a1b9a; /* Morado */
+}
+
+.titulo-claro {
+    /* Agrega cualquier estilo adicional aquí */
+}
