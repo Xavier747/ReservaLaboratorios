@@ -49,6 +49,7 @@
     <Compile Include="LAB_RESPONSABLE.cs" />
     <Compile Include="LAB_SOFTWARE.cs" />
     <Compile Include="LAB_TIPO.cs" />
+    <Compile Include="POSG_INSCRIPCION.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
