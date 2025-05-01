@@ -112,7 +112,7 @@ namespace ReservaLaboratorios
 
         public void cargarFacultad()
         {
-            SqlCommand comandoConsulta = new SqlCommand("SIGUTC_GetUB_SEDES", conexion);
+            SqlCommand comandoConsulta = new SqlCommand("SIGUTC_GetUB_FACULTADES", conexion);
             tipoConsulta = "xPK";
             string sedeId = "";
 

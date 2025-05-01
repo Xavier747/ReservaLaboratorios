@@ -274,3 +274,21 @@ D:\Tesis\tesis1.4\reservalaboratorios\ReservaLaboratorios\ReservaLaboratorios\ob
 D:\Tesis\tesis1.4\reservalaboratorios\ReservaLaboratorios\ReservaLaboratorios\obj\Debug\ReservaLaboratorios.pdb
 C:\Users\hp\Documents\Visual Studio 2015\Projects\reservalaboratorios\ReservaLaboratorios\ReservaLaboratorios\bin\LabUTC.dll
 C:\Users\hp\Documents\Visual Studio 2015\Projects\reservalaboratorios\ReservaLaboratorios\ReservaLaboratorios\bin\LabUTC.pdb
+C:\Users\User\OneDrive\Documents\Visual Studio 2015\Projects\reservalaboratorios\ReservaLaboratorios\ReservaLaboratorios\bin\roslyn\csc.exe
+C:\Users\User\OneDrive\Documents\Visual Studio 2015\Projects\reservalaboratorios\ReservaLaboratorios\ReservaLaboratorios\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\User\OneDrive\Documents\Visual Studio 2015\Projects\reservalaboratorios\ReservaLaboratorios\ReservaLaboratorios\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\User\OneDrive\Documents\Visual Studio 2015\Projects\reservalaboratorios\ReservaLaboratorios\ReservaLaboratorios\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\User\OneDrive\Documents\Visual Studio 2015\Projects\reservalaboratorios\ReservaLaboratorios\ReservaLaboratorios\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\User\OneDrive\Documents\Visual Studio 2015\Projects\reservalaboratorios\ReservaLaboratorios\ReservaLaboratorios\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\User\OneDrive\Documents\Visual Studio 2015\Projects\reservalaboratorios\ReservaLaboratorios\ReservaLaboratorios\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\User\OneDrive\Documents\Visual Studio 2015\Projects\reservalaboratorios\ReservaLaboratorios\ReservaLaboratorios\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\User\OneDrive\Documents\Visual Studio 2015\Projects\reservalaboratorios\ReservaLaboratorios\ReservaLaboratorios\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\User\OneDrive\Documents\Visual Studio 2015\Projects\reservalaboratorios\ReservaLaboratorios\ReservaLaboratorios\bin\roslyn\vbc.exe
+C:\Users\User\OneDrive\Documents\Visual Studio 2015\Projects\reservalaboratorios\ReservaLaboratorios\ReservaLaboratorios\bin\roslyn\VBCSCompiler.exe
+C:\Users\User\OneDrive\Documents\Visual Studio 2015\Projects\reservalaboratorios\ReservaLaboratorios\ReservaLaboratorios\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\User\OneDrive\Documents\Visual Studio 2015\Projects\reservalaboratorios\ReservaLaboratorios\ReservaLaboratorios\bin\ReservaLaboratorios.dll.config
+C:\Users\User\OneDrive\Documents\Visual Studio 2015\Projects\reservalaboratorios\ReservaLaboratorios\ReservaLaboratorios\bin\ReservaLaboratorios.dll
+C:\Users\User\OneDrive\Documents\Visual Studio 2015\Projects\reservalaboratorios\ReservaLaboratorios\ReservaLaboratorios\bin\ReservaLaboratorios.pdb
+C:\Users\User\OneDrive\Documents\Visual Studio 2015\Projects\reservalaboratorios\ReservaLaboratorios\ReservaLaboratorios\obj\Debug\ReservaLaboratorios.csprojResolveAssemblyReference.cache
+C:\Users\User\OneDrive\Documents\Visual Studio 2015\Projects\reservalaboratorios\ReservaLaboratorios\ReservaLaboratorios\obj\Debug\ReservaLaboratorios.dll
+C:\Users\User\OneDrive\Documents\Visual Studio 2015\Projects\reservalaboratorios\ReservaLaboratorios\ReservaLaboratorios\obj\Debug\ReservaLaboratorios.pdb
