@@ -3,17 +3,29 @@ USE Reserva
 
 -------------------------------------------------------------
 CREATE PROCEDURE loginPlataforma
-@usuario varchar(100),
-@contrasena varchar(100)
+@Comodin varchar(100)
+, @FILTRO1 varchar(100)
+, @FILTRO2 varchar(100)
+, @FILTRO3 varchar(100)
+, @FILTRO4 varchar(100)
 as begin
-	SELECT per.*, usuRol.strNombre_rol
-	FROM PERSONAL per
-	INNER JOIN USUARIO usu
-	ON per.CEDULA_ALU = usu.strUsuarioCedula
-	INNER JOIN USUARIOINROLES usuRol
-	ON usuRol.strUsuarioId = usu.strUsuarioId
-	WHERE CEDULA_ALU = @usuario 
-	and strContraseña_Per = @contrasena
+	IF @Comodin = 'xUserPassword'
+		BEGIN
+		SELECT *
+		FROM PERSONAL per
+		WHERE CEDULA_ALU = @FILTRO1
+		and strContraseña_Per = @FILTRO2
+		END
+	ELSE IF @Comodin = 'xCedula'
+		BEGIN
+		SELECT usuRol.strNombre_rol
+		FROM PERSONAL per
+		INNER JOIN USUARIO usu
+		ON per.CEDULA_ALU = usu.strUsuarioCedula
+		INNER JOIN USUARIOINROLES usuRol
+		ON usuRol.strUsuarioId = usu.strUsuarioId
+		WHERE CEDULA_ALU = @FILTRO1 
+		END
 end
 --------------------------------------------------
 -- +++++++++++++++++++++Funciona+++++++++++++++++++++++++
