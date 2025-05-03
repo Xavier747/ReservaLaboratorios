@@ -1535,7 +1535,7 @@ namespace ClassLibraryLaboratorios
         public int DelPOSG_INSCRIPCION(string comodin, string filtro1, string filtro2, string filtro3, string filtro4)
         {
             //Conexion a bd
-            SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["POSG_ConnectionString"]);
+            SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
             //conexion SP
             SqlCommand myCommand = new SqlCommand("TESIS_DelPOSG_INSCRIPCION", myConnection);
             myCommand.CommandType = CommandType.StoredProcedure;
