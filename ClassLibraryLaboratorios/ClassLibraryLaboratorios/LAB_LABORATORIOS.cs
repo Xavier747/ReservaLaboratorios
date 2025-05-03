@@ -40,15 +40,15 @@ namespace ClassLibraryLaboratorios
             strCod_Lab = _strCod_Lab;
             strCod_Sede = _strCod_Sede;
             strCod_Fac = _strCod_Fac;
-            strNombre_Lab = _strNombre_Lab;
+            strNombre_lab = _strNombre_Lab;
             intNumeroEquipos_lab = _intNumeroEquipos_lab;
-            strUbicacion_Lab = _strUbicacion_Lab;
+            strUbicacion_lab = _strUbicacion_Lab;
             strCod_tipoLab = _strCod_tipoLab;
             strCod_areac = _strCod_areac;
-            strFotografia1_Lab = _strFotografia1_Lab;
-            strFotografia2_Lab = _strFotografia2_Lab;
+            strFotografia1_lab = _strFotografia1_Lab;
+            strFotografia2_lab = _strFotografia2_Lab;
             dtFechaRegistro_lab = _dtFechaRegistro_lab;
-            bitEstado_Lab = _bitEstado_Lab;
+            bitEstado_lab = _bitEstado_Lab;
             dtFecha_log = _dtFecha_log;
             strUser_log = _strUser_log;
             strObs1_lab = _strObs1_lab;
@@ -66,28 +66,28 @@ namespace ClassLibraryLaboratorios
         }
 
         // Campos privados
-        private string strCod_Lab;
-        private string strCod_Sede;
-        private string strCod_Fac;
-        private string strNombre_Lab;
-        private int intNumeroEquipos_lab;
-        private string strUbicacion_Lab;
-        private string strCod_tipoLab;
-        private string strCod_areac;
-        private string strFotografia1_Lab;
-        private string strFotografia2_Lab;
-        private DateTime dtFechaRegistro_lab;
-        private bool bitEstado_Lab;
-        private DateTime dtFecha_log;
-        private string strUser_log;
-        private string strObs1_lab;
-        private string strObs2_lab;
-        private bool bitObs1_lab;
-        private bool bitObs2_lab;
-        private decimal decObs1_lab;
-        private decimal decObs2_lab;
-        private DateTime dtObs1_lab;
-        private DateTime dtObs2_lab;
+        private string STRCOD_LAB;
+        private string STRCOD_SEDE;
+        private string STRCOD_FAC;
+        private string STRNOMBRE_LAB;
+        private int INTNUMEROEQUIPOS_LAB;
+        private string STRUBICACION_LAB;
+        private string STRCOD_TIPOLAB;
+        private string STRCOD_AREAC;
+        private string STRFOTOGRAFIA1_LAB;
+        private string STRFOTOGRAFIA2_LAB;
+        private DateTime DTFECHAREGISTRO_LAB;
+        private bool BITESTADO_LAB;
+        private DateTime DTFECHA_LOG;
+        private string STRUSER_LOG;
+        private string STROBS1_LAB;
+        private string STROBS2_LAB;
+        private bool BITOBS1_LAB;
+        private bool BITOBS2_LAB;
+        private decimal DECOBS1_LAB;
+        private decimal DECOBS2_LAB;
+        private DateTime DTOBS1_LAB;
+        private DateTime DTOBS2_LAB;
         private int NUMERR;
         private string MSG;
         private bool RESULTADO;
@@ -130,267 +130,267 @@ namespace ClassLibraryLaboratorios
             }
         }
 
-        public string codLab
+        public string strCod_Lab
         {
             get
             {
-                return strCod_Lab;
+                return STRCOD_LAB;
             }
             set
             {
-                strCod_Lab = value;
+                STRCOD_LAB = value;
             }
         }
 
-        public string codSede
+        public string strCod_Sede
         {
             get
             {
-                return strCod_Sede;
+                return STRCOD_SEDE;
             }
             set
             {
-                strCod_Sede = value;
+                STRCOD_SEDE = value;
             }
         }
 
-        public string codFac
+        public string strCod_Fac
         {
             get
             {
-                return strCod_Fac;
+                return STRCOD_FAC;
             }
             set
             {
-                strCod_Fac = value;
+                STRCOD_FAC = value;
             }
         }
 
-        public string nombreLab
+        public string strNombre_lab
         {
             get
             {
-                return strNombre_Lab;
+                return STRNOMBRE_LAB;
             }
             set
             {
-                strNombre_Lab = value;
+                STRNOMBRE_LAB = value;
             }
         }
 
-        public int numeroEquiposLab
+        public int intNumeroEquipos_lab
         {
             get
             {
-                return intNumeroEquipos_lab;
+                return INTNUMEROEQUIPOS_LAB;
             }
             set
             {
-                intNumeroEquipos_lab = value;
+                INTNUMEROEQUIPOS_LAB = value;
             }
         }
 
-        public string ubicacionLab
+        public string strUbicacion_lab
         {
             get
             {
-                return strUbicacion_Lab;
+                return STRUBICACION_LAB;
             }
             set
             {
-                strUbicacion_Lab = value;
+                STRUBICACION_LAB = value;
             }
         }
 
-        public string codTipoLab
+        public string strCod_tipoLab
         {
             get
             {
-                return strCod_tipoLab;
+                return STRCOD_TIPOLAB;
             }
             set
             {
-                strCod_tipoLab = value;
+                STRCOD_TIPOLAB = value;
             }
         }
 
-        public string codAreac
+        public string strCod_areac
         {
             get
             {
-                return strCod_areac;
+                return STRCOD_AREAC;
             }
             set
             {
-                strCod_areac = value;
+                STRCOD_AREAC = value;
             }
         }
 
-        public string fotografia1Lab
+        public string strFotografia1_lab
         {
             get
             {
-                return strFotografia1_Lab;
+                return STRFOTOGRAFIA1_LAB;
             }
             set
             {
-                strFotografia1_Lab = value;
+                STRFOTOGRAFIA1_LAB = value;
             }
         }
 
-        public string fotografia2Lab
+        public string strFotografia2_lab
         {
             get
             {
-                return strFotografia2_Lab;
+                return STRFOTOGRAFIA2_LAB;
             }
             set
             {
-                strFotografia2_Lab = value;
+                STRFOTOGRAFIA2_LAB = value;
             }
         }
 
-        public DateTime fechaRegistroLab
+        public DateTime dtFechaRegistro_lab
         {
             get
             {
-                return dtFechaRegistro_lab;
+                return DTFECHAREGISTRO_LAB;
             }
             set
             {
-                dtFechaRegistro_lab = value;
+                DTFECHAREGISTRO_LAB = value;
             }
         }
 
-        public bool estadoLab
+        public bool bitEstado_lab
         {
             get
             {
-                return bitEstado_Lab;
+                return BITESTADO_LAB;
             }
             set
             {
-                bitEstado_Lab = value;
+                BITESTADO_LAB = value;
             }
         }
 
-        public DateTime fechaLog
+        public DateTime dtFecha_log
         {
             get
             {
-                return dtFecha_log;
+                return DTFECHA_LOG;
             }
             set
             {
-                dtFecha_log = value;
+                DTFECHA_LOG = value;
             }
         }
 
-        public string userLog
+        public string strUser_log
         {
             get
             {
-                return strUser_log;
+                return STRUSER_LOG;
             }
             set
             {
-                strUser_log = value;
+                STRUSER_LOG = value;
             }
         }
 
-        public string obs1Lab
+        public string strObs1_lab
         {
             get
             {
-                return strObs1_lab;
+                return STROBS1_LAB;
             }
             set
             {
-                strObs1_lab = value;
+                STROBS1_LAB = value;
             }
         }
 
-        public string obs2Lab
+        public string strObs2_lab
         {
             get
             {
-                return strObs2_lab;
+                return STROBS2_LAB;
             }
             set
             {
-                strObs2_lab = value;
+                STROBS2_LAB = value;
             }
         }
 
-        public bool obs1LabBit
+        public bool bitObs1_lab
         {
             get
             {
-                return bitObs1_lab;
+                return BITOBS1_LAB;
             }
             set
             {
-                bitObs1_lab = value;
+                BITOBS1_LAB = value;
             }
         }
 
-        public bool obs2LabBit
+        public bool bitObs2_lab
         {
             get
             {
-                return bitObs2_lab;
+                return BITOBS2_LAB;
             }
             set
             {
-                bitObs2_lab = value;
+                BITOBS2_LAB = value;
             }
         }
 
-        public decimal obs1LabDec
+        public decimal decObs1_lab
         {
             get
             {
-                return decObs1_lab;
+                return DECOBS1_LAB;
             }
             set
             {
-                decObs1_lab = value;
+                DECOBS1_LAB = value;
             }
         }
 
-        public decimal obs2LabDec
+        public decimal decObs2_lab
         {
             get
             {
-                return decObs2_lab;
+                return DECOBS2_LAB;
             }
             set
             {
-                decObs2_lab = value;
+                DECOBS2_LAB = value;
             }
         }
 
-        public DateTime obs1LabDate
+        public DateTime dtObs1_lab
         {
             get
             {
-                return dtObs1_lab;
+                return DTOBS1_LAB;
             }
             set
             {
-                dtObs1_lab = value;
+                DTOBS1_LAB = value;
             }
         }
 
-        public DateTime obs2LabDate
+        public DateTime dtObs2_lab
         {
             get
             {
-                return dtObs2_lab;
+                return DTOBS2_LAB;
             }
             set
             {
-                dtObs2_lab = value;
+                DTOBS2_LAB = value;
             }
         }
 
@@ -439,15 +439,15 @@ namespace ClassLibraryLaboratorios
                                     strCod_Lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strCod_Lab"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strCod_Lab"))),
                                     strCod_Sede = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strCod_Sede"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strCod_Sede"))),
                                     strCod_Fac = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strCod_Fac"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strCod_Fac"))),
-                                    strNombre_Lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strNombre_Lab"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strNombre_Lab"))),
+                                    strNombre_lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strNombre_Lab"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strNombre_Lab"))),
                                     intNumeroEquipos_lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("intNumeroEquipos_lab"))) == true ? 0 : Convert.ToInt32(reader1.GetValue(reader1.GetOrdinal("intNumeroEquipos_lab"))),
-                                    strUbicacion_Lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strUbicacion_Lab"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strUbicacion_Lab"))),
+                                    strUbicacion_lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strUbicacion_Lab"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strUbicacion_Lab"))),
                                     strCod_tipoLab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strCod_tipoLab"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strCod_tipoLab"))),
                                     strCod_areac = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strCod_areac"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strCod_areac"))),
-                                    strFotografia1_Lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strFotografia1_Lab"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strFotografia1_Lab"))),
-                                    strFotografia2_Lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strFotografia2_Lab"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strFotografia2_Lab"))),
+                                    strFotografia1_lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strFotografia1_Lab"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strFotografia1_Lab"))),
+                                    strFotografia2_lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strFotografia2_Lab"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strFotografia2_Lab"))),
                                     dtFechaRegistro_lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("dtFechaRegistro_lab"))) == true ? DateTime.Now : Convert.ToDateTime(reader1.GetValue(reader1.GetOrdinal("dtFechaRegistro_lab"))),
-                                    bitEstado_Lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("bitEstado_Lab"))) == true ? false : Convert.ToBoolean(reader1.GetValue(reader1.GetOrdinal("bitEstado_Lab"))),
+                                    bitEstado_lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("bitEstado_Lab"))) == true ? false : Convert.ToBoolean(reader1.GetValue(reader1.GetOrdinal("bitEstado_Lab"))),
                                     dtFecha_log = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("dtFecha_log"))) == true ? DateTime.Now : Convert.ToDateTime(reader1.GetValue(reader1.GetOrdinal("dtFecha_log"))),
                                     strUser_log = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strUser_log"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strUser_log"))),
                                     strObs1_lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strObs1_lab"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strObs1_lab"))),
@@ -502,7 +502,7 @@ namespace ClassLibraryLaboratorios
         myCommand.Parameters.Add(prmSTRCOD_FAC);
 
         SqlParameter prmSTRNOMBRE_LAB = new SqlParameter("@STRNOMBRE_LAB", SqlDbType.NVarChar);
-        prmSTRNOMBRE_LAB.Value = miClass.strNombre_Lab;
+        prmSTRNOMBRE_LAB.Value = miClass.strNombre_lab;
         myCommand.Parameters.Add(prmSTRNOMBRE_LAB);
 
         SqlParameter prmINTNUMEROEQUIPOS_LAB = new SqlParameter("@INTNUMEROEQUIPOS_LAB", SqlDbType.Int);
@@ -510,7 +510,7 @@ namespace ClassLibraryLaboratorios
         myCommand.Parameters.Add(prmINTNUMEROEQUIPOS_LAB);
 
         SqlParameter prmSTRUBICACION_LAB = new SqlParameter("@STRUBICACION_LAB", SqlDbType.NVarChar);
-        prmSTRUBICACION_LAB.Value = miClass.strUbicacion_Lab;
+        prmSTRUBICACION_LAB.Value = miClass.strUbicacion_lab;
         myCommand.Parameters.Add(prmSTRUBICACION_LAB);
 
         SqlParameter prmSTRCOD_TIPOLAB = new SqlParameter("@STRCOD_TIPOLAB", SqlDbType.NVarChar);
@@ -522,11 +522,11 @@ namespace ClassLibraryLaboratorios
         myCommand.Parameters.Add(prmSTRCOD_AREAC);
 
         SqlParameter prmSTRFOTOGRAFIA1_LAB = new SqlParameter("@STRFOTOGRAFIA1_LAB", SqlDbType.NVarChar);
-        prmSTRFOTOGRAFIA1_LAB.Value = miClass.strFotografia1_Lab;
+        prmSTRFOTOGRAFIA1_LAB.Value = miClass.strFotografia1_lab;
         myCommand.Parameters.Add(prmSTRFOTOGRAFIA1_LAB);
 
         SqlParameter prmSTRFOTOGRAFIA2_LAB = new SqlParameter("@STRFOTOGRAFIA2_LAB", SqlDbType.NVarChar);
-        prmSTRFOTOGRAFIA2_LAB.Value = miClass.strFotografia2_Lab;
+        prmSTRFOTOGRAFIA2_LAB.Value = miClass.strFotografia2_lab;
         myCommand.Parameters.Add(prmSTRFOTOGRAFIA2_LAB);
 
         SqlParameter prmDTFECHAREGISTRO_LAB = new SqlParameter("@DTFECHAREGISTRO_LAB", SqlDbType.DateTime);
@@ -534,7 +534,7 @@ namespace ClassLibraryLaboratorios
         myCommand.Parameters.Add(prmDTFECHAREGISTRO_LAB);
 
         SqlParameter prmBITESTADO_LAB = new SqlParameter("@BITESTADO_LAB", SqlDbType.Bit);
-        prmBITESTADO_LAB.Value = miClass.bitEstado_Lab;
+        prmBITESTADO_LAB.Value = miClass.bitEstado_lab;
         myCommand.Parameters.Add(prmBITESTADO_LAB);
 
         SqlParameter prmDTFECHA_LOG = new SqlParameter("@DTFECHA_LOG", SqlDbType.DateTime);
@@ -779,7 +779,7 @@ namespace ClassLibraryLaboratorios
         myCommand.Parameters.Add(prmSTRCOD_FAC);
 
         SqlParameter prmSTRNOMBRE_LAB = new SqlParameter("@STRNOMBRE_LAB", SqlDbType.NVarChar);
-        prmSTRNOMBRE_LAB.Value = miClass.strNombre_Lab;
+        prmSTRNOMBRE_LAB.Value = miClass.strNombre_lab;
         myCommand.Parameters.Add(prmSTRNOMBRE_LAB);
 
         SqlParameter prmINTNUMEROEQUIPOS_LAB = new SqlParameter("@INTNUMEROEQUIPOS_LAB", SqlDbType.Int);
@@ -787,7 +787,7 @@ namespace ClassLibraryLaboratorios
         myCommand.Parameters.Add(prmINTNUMEROEQUIPOS_LAB);
 
         SqlParameter prmSTRUBICACION_LAB = new SqlParameter("@STRUBICACION_LAB", SqlDbType.NVarChar);
-        prmSTRUBICACION_LAB.Value = miClass.strUbicacion_Lab;
+        prmSTRUBICACION_LAB.Value = miClass.strUbicacion_lab;
         myCommand.Parameters.Add(prmSTRUBICACION_LAB);
 
         SqlParameter prmSTRCOD_TIPOLAB = new SqlParameter("@STRCOD_TIPOLAB", SqlDbType.NVarChar);
@@ -799,11 +799,11 @@ namespace ClassLibraryLaboratorios
         myCommand.Parameters.Add(prmSTRCOD_AREAC);
 
         SqlParameter prmSTRFOTOGRAFIA1_LAB = new SqlParameter("@STRFOTOGRAFIA1_LAB", SqlDbType.NVarChar);
-        prmSTRFOTOGRAFIA1_LAB.Value = miClass.strFotografia1_Lab;
+        prmSTRFOTOGRAFIA1_LAB.Value = miClass.strFotografia1_lab;
         myCommand.Parameters.Add(prmSTRFOTOGRAFIA1_LAB);
 
         SqlParameter prmSTRFOTOGRAFIA2_LAB = new SqlParameter("@STRFOTOGRAFIA2_LAB", SqlDbType.NVarChar);
-        prmSTRFOTOGRAFIA2_LAB.Value = miClass.strFotografia2_Lab;
+        prmSTRFOTOGRAFIA2_LAB.Value = miClass.strFotografia2_lab;
         myCommand.Parameters.Add(prmSTRFOTOGRAFIA2_LAB);
 
         SqlParameter prmDTFECHAREGISTRO_LAB = new SqlParameter("@DTFECHAREGISTRO_LAB", SqlDbType.DateTime);
@@ -811,7 +811,7 @@ namespace ClassLibraryLaboratorios
         myCommand.Parameters.Add(prmDTFECHAREGISTRO_LAB);
 
         SqlParameter prmBITESTADO_LAB = new SqlParameter("@BITESTADO_LAB", SqlDbType.Bit);
-        prmBITESTADO_LAB.Value = miClass.bitEstado_Lab;
+        prmBITESTADO_LAB.Value = miClass.bitEstado_lab;
         myCommand.Parameters.Add(prmBITESTADO_LAB);
 
         SqlParameter prmDTFECHA_LOG = new SqlParameter("@DTFECHA_LOG", SqlDbType.DateTime);

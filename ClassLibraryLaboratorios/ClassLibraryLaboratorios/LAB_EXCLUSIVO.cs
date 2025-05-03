@@ -33,6 +33,7 @@ namespace ClassLibraryLaboratorios
             decimal _decObs2_labEx,
             DateTime _dtObs1_labEx,
             DateTime _dtObs2_labEx)
+
         {
             strCod_labEx = _strCod_labEx;
             strCod_Sede = _strCod_Sede;
@@ -58,218 +59,220 @@ namespace ClassLibraryLaboratorios
             resultado = false;
         }
 
-        private string strCod_labEx;
-        private string strCod_Sede;
-        private string strCod_Fac;
-        private string strCod_Car;
-        private string strCod_lab;
-        private DateTime dtFechaRegistro_labEx;
-        private bool bitEstado_labEx;
-        private DateTime dtFecha_log;
-        private string strUser_log;
-        private string strObs1_labEx;
-        private string strObs2_labEx;
-        private bool bitObs1_labEx;
-        private bool bitObs2_labEx;
-        private decimal decObs1_labEx;
-        private decimal decObs2_labEx;
-        private DateTime dtObs1_labEx;
-        private DateTime dtObs2_labEx;
+        private string STRCOD_LABEX;
+        private string STRCOD_SEDE;
+        private string STRCOD_FAC;
+        private string STRCOD_CAR;
+        private string STRCOD_LAB;
+        private DateTime DTFECHAREGISTRO_LABEX;
+        private bool BITESTADO_LABEX;
+        private DateTime DTFECHA_LOG;
+        private string STRUSER_LOG;
+        private string STROBS1_LABEX;
+        private string STROBS2_LABEX;
+        private bool BITOBS1_LABEX;
+        private bool BITOBS2_LABEX;
+        private decimal DECOBS1_LABEX;
+        private decimal DECOBS2_LABEX;
+        private DateTime DTOBS1_LABEX;
+        private DateTime DTOBS2_LABEX;
         private int NUMERR;
         private string MSG;
         private bool RESULTADO;
 
 
+
+
         ///////////////////// Generacion de propiedades/////////////////
 
-        public string StrCod_labEx
+        public string strCod_labEx
         {
             get
             {
-                return strCod_labEx;
+                return STRCOD_LABEX;
             }
             set
             {
-                strCod_labEx = value;
+                STRCOD_LABEX = value;
             }
 
         }
 
        
-        public string StrCod_Sede
+        public string strCod_Sede
         {
             get
             {
-                return strCod_Sede;
+                return STRCOD_SEDE;
             }
             set
             {
-                strCod_Sede = value;
+                STRCOD_SEDE = value;
             }
         }
-        public string StrCod_Fac
+        public string strCod_Fac
         {
             get
             {
-                return strCod_Fac;
+                return STRCOD_FAC;
             }
             set
             {
-                strCod_Fac = value;
+                STRCOD_FAC = value;
             }
         }
-        public string StrCod_Car
+        public string strCod_Car
         {
             get
             {
-                return strCod_Car;
+                return STRCOD_CAR;
             }
             set
             {
-                strCod_Car = value;
+                STRCOD_CAR = value;
             }
         }
-        public string StrCod_lab
+        public string strCod_lab
         {
             get
             {
-                return strCod_lab;
+                return STRCOD_LAB;
             }
             set
             {
-                strCod_lab = value;
+                STRCOD_LAB = value;
             }
         }
-        public DateTime DtFechaRegistro_labEx
+        public DateTime dtFechaRegistro_labEx
         {
             get
             {
-                return dtFechaRegistro_labEx;
+                return DTFECHAREGISTRO_LABEX;
             }
             set
             {
-                dtFechaRegistro_labEx = value;
+                DTFECHAREGISTRO_LABEX = value;
             }
         }
-        public bool BitEstado_labEx
+        public bool bitEstado_labEx
         {
             get
             {
-                return bitEstado_labEx;
+                return BITESTADO_LABEX;
             }
             set
             {
-                bitEstado_labEx = value;
+                BITESTADO_LABEX = value;
             }
         }
-        public DateTime DtFecha_log
+        public DateTime dtFecha_log
         {
             get
             {
-                return dtFecha_log;
+                return DTFECHA_LOG;
             }
             set
             {
-                dtFecha_log = value;
+                DTFECHA_LOG = value;
             }
         }
-        public string StrUser_log
+        public string strUser_log
         {
             get
             {
-                return strUser_log;
+                return STRUSER_LOG;
             }
             set
             {
-                strUser_log = value;
+                STRUSER_LOG = value;
             }
         }
-        public string StrObs1_labEx
+        public string strObs1_labEx
         {
             get
             {
-                return strObs1_labEx;
+                return STROBS1_LABEX;
             }
             set
             {
-                strObs1_labEx = value;
+                STROBS1_LABEX = value;
             }
         }
-        public string StrObs2_labEx
+        public string strObs2_labEx
         {
             get
             {
-                return strObs2_labEx;
+                return STROBS2_LABEX;
             }
             set
             {
-                strObs2_labEx = value;
+                STROBS2_LABEX = value;
             }
         }
-        public bool BitObs1_labEx
+        public bool bitObs1_labEx
         {
             get
             {
-                return bitObs1_labEx;
+                return BITOBS1_LABEX;
             }
             set
             {
-                bitObs1_labEx = value;
+                BITOBS1_LABEX = value;
             }
         }
-        public bool BitObs2_labEx
+        public bool bitObs2_labEx
         {
             get
             {
-                return bitObs2_labEx;
+                return BITOBS2_LABEX;
             }
             set
             {
-                bitObs2_labEx = value;
+                BITOBS2_LABEX = value;
             }
         }
-        public decimal DecObs1_labEx
+        public decimal decObs1_labEx
         {
             get
             {
-                return decObs1_labEx;
+                return DECOBS1_LABEX;
             }
             set
             {
-                decObs1_labEx = value;
+                DECOBS1_LABEX = value;
             }
         }
-        public decimal DecObs2_labEx
+        public decimal decObs2_labEx
         {
             get
             {
-                return decObs2_labEx;
+                return DECOBS2_LABEX;
             }
             set
             {
-                decObs2_labEx = value;
+                DECOBS2_LABEX = value;
             }
         }
-        public DateTime DtObs1_labEx
+        public DateTime dtObs1_labEx
         {
             get
             {
-                return dtObs1_labEx;
+                return DTOBS1_LABEX;
             }
             set
             {
-                dtObs1_labEx = value;
+                DTOBS1_LABEX = value;
             }
         }
-        public DateTime DtObs2_labEx
+        public DateTime dtObs2_labEx
         {
             get
             {
-                return dtObs2_labEx;
+                return DTOBS2_LABEX;
             }
             set
             {
-                dtObs2_labEx = value;
+                DTOBS2_LABEX = value;
             }
         }
 
@@ -348,23 +351,23 @@ namespace ClassLibraryLaboratorios
                                 {
                                     LAB_EXCLUSIVO labExclusivo = new LAB_EXCLUSIVO
                                     {
-                                        StrCod_labEx = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strCod_labEx"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strCod_labEx"))),
-                                        StrCod_Sede = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strCod_Sede"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strCod_Sede"))),
-                                        StrCod_Fac = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strCod_Fac"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strCod_Fac"))),
-                                        StrCod_Car = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strCod_Car"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strCod_Car"))),
-                                        StrCod_lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strCod_lab"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strCod_lab"))),
-                                        DtFechaRegistro_labEx = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("dtFechaRegistro_labEx"))) == true ? DateTime.MinValue : Convert.ToDateTime(reader1.GetValue(reader1.GetOrdinal("dtFechaRegistro_labEx"))),
-                                        BitEstado_labEx = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("bitEstado_labEx"))) == true ? false : Convert.ToBoolean(reader1.GetValue(reader1.GetOrdinal("bitEstado_labEx"))),
-                                        DtFecha_log = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("dtFecha_log"))) == true ? DateTime.MinValue : Convert.ToDateTime(reader1.GetValue(reader1.GetOrdinal("dtFecha_log"))),
-                                        StrUser_log = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strUser_log"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strUser_log"))),
-                                        StrObs1_labEx = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strObs1_labEx"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strObs1_labEx"))),
-                                        StrObs2_labEx = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strObs2_labEx"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strObs2_labEx"))),
-                                        BitObs1_labEx = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("bitObs1_labEx"))) == true ? false : Convert.ToBoolean(reader1.GetValue(reader1.GetOrdinal("bitObs1_labEx"))),
-                                        BitObs2_labEx = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("bitObs2_labEx"))) == true ? false : Convert.ToBoolean(reader1.GetValue(reader1.GetOrdinal("bitObs2_labEx"))),
-                                        DecObs1_labEx = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("decObs1_labEx"))) == true ? 0 : Convert.ToDecimal(reader1.GetValue(reader1.GetOrdinal("decObs1_labEx"))),
-                                        DecObs2_labEx = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("decObs2_labEx"))) == true ? 0 : Convert.ToDecimal(reader1.GetValue(reader1.GetOrdinal("decObs2_labEx"))),
-                                        DtObs1_labEx = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("dtObs1_labEx"))) == true ? DateTime.MinValue : Convert.ToDateTime(reader1.GetValue(reader1.GetOrdinal("dtObs1_labEx"))),
-                                        DtObs2_labEx = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("dtObs2_labEx"))) == true ? DateTime.MinValue : Convert.ToDateTime(reader1.GetValue(reader1.GetOrdinal("dtObs2_labEx"))),
+                                        strCod_labEx = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strCod_labEx"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strCod_labEx"))),
+                                        strCod_Sede = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strCod_Sede"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strCod_Sede"))),
+                                        strCod_Fac = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strCod_Fac"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strCod_Fac"))),
+                                        strCod_Car = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strCod_Car"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strCod_Car"))),
+                                        strCod_lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strCod_lab"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strCod_lab"))),
+                                        dtFechaRegistro_labEx = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("dtFechaRegistro_labEx"))) == true ? DateTime.MinValue : Convert.ToDateTime(reader1.GetValue(reader1.GetOrdinal("dtFechaRegistro_labEx"))),
+                                        bitEstado_labEx = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("bitEstado_labEx"))) == true ? false : Convert.ToBoolean(reader1.GetValue(reader1.GetOrdinal("bitEstado_labEx"))),
+                                        dtFecha_log = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("dtFecha_log"))) == true ? DateTime.MinValue : Convert.ToDateTime(reader1.GetValue(reader1.GetOrdinal("dtFecha_log"))),
+                                        strUser_log = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strUser_log"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strUser_log"))),
+                                        strObs1_labEx = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strObs1_labEx"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strObs1_labEx"))),
+                                        strObs2_labEx = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strObs2_labEx"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strObs2_labEx"))),
+                                        bitObs1_labEx = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("bitObs1_labEx"))) == true ? false : Convert.ToBoolean(reader1.GetValue(reader1.GetOrdinal("bitObs1_labEx"))),
+                                        bitObs2_labEx = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("bitObs2_labEx"))) == true ? false : Convert.ToBoolean(reader1.GetValue(reader1.GetOrdinal("bitObs2_labEx"))),
+                                        decObs1_labEx = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("decObs1_labEx"))) == true ? 0 : Convert.ToDecimal(reader1.GetValue(reader1.GetOrdinal("decObs1_labEx"))),
+                                        decObs2_labEx = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("decObs2_labEx"))) == true ? 0 : Convert.ToDecimal(reader1.GetValue(reader1.GetOrdinal("decObs2_labEx"))),
+                                        dtObs1_labEx = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("dtObs1_labEx"))) == true ? DateTime.MinValue : Convert.ToDateTime(reader1.GetValue(reader1.GetOrdinal("dtObs1_labEx"))),
+                                        dtObs2_labEx = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("dtObs2_labEx"))) == true ? DateTime.MinValue : Convert.ToDateTime(reader1.GetValue(reader1.GetOrdinal("dtObs2_labEx"))),
                                         numerr = 0,
                                         msg = "Datos extraidos satisfactoriamente...",
                                         resultado = true
@@ -393,71 +396,71 @@ namespace ClassLibraryLaboratorios
             myCommand.CommandType = CommandType.StoredProcedure;
 
             SqlParameter prmStrCod_labEx = new SqlParameter("@strCod_labEx", SqlDbType.NVarChar);
-            prmStrCod_labEx.Value = miClass.StrCod_labEx;
+            prmStrCod_labEx.Value = miClass.strCod_labEx;
             myCommand.Parameters.Add(prmStrCod_labEx);
 
             SqlParameter prmStrCod_Sede = new SqlParameter("@strCod_Sede", SqlDbType.NVarChar);
-            prmStrCod_Sede.Value = miClass.StrCod_Sede;
+            prmStrCod_Sede.Value = miClass.strCod_Sede;
             myCommand.Parameters.Add(prmStrCod_Sede);
 
             SqlParameter prmStrCod_Fac = new SqlParameter("@strCod_Fac", SqlDbType.NVarChar);
-            prmStrCod_Fac.Value = miClass.StrCod_Fac;
+            prmStrCod_Fac.Value = miClass.strCod_Fac;
             myCommand.Parameters.Add(prmStrCod_Fac);
 
             SqlParameter prmStrCod_Car = new SqlParameter("@strCod_Car", SqlDbType.NVarChar);
-            prmStrCod_Car.Value = miClass.StrCod_Car;
+            prmStrCod_Car.Value = miClass.strCod_Car;
             myCommand.Parameters.Add(prmStrCod_Car);
 
             SqlParameter prmStrCod_lab = new SqlParameter("@strCod_lab", SqlDbType.NVarChar);
-            prmStrCod_lab.Value = miClass.StrCod_lab;
+            prmStrCod_lab.Value = miClass.strCod_lab;
             myCommand.Parameters.Add(prmStrCod_lab);
 
             SqlParameter prmDtFechaRegistro_labEx = new SqlParameter("@dtFechaRegistro_labEx", SqlDbType.DateTime);
-            prmDtFechaRegistro_labEx.Value = miClass.DtFechaRegistro_labEx;
+            prmDtFechaRegistro_labEx.Value = miClass.dtFechaRegistro_labEx;
             myCommand.Parameters.Add(prmDtFechaRegistro_labEx);
 
             SqlParameter prmBitEstado_labEx = new SqlParameter("@bitEstado_labEx", SqlDbType.Bit);
-            prmBitEstado_labEx.Value = miClass.BitEstado_labEx;
+            prmBitEstado_labEx.Value = miClass.bitEstado_labEx;
             myCommand.Parameters.Add(prmBitEstado_labEx);
 
             SqlParameter prmDtFecha_log = new SqlParameter("@dtFecha_log", SqlDbType.DateTime);
-            prmDtFecha_log.Value = miClass.DtFecha_log;
+            prmDtFecha_log.Value = miClass.dtFecha_log;
             myCommand.Parameters.Add(prmDtFecha_log);
 
             SqlParameter prmStrUser_log = new SqlParameter("@strUser_log", SqlDbType.NVarChar);
-            prmStrUser_log.Value = miClass.StrUser_log;
+            prmStrUser_log.Value = miClass.strUser_log;
             myCommand.Parameters.Add(prmStrUser_log);
 
             SqlParameter prmStrObs1_labEx = new SqlParameter("@strObs1_labEx", SqlDbType.NVarChar);
-            prmStrObs1_labEx.Value = miClass.StrObs1_labEx;
+            prmStrObs1_labEx.Value = miClass.strObs1_labEx;
             myCommand.Parameters.Add(prmStrObs1_labEx);
 
             SqlParameter prmStrObs2_labEx = new SqlParameter("@strObs2_labEx", SqlDbType.NVarChar);
-            prmStrObs2_labEx.Value = miClass.StrObs2_labEx;
+            prmStrObs2_labEx.Value = miClass.strObs2_labEx;
             myCommand.Parameters.Add(prmStrObs2_labEx);
 
             SqlParameter prmBitObs1_labEx = new SqlParameter("@bitObs1_labEx", SqlDbType.Bit);
-            prmBitObs1_labEx.Value = miClass.BitObs1_labEx;
+            prmBitObs1_labEx.Value = miClass.bitObs1_labEx;
             myCommand.Parameters.Add(prmBitObs1_labEx);
 
             SqlParameter prmBitObs2_labEx = new SqlParameter("@bitObs2_labEx", SqlDbType.Bit);
-            prmBitObs2_labEx.Value = miClass.BitObs2_labEx;
+            prmBitObs2_labEx.Value = miClass.bitObs2_labEx;
             myCommand.Parameters.Add(prmBitObs2_labEx);
 
             SqlParameter prmDecObs1_labEx = new SqlParameter("@decObs1_labEx", SqlDbType.Decimal);
-            prmDecObs1_labEx.Value = miClass.DecObs1_labEx;
+            prmDecObs1_labEx.Value = miClass.decObs1_labEx;
             myCommand.Parameters.Add(prmDecObs1_labEx);
 
             SqlParameter prmDecObs2_labEx = new SqlParameter("@decObs2_labEx", SqlDbType.Decimal);
-            prmDecObs2_labEx.Value = miClass.DecObs2_labEx;
+            prmDecObs2_labEx.Value = miClass.decObs2_labEx;
             myCommand.Parameters.Add(prmDecObs2_labEx);
 
             SqlParameter prmDtObs1_labEx = new SqlParameter("@dtObs1_labEx", SqlDbType.DateTime);
-            prmDtObs1_labEx.Value = miClass.DtObs1_labEx;
+            prmDtObs1_labEx.Value = miClass.dtObs1_labEx;
             myCommand.Parameters.Add(prmDtObs1_labEx);
 
             SqlParameter prmDtObs2_labEx = new SqlParameter("@dtObs2_labEx", SqlDbType.DateTime);
-            prmDtObs2_labEx.Value = miClass.DtObs2_labEx;
+            prmDtObs2_labEx.Value = miClass.dtObs2_labEx;
             myCommand.Parameters.Add(prmDtObs2_labEx);
 
             int intReturn = -1;
@@ -621,71 +624,71 @@ namespace ClassLibraryLaboratorios
             myCommand.CommandType = CommandType.StoredProcedure;
 
             SqlParameter prmStrCod_labEx = new SqlParameter("@strCod_labEx", SqlDbType.NVarChar);
-            prmStrCod_labEx.Value = miClass.StrCod_labEx;
+            prmStrCod_labEx.Value = miClass.strCod_labEx;
             myCommand.Parameters.Add(prmStrCod_labEx);
 
             SqlParameter prmStrCod_Sede = new SqlParameter("@strCod_Sede", SqlDbType.NVarChar);
-            prmStrCod_Sede.Value = miClass.StrCod_Sede;
+            prmStrCod_Sede.Value = miClass.strCod_Sede;
             myCommand.Parameters.Add(prmStrCod_Sede);
 
             SqlParameter prmStrCod_Fac = new SqlParameter("@strCod_Fac", SqlDbType.NVarChar);
-            prmStrCod_Fac.Value = miClass.StrCod_Fac;
+            prmStrCod_Fac.Value = miClass.strCod_Fac;
             myCommand.Parameters.Add(prmStrCod_Fac);
 
             SqlParameter prmStrCod_Car = new SqlParameter("@strCod_Car", SqlDbType.NVarChar);
-            prmStrCod_Car.Value = miClass.StrCod_Car;
+            prmStrCod_Car.Value = miClass.strCod_Car;
             myCommand.Parameters.Add(prmStrCod_Car);
 
             SqlParameter prmStrCod_lab = new SqlParameter("@strCod_lab", SqlDbType.NVarChar);
-            prmStrCod_lab.Value = miClass.StrCod_lab;
+            prmStrCod_lab.Value = miClass.strCod_lab;
             myCommand.Parameters.Add(prmStrCod_lab);
 
             SqlParameter prmDtFechaRegistro_labEx = new SqlParameter("@dtFechaRegistro_labEx", SqlDbType.DateTime);
-            prmDtFechaRegistro_labEx.Value = miClass.DtFechaRegistro_labEx;
+            prmDtFechaRegistro_labEx.Value = miClass.dtFechaRegistro_labEx;
             myCommand.Parameters.Add(prmDtFechaRegistro_labEx);
 
             SqlParameter prmBitEstado_labEx = new SqlParameter("@bitEstado_labEx", SqlDbType.Bit);
-            prmBitEstado_labEx.Value = miClass.BitEstado_labEx;
+            prmBitEstado_labEx.Value = miClass.bitEstado_labEx;
             myCommand.Parameters.Add(prmBitEstado_labEx);
 
             SqlParameter prmDtFecha_log = new SqlParameter("@dtFecha_log", SqlDbType.DateTime);
-            prmDtFecha_log.Value = miClass.DtFecha_log;
+            prmDtFecha_log.Value = miClass.dtFecha_log;
             myCommand.Parameters.Add(prmDtFecha_log);
 
             SqlParameter prmStrUser_log = new SqlParameter("@strUser_log", SqlDbType.NVarChar);
-            prmStrUser_log.Value = miClass.StrUser_log;
+            prmStrUser_log.Value = miClass.strUser_log;
             myCommand.Parameters.Add(prmStrUser_log);
 
             SqlParameter prmStrObs1_labEx = new SqlParameter("@strObs1_labEx", SqlDbType.NVarChar);
-            prmStrObs1_labEx.Value = miClass.StrObs1_labEx;
+            prmStrObs1_labEx.Value = miClass.strObs1_labEx;
             myCommand.Parameters.Add(prmStrObs1_labEx);
 
             SqlParameter prmStrObs2_labEx = new SqlParameter("@strObs2_labEx", SqlDbType.NVarChar);
-            prmStrObs2_labEx.Value = miClass.StrObs2_labEx;
+            prmStrObs2_labEx.Value = miClass.strObs2_labEx;
             myCommand.Parameters.Add(prmStrObs2_labEx);
 
             SqlParameter prmBitObs1_labEx = new SqlParameter("@bitObs1_labEx", SqlDbType.Bit);
-            prmBitObs1_labEx.Value = miClass.BitObs1_labEx;
+            prmBitObs1_labEx.Value = miClass.bitObs1_labEx;
             myCommand.Parameters.Add(prmBitObs1_labEx);
 
             SqlParameter prmBitObs2_labEx = new SqlParameter("@bitObs2_labEx", SqlDbType.Bit);
-            prmBitObs2_labEx.Value = miClass.BitObs2_labEx;
+            prmBitObs2_labEx.Value = miClass.bitObs2_labEx;
             myCommand.Parameters.Add(prmBitObs2_labEx);
 
             SqlParameter prmDecObs1_labEx = new SqlParameter("@decObs1_labEx", SqlDbType.Decimal);
-            prmDecObs1_labEx.Value = miClass.DecObs1_labEx;
+            prmDecObs1_labEx.Value = miClass.decObs1_labEx;
             myCommand.Parameters.Add(prmDecObs1_labEx);
 
             SqlParameter prmDecObs2_labEx = new SqlParameter("@decObs2_labEx", SqlDbType.Decimal);
-            prmDecObs2_labEx.Value = miClass.DecObs2_labEx;
+            prmDecObs2_labEx.Value = miClass.decObs2_labEx;
             myCommand.Parameters.Add(prmDecObs2_labEx);
 
             SqlParameter prmDtObs1_labEx = new SqlParameter("@dtObs1_labEx", SqlDbType.DateTime);
-            prmDtObs1_labEx.Value = miClass.DtObs1_labEx;
+            prmDtObs1_labEx.Value = miClass.dtObs1_labEx;
             myCommand.Parameters.Add(prmDtObs1_labEx);
 
             SqlParameter prmDtObs2_labEx = new SqlParameter("@dtObs2_labEx", SqlDbType.DateTime);
-            prmDtObs2_labEx.Value = miClass.DtObs2_labEx;
+            prmDtObs2_labEx.Value = miClass.dtObs2_labEx;
             myCommand.Parameters.Add(prmDtObs2_labEx);
 
             int intReturn = -1;
