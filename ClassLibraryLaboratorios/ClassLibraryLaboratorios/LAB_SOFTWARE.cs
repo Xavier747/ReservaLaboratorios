@@ -432,7 +432,7 @@ namespace ClassLibraryLaboratorios
             var listG = new List<LAB_SOFTWARE>();
             using (SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]))
             {
-                using (SqlCommand myCommand = new SqlCommand("LAB_GetLAB_SOFTWARE", myConnection))
+                using (SqlCommand myCommand = new SqlCommand("SIGUTC_GetLAB_SOFTWARE", myConnection))
                 {
                     myCommand.CommandType = CommandType.StoredProcedure;
                     SqlParameter prmComodin = new SqlParameter("@COMODIN", SqlDbType.VarChar);
@@ -515,7 +515,7 @@ namespace ClassLibraryLaboratorios
             //Conexion a bd
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
             //conexion SP
-            SqlCommand myCommand = new SqlCommand("LAB_AddLAB_SOFTWARE", myConnection);
+            SqlCommand myCommand = new SqlCommand("SIGUTC_AddLAB_SOFTWARE", myConnection);
             myCommand.CommandType = CommandType.StoredProcedure;
 
             //Creacion de parametros que se envian al SP
@@ -675,7 +675,7 @@ namespace ClassLibraryLaboratorios
             //Conexion a bd
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
             //conexion SP
-            SqlCommand myCommand = new SqlCommand("LAB_AddLAB_SOFTWARE", myConnection);
+            SqlCommand myCommand = new SqlCommand("SIGUTC_AddLAB_SOFTWARE", myConnection);
             myCommand.CommandType = CommandType.StoredProcedure;
 
             //Creacion de parametros que se envian al SP
@@ -812,7 +812,7 @@ namespace ClassLibraryLaboratorios
             //Conexion a bd
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
             //conexion SP
-            SqlCommand myCommand = new SqlCommand("LAB_UpdateLAB_SOFTWARE", myConnection);
+            SqlCommand myCommand = new SqlCommand("SIGUTC_UpdateLAB_SOFTWARE", myConnection);
             myCommand.CommandType = CommandType.StoredProcedure;
 
             //Creacion de parametros que se envian al SP
@@ -973,7 +973,7 @@ namespace ClassLibraryLaboratorios
             //Conexion a bd
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
             //conexion SP
-            SqlCommand myCommand = new SqlCommand("LAB_UpdateLAB_SOFTWARE", myConnection);
+            SqlCommand myCommand = new SqlCommand("SIGUTC_UpdateLAB_SOFTWARE", myConnection);
             myCommand.CommandType = CommandType.StoredProcedure;
 
             //Creacion de parametros que se envian al SP
@@ -1117,7 +1117,7 @@ namespace ClassLibraryLaboratorios
             //Conexion a bd
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
             //conexion SP
-            SqlCommand myCommand = new SqlCommand("LAB_DelLAB_SOFTWARE", myConnection);
+            SqlCommand myCommand = new SqlCommand("SIGUTC_DelLAB_SOFTWARE", myConnection);
             myCommand.CommandType = CommandType.StoredProcedure;
 
             SqlParameter prmComodin = new SqlParameter("@COMODIN", SqlDbType.VarChar);
