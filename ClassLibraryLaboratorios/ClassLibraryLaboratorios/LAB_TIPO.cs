@@ -372,10 +372,6 @@ namespace ClassLibraryLaboratorios
             prmDTFECHAREGISTRO_TIPOLAB.Value = miClass.dtFechaRegistro_tipoLab;
             myCommand.Parameters.Add(prmDTFECHAREGISTRO_TIPOLAB);
 
-            SqlParameter prmBITESTADO_TIPOLAB = new SqlParameter("@bitEstado_tipoLab", SqlDbType.Bit);
-            prmBITESTADO_TIPOLAB.Value = miClass.bitEstado_tipoLab;
-            myCommand.Parameters.Add(prmBITESTADO_TIPOLAB);
-
             SqlParameter prmDTFECHA_LOG = new SqlParameter("@dtFecha_log", SqlDbType.DateTime);
             prmDTFECHA_LOG.Value = miClass.dtFecha_log;
             myCommand.Parameters.Add(prmDTFECHA_LOG);
@@ -383,38 +379,6 @@ namespace ClassLibraryLaboratorios
             SqlParameter prmSTRUSER_LOG = new SqlParameter("@strUser_log", SqlDbType.NVarChar);
             prmSTRUSER_LOG.Value = miClass.strUser_log;
             myCommand.Parameters.Add(prmSTRUSER_LOG);
-
-            SqlParameter prmSTROBS1_TIPOLAB = new SqlParameter("@strObs1_tipoLab", SqlDbType.NVarChar);
-            prmSTROBS1_TIPOLAB.Value = miClass.strObs1_tipoLab;
-            myCommand.Parameters.Add(prmSTROBS1_TIPOLAB);
-
-            SqlParameter prmSTROBS2_TIPOLAB = new SqlParameter("@strObs2_tipoLab", SqlDbType.NVarChar);
-            prmSTROBS2_TIPOLAB.Value = miClass.strObs2_tipoLab;
-            myCommand.Parameters.Add(prmSTROBS2_TIPOLAB);
-
-            SqlParameter prmBITOBS1_TIPOLAB = new SqlParameter("@bitObs1_tipoLab", SqlDbType.Bit);
-            prmBITOBS1_TIPOLAB.Value = miClass.bitObs1_tipoLab;
-            myCommand.Parameters.Add(prmBITOBS1_TIPOLAB);
-
-            SqlParameter prmBITOBS2_TIPOLAB = new SqlParameter("@bitObs2_tipoLab", SqlDbType.Bit);
-            prmBITOBS2_TIPOLAB.Value = miClass.bitObs2_tipoLab;
-            myCommand.Parameters.Add(prmBITOBS2_TIPOLAB);
-
-            SqlParameter prmDECOBS1_TIPOLAB = new SqlParameter("@decObs1_tipoLab", SqlDbType.Decimal);
-            prmDECOBS1_TIPOLAB.Value = miClass.decObs1_tipoLab;
-            myCommand.Parameters.Add(prmDECOBS1_TIPOLAB);
-
-            SqlParameter prmDECOBS2_TIPOLAB = new SqlParameter("@decObs2_tipoLab", SqlDbType.Decimal);
-            prmDECOBS2_TIPOLAB.Value = miClass.decObs2_tipoLab;
-            myCommand.Parameters.Add(prmDECOBS2_TIPOLAB);
-
-            SqlParameter prmDTOBS1_TIPOLAB = new SqlParameter("@dtObs1_tipoLab", SqlDbType.DateTime);
-            prmDTOBS1_TIPOLAB.Value = miClass.dtObs1_tipoLab;
-            myCommand.Parameters.Add(prmDTOBS1_TIPOLAB);
-
-            SqlParameter prmDTOBS2_TIPOLAB = new SqlParameter("@dtObs2_tipoLab", SqlDbType.DateTime);
-            prmDTOBS2_TIPOLAB.Value = miClass.dtObs2_tipoLab;
-            myCommand.Parameters.Add(prmDTOBS2_TIPOLAB);
 
             int intReturb = -1;
             try
@@ -593,38 +557,6 @@ namespace ClassLibraryLaboratorios
             prmSTRUSER_LOG.Value = miClass.strUser_log;
             myCommand.Parameters.Add(prmSTRUSER_LOG);
 
-            SqlParameter prmSTROBS1_TIPOLAB = new SqlParameter("@strObs1_tipoLab", SqlDbType.NVarChar);
-            prmSTROBS1_TIPOLAB.Value = miClass.strObs1_tipoLab;
-            myCommand.Parameters.Add(prmSTROBS1_TIPOLAB);
-
-            SqlParameter prmSTROBS2_TIPOLAB = new SqlParameter("@strObs2_tipoLab", SqlDbType.NVarChar);
-            prmSTROBS2_TIPOLAB.Value = miClass.strObs2_tipoLab;
-            myCommand.Parameters.Add(prmSTROBS2_TIPOLAB);
-
-            SqlParameter prmBITOBS1_TIPOLAB = new SqlParameter("@bitObs1_tipoLab", SqlDbType.Bit);
-            prmBITOBS1_TIPOLAB.Value = miClass.bitObs1_tipoLab;
-            myCommand.Parameters.Add(prmBITOBS1_TIPOLAB);
-
-            SqlParameter prmBITOBS2_TIPOLAB = new SqlParameter("@bitObs2_tipoLab", SqlDbType.Bit);
-            prmBITOBS2_TIPOLAB.Value = miClass.bitObs2_tipoLab;
-            myCommand.Parameters.Add(prmBITOBS2_TIPOLAB);
-
-            SqlParameter prmDECOBS1_TIPOLAB = new SqlParameter("@decObs1_tipoLab", SqlDbType.Decimal);
-            prmDECOBS1_TIPOLAB.Value = miClass.decObs1_tipoLab;
-            myCommand.Parameters.Add(prmDECOBS1_TIPOLAB);
-
-            SqlParameter prmDECOBS2_TIPOLAB = new SqlParameter("@decObs2_tipoLab", SqlDbType.Decimal);
-            prmDECOBS2_TIPOLAB.Value = miClass.decObs2_tipoLab;
-            myCommand.Parameters.Add(prmDECOBS2_TIPOLAB);
-
-            SqlParameter prmDTOBS1_TIPOLAB = new SqlParameter("@dtObs1_tipoLab", SqlDbType.DateTime);
-            prmDTOBS1_TIPOLAB.Value = miClass.dtObs1_tipoLab;
-            myCommand.Parameters.Add(prmDTOBS1_TIPOLAB);
-
-            SqlParameter prmDTOBS2_TIPOLAB = new SqlParameter("@dtObs2_tipoLab", SqlDbType.DateTime);
-            prmDTOBS2_TIPOLAB.Value = miClass.dtObs2_tipoLab;
-            myCommand.Parameters.Add(prmDTOBS2_TIPOLAB);
-
             int intReturb = -1;
             try
             {
@@ -701,38 +633,6 @@ namespace ClassLibraryLaboratorios
             SqlParameter prmSTRUSER_LOG = new SqlParameter("@strUser_log", SqlDbType.NVarChar);
             prmSTRUSER_LOG.Value = _strUser_log;
             myCommand.Parameters.Add(prmSTRUSER_LOG);
-
-            SqlParameter prmSTROBS1_TIPOLAB = new SqlParameter("@strObs1_tipoLab", SqlDbType.NVarChar);
-            prmSTROBS1_TIPOLAB.Value = _strObs1_tipoLab;
-            myCommand.Parameters.Add(prmSTROBS1_TIPOLAB);
-
-            SqlParameter prmSTROBS2_TIPOLAB = new SqlParameter("@strObs2_tipoLab", SqlDbType.NVarChar);
-            prmSTROBS2_TIPOLAB.Value = _strObs2_tipoLab;
-            myCommand.Parameters.Add(prmSTROBS2_TIPOLAB);
-
-            SqlParameter prmBITOBS1_TIPOLAB = new SqlParameter("@bitObs1_tipoLab", SqlDbType.Bit);
-            prmBITOBS1_TIPOLAB.Value = _bitObs1_tipoLab;
-            myCommand.Parameters.Add(prmBITOBS1_TIPOLAB);
-
-            SqlParameter prmBITOBS2_TIPOLAB = new SqlParameter("@bitObs2_tipoLab", SqlDbType.Bit);
-            prmBITOBS2_TIPOLAB.Value = _bitObs2_tipoLab;
-            myCommand.Parameters.Add(prmBITOBS2_TIPOLAB);
-
-            SqlParameter prmDECOBS1_TIPOLAB = new SqlParameter("@decObs1_tipoLab", SqlDbType.Decimal);
-            prmDECOBS1_TIPOLAB.Value = _decObs1_tipoLab;
-            myCommand.Parameters.Add(prmDECOBS1_TIPOLAB);
-
-            SqlParameter prmDECOBS2_TIPOLAB = new SqlParameter("@decObs2_tipoLab", SqlDbType.Decimal);
-            prmDECOBS2_TIPOLAB.Value = _decObs2_tipoLab;
-            myCommand.Parameters.Add(prmDECOBS2_TIPOLAB);
-
-            SqlParameter prmDTOBS1_TIPOLAB = new SqlParameter("@dtObs1_tipoLab", SqlDbType.DateTime);
-            prmDTOBS1_TIPOLAB.Value = _dtObs1_tipoLab;
-            myCommand.Parameters.Add(prmDTOBS1_TIPOLAB);
-
-            SqlParameter prmDTOBS2_TIPOLAB = new SqlParameter("@dtObs2_tipoLab", SqlDbType.DateTime);
-            prmDTOBS2_TIPOLAB.Value = _dtObs2_tipoLab;
-            myCommand.Parameters.Add(prmDTOBS2_TIPOLAB);
 
             int intReturb = -1;
 
