@@ -864,14 +864,6 @@ namespace ClassLibraryLaboratorios
             prmSTRURL_SOF.Value = miClass.strUrl_sof;
             myCommand.Parameters.Add(prmSTRURL_SOF);
 
-            SqlParameter prmDTFECHAREGISTRO_SOF = new SqlParameter("@DTFECHAREGISTRO_SOF", SqlDbType.DateTime);
-            prmDTFECHAREGISTRO_SOF.Value = miClass.dtFechaRegistro_sof;
-            myCommand.Parameters.Add(prmDTFECHAREGISTRO_SOF);
-
-            SqlParameter prmBITESTADO_SOF = new SqlParameter("@BITESTADO_SOF", SqlDbType.Bit);
-            prmBITESTADO_SOF.Value = miClass.bitEstado_sof;
-            myCommand.Parameters.Add(prmBITESTADO_SOF);
-
             SqlParameter prmDTFECHA_LOG = new SqlParameter("@DTFECHA_LOG", SqlDbType.DateTime);
             prmDTFECHA_LOG.Value = miClass.dtFecha_log;
             myCommand.Parameters.Add(prmDTFECHA_LOG);
@@ -879,38 +871,6 @@ namespace ClassLibraryLaboratorios
             SqlParameter prmSTRUSER_LOG = new SqlParameter("@STRUSER_LOG", SqlDbType.NVarChar);
             prmSTRUSER_LOG.Value = miClass.strUser_log;
             myCommand.Parameters.Add(prmSTRUSER_LOG);
-
-            SqlParameter prmSTROBS1_SOF = new SqlParameter("@STROBS1_SOF", SqlDbType.NVarChar);
-            prmSTROBS1_SOF.Value = miClass.strObs1_sof;
-            myCommand.Parameters.Add(prmSTROBS1_SOF);
-
-            SqlParameter prmSTROBS2_SOF = new SqlParameter("@STROBS2_SOF", SqlDbType.NVarChar);
-            prmSTROBS2_SOF.Value = miClass.strObs2_sof;
-            myCommand.Parameters.Add(prmSTROBS2_SOF);
-
-            SqlParameter prmBITOBS1_SOF = new SqlParameter("@BITOBS1_SOF", SqlDbType.Bit);
-            prmBITOBS1_SOF.Value = miClass.bitObs1_sof;
-            myCommand.Parameters.Add(prmBITOBS1_SOF);
-
-            SqlParameter prmBITOBS2_SOF = new SqlParameter("@BITOBS2_SOF", SqlDbType.Bit);
-            prmBITOBS2_SOF.Value = miClass.bitObs2_sof;
-            myCommand.Parameters.Add(prmBITOBS2_SOF);
-
-            SqlParameter prmDECOBS1_SOF = new SqlParameter("@DECOBS1_SOF", SqlDbType.Decimal);
-            prmDECOBS1_SOF.Value = miClass.decObs1_sof;
-            myCommand.Parameters.Add(prmDECOBS1_SOF);
-
-            SqlParameter prmDECOBS2_SOF = new SqlParameter("@DECOBS2_SOF", SqlDbType.Decimal);
-            prmDECOBS2_SOF.Value = miClass.decObs2_sof;
-            myCommand.Parameters.Add(prmDECOBS2_SOF);
-
-            SqlParameter prmDTOBS1_SOF = new SqlParameter("@DTOBS1_SOF", SqlDbType.DateTime);
-            prmDTOBS1_SOF.Value = miClass.dtObs1_sof;
-            myCommand.Parameters.Add(prmDTOBS1_SOF);
-
-            SqlParameter prmDTOBS2_SOF = new SqlParameter("@DTOBS2_SOF", SqlDbType.DateTime);
-            prmDTOBS2_SOF.Value = miClass.dtObs2_sof;
-            myCommand.Parameters.Add(prmDTOBS2_SOF);
 
             int intReturb = -1;
             try
@@ -957,18 +917,8 @@ namespace ClassLibraryLaboratorios
             string _strDescripcion_sof,
             string _strImagen_sof,
             string _strUrl_sof,
-            DateTime _dtFechaRegistro_sof,
-            bool _bitEstado_sof,
             DateTime _dtFecha_log,
-            string _strUser_log,
-            string _strObs1_sof,
-            string _strObs2_sof,
-            bool _bitObs1_sof,
-            bool _bitObs2_sof,
-            decimal _decObs1_sof,
-            decimal _decObs2_sof,
-            DateTime _dtObs1_sof,
-            DateTime _dtObs2_sof)
+            string _strUser_log)
         {
             //Conexion a bd
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
@@ -1025,13 +975,6 @@ namespace ClassLibraryLaboratorios
             prmSTRURL_SOF.Value = _strUrl_sof;
             myCommand.Parameters.Add(prmSTRURL_SOF);
 
-            SqlParameter prmDTFECHAREGISTRO_SOF = new SqlParameter("@DTFECHAREGISTRO_SOF", SqlDbType.DateTime);
-            prmDTFECHAREGISTRO_SOF.Value = _dtFechaRegistro_sof;
-            myCommand.Parameters.Add(prmDTFECHAREGISTRO_SOF);
-
-            SqlParameter prmBITESTADO_SOF = new SqlParameter("@BITESTADO_SOF", SqlDbType.Bit);
-            prmBITESTADO_SOF.Value = _bitEstado_sof;
-            myCommand.Parameters.Add(prmBITESTADO_SOF);
 
             SqlParameter prmDTFECHA_LOG = new SqlParameter("@DTFECHA_LOG", SqlDbType.DateTime);
             prmDTFECHA_LOG.Value = _dtFecha_log;
@@ -1041,37 +984,7 @@ namespace ClassLibraryLaboratorios
             prmSTRUSER_LOG.Value = _strUser_log;
             myCommand.Parameters.Add(prmSTRUSER_LOG);
 
-            SqlParameter prmSTROBS1_SOF = new SqlParameter("@STROBS1_SOF", SqlDbType.NVarChar);
-            prmSTROBS1_SOF.Value = _strObs1_sof;
-            myCommand.Parameters.Add(prmSTROBS1_SOF);
-
-            SqlParameter prmSTROBS2_SOF = new SqlParameter("@STROBS2_SOF", SqlDbType.NVarChar);
-            prmSTROBS2_SOF.Value = _strObs2_sof;
-            myCommand.Parameters.Add(prmSTROBS2_SOF);
-
-            SqlParameter prmBITOBS1_SOF = new SqlParameter("@BITOBS1_SOF", SqlDbType.Bit);
-            prmBITOBS1_SOF.Value = _bitObs1_sof;
-            myCommand.Parameters.Add(prmBITOBS1_SOF);
-
-            SqlParameter prmBITOBS2_SOF = new SqlParameter("@BITOBS2_SOF", SqlDbType.Bit);
-            prmBITOBS2_SOF.Value = _bitObs2_sof;
-            myCommand.Parameters.Add(prmBITOBS2_SOF);
-
-            SqlParameter prmDECOBS1_SOF = new SqlParameter("@DECOBS1_SOF", SqlDbType.Decimal);
-            prmDECOBS1_SOF.Value = _decObs1_sof;
-            myCommand.Parameters.Add(prmDECOBS1_SOF);
-
-            SqlParameter prmDECOBS2_SOF = new SqlParameter("@DECOBS2_SOF", SqlDbType.Decimal);
-            prmDECOBS2_SOF.Value = _decObs2_sof;
-            myCommand.Parameters.Add(prmDECOBS2_SOF);
-
-            SqlParameter prmDTOBS1_SOF = new SqlParameter("@DTOBS1_SOF", SqlDbType.DateTime);
-            prmDTOBS1_SOF.Value = _dtObs1_sof;
-            myCommand.Parameters.Add(prmDTOBS1_SOF);
-
-            SqlParameter prmDTOBS2_SOF = new SqlParameter("@DTOBS2_SOF", SqlDbType.DateTime);
-            prmDTOBS2_SOF.Value = _dtObs2_sof;
-            myCommand.Parameters.Add(prmDTOBS2_SOF);
+            
 
             int intReturb = -1;
             try
