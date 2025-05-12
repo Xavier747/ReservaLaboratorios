@@ -697,7 +697,7 @@ namespace ClassLibraryLaboratorios
 
         ///////////////// Método Delete /////////////////
 
-        public int DelPOSG_INSCRIPCION(string comodin, string filtro1, string filtro2, string filtro3, string filtro4)
+        public int DelLAB_TIPO(string comodin, string filtro1, string filtro2, string filtro3, string filtro4)
         {
             //Conexion a bd
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);

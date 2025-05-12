@@ -14,18 +14,18 @@ namespace ClassLibraryLaboratorios
         public LAB_LABORATORIOS() { }
 
         public LAB_LABORATORIOS(
-            string _strCod_Lab,
+            string _strCod_lab,
             string _strCod_Sede,
             string _strCod_Fac,
-            string _strNombre_Lab,
-            int _intNumeroEquipos_lab,
-            string _strUbicacion_Lab,
             string _strCod_tipoLab,
             string _strCod_areac,
-            string _strFotografia1_Lab,
-            string _strFotografia2_Lab,
+            string _strNombre_lab,
+            int _intNumeroEquipos_lab,
+            string _strUbicacion_lab,
+            string _strFotografia1_lab,
+            string _strFotografia2_lab,
             DateTime _dtFechaRegistro_lab,
-            bool _bitEstado_Lab,
+            bool _bitEstado_lab,
             DateTime _dtFecha_log,
             string _strUser_log,
             string _strObs1_lab,
@@ -37,18 +37,18 @@ namespace ClassLibraryLaboratorios
             DateTime _dtObs1_lab,
             DateTime _dtObs2_lab)
         {
-            strCod_Lab = _strCod_Lab;
+            strCod_lab = _strCod_lab;
             strCod_Sede = _strCod_Sede;
             strCod_Fac = _strCod_Fac;
-            strNombre_lab = _strNombre_Lab;
-            intNumeroEquipos_lab = _intNumeroEquipos_lab;
-            strUbicacion_lab = _strUbicacion_Lab;
             strCod_tipoLab = _strCod_tipoLab;
             strCod_areac = _strCod_areac;
-            strFotografia1_lab = _strFotografia1_Lab;
-            strFotografia2_lab = _strFotografia2_Lab;
+            strNombre_lab = _strNombre_lab;
+            intNumeroEquipos_lab = _intNumeroEquipos_lab;
+            strUbicacion_lab = _strUbicacion_lab;
+            strFotografia1_lab = _strFotografia1_lab;
+            strFotografia2_lab = _strFotografia2_lab;
             dtFechaRegistro_lab = _dtFechaRegistro_lab;
-            bitEstado_lab = _bitEstado_Lab;
+            bitEstado_lab = _bitEstado_lab;
             dtFecha_log = _dtFecha_log;
             strUser_log = _strUser_log;
             strObs1_lab = _strObs1_lab;
@@ -69,11 +69,11 @@ namespace ClassLibraryLaboratorios
         private string STRCOD_LAB;
         private string STRCOD_SEDE;
         private string STRCOD_FAC;
+        private string STRCOD_TIPOLAB;
+        private string STRCOD_AREAC;
         private string STRNOMBRE_LAB;
         private int INTNUMEROEQUIPOS_LAB;
         private string STRUBICACION_LAB;
-        private string STRCOD_TIPOLAB;
-        private string STRCOD_AREAC;
         private string STRFOTOGRAFIA1_LAB;
         private string STRFOTOGRAFIA2_LAB;
         private DateTime DTFECHAREGISTRO_LAB;
@@ -88,49 +88,14 @@ namespace ClassLibraryLaboratorios
         private decimal DECOBS2_LAB;
         private DateTime DTOBS1_LAB;
         private DateTime DTOBS2_LAB;
+
         private int NUMERR;
         private string MSG;
         private bool RESULTADO;
 
         ///////////////////// Generacion de propiedades/////////////////
 
-        public int numerr
-        {
-            get
-            {
-                return NUMERR;
-            }
-            set
-            {
-                NUMERR = value;
-            }
-        }
-
-        public string msg
-        {
-            get
-            {
-                return MSG;
-            }
-            set
-            {
-                MSG = value;
-            }
-        }
-
-        public bool resultado
-        {
-            get
-            {
-                return RESULTADO;
-            }
-            set
-            {
-                RESULTADO = value;
-            }
-        }
-
-        public string strCod_Lab
+        public string strCod_lab
         {
             get
             {
@@ -163,6 +128,30 @@ namespace ClassLibraryLaboratorios
             set
             {
                 STRCOD_FAC = value;
+            }
+        }
+
+        public string strCod_tipoLab
+        {
+            get
+            {
+                return STRCOD_TIPOLAB;
+            }
+            set
+            {
+                STRCOD_TIPOLAB = value;
+            }
+        }
+
+        public string strCod_areac
+        {
+            get
+            {
+                return STRCOD_AREAC;
+            }
+            set
+            {
+                STRCOD_AREAC = value;
             }
         }
 
@@ -199,30 +188,6 @@ namespace ClassLibraryLaboratorios
             set
             {
                 STRUBICACION_LAB = value;
-            }
-        }
-
-        public string strCod_tipoLab
-        {
-            get
-            {
-                return STRCOD_TIPOLAB;
-            }
-            set
-            {
-                STRCOD_TIPOLAB = value;
-            }
-        }
-
-        public string strCod_areac
-        {
-            get
-            {
-                return STRCOD_AREAC;
-            }
-            set
-            {
-                STRCOD_AREAC = value;
             }
         }
 
@@ -394,10 +359,43 @@ namespace ClassLibraryLaboratorios
             }
         }
 
+        public int numerr
+        {
+            get
+            {
+                return NUMERR;
+            }
+            set
+            {
+                NUMERR = value;
+            }
+        }
+
+        public string msg
+        {
+            get
+            {
+                return MSG;
+            }
+            set
+            {
+                MSG = value;
+            }
+        }
+
+        public bool resultado
+        {
+            get
+            {
+                return RESULTADO;
+            }
+            set
+            {
+                RESULTADO = value;
+            }
+        }
 
         ///////////////// Método Get /////////////////
-
-
         public List<LAB_LABORATORIOS> LoadLAB_LABORATORIOS(string comodin, string filtro1, string filtro2, string filtro3, string filtro4)
         {
             var listG = new List<LAB_LABORATORIOS>();
@@ -436,19 +434,19 @@ namespace ClassLibraryLaboratorios
                             {
                                 LAB_LABORATORIOS miClase = new LAB_LABORATORIOS()
                                 {
-                                    strCod_Lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strCod_Lab"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strCod_Lab"))),
+                                    strCod_lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strCod_lab"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strCod_lab"))),
                                     strCod_Sede = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strCod_Sede"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strCod_Sede"))),
                                     strCod_Fac = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strCod_Fac"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strCod_Fac"))),
-                                    strNombre_lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strNombre_Lab"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strNombre_Lab"))),
-                                    intNumeroEquipos_lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("intNumeroEquipos_lab"))) == true ? 0 : Convert.ToInt32(reader1.GetValue(reader1.GetOrdinal("intNumeroEquipos_lab"))),
-                                    strUbicacion_lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strUbicacion_Lab"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strUbicacion_Lab"))),
                                     strCod_tipoLab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strCod_tipoLab"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strCod_tipoLab"))),
                                     strCod_areac = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strCod_areac"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strCod_areac"))),
-                                    strFotografia1_lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strFotografia1_Lab"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strFotografia1_Lab"))),
-                                    strFotografia2_lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strFotografia2_Lab"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strFotografia2_Lab"))),
-                                    dtFechaRegistro_lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("dtFechaRegistro_lab"))) == true ? DateTime.Now : Convert.ToDateTime(reader1.GetValue(reader1.GetOrdinal("dtFechaRegistro_lab"))),
-                                    bitEstado_lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("bitEstado_Lab"))) == true ? false : Convert.ToBoolean(reader1.GetValue(reader1.GetOrdinal("bitEstado_Lab"))),
-                                    dtFecha_log = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("dtFecha_log"))) == true ? DateTime.Now : Convert.ToDateTime(reader1.GetValue(reader1.GetOrdinal("dtFecha_log"))),
+                                    strNombre_lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strNombre_lab"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strNombre_lab"))),
+                                    intNumeroEquipos_lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("intNumeroEquipos_lab"))) == true ? 0 : Convert.ToInt32(reader1.GetValue(reader1.GetOrdinal("intNumeroEquipos_lab"))),
+                                    strUbicacion_lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strUbicacion_lab"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strUbicacion_lab"))),
+                                    strFotografia1_lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strFotografia1_lab"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strFotografia1_lab"))),
+                                    strFotografia2_lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strFotografia2_lab"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strFotografia2_lab"))),
+                                    dtFechaRegistro_lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("dtFechaRegistro_lab"))) == true ? DateTime.MinValue : Convert.ToDateTime(reader1.GetValue(reader1.GetOrdinal("dtFechaRegistro_lab"))),
+                                    bitEstado_lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("bitEstado_lab"))) == true ? false : Convert.ToBoolean(reader1.GetValue(reader1.GetOrdinal("bitEstado_lab"))),
+                                    dtFecha_log = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("dtFecha_log"))) == true ? DateTime.MinValue : Convert.ToDateTime(reader1.GetValue(reader1.GetOrdinal("dtFecha_log"))),
                                     strUser_log = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strUser_log"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strUser_log"))),
                                     strObs1_lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strObs1_lab"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strObs1_lab"))),
                                     strObs2_lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strObs2_lab"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strObs2_lab"))),
@@ -456,576 +454,576 @@ namespace ClassLibraryLaboratorios
                                     bitObs2_lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("bitObs2_lab"))) == true ? false : Convert.ToBoolean(reader1.GetValue(reader1.GetOrdinal("bitObs2_lab"))),
                                     decObs1_lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("decObs1_lab"))) == true ? 0 : Convert.ToDecimal(reader1.GetValue(reader1.GetOrdinal("decObs1_lab"))),
                                     decObs2_lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("decObs2_lab"))) == true ? 0 : Convert.ToDecimal(reader1.GetValue(reader1.GetOrdinal("decObs2_lab"))),
-                                    dtObs1_lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("dtObs1_lab"))) == true ? DateTime.Now : Convert.ToDateTime(reader1.GetValue(reader1.GetOrdinal("dtObs1_lab"))),
-                                    dtObs2_lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("dtObs2_lab"))) == true ? DateTime.Now : Convert.ToDateTime(reader1.GetValue(reader1.GetOrdinal("dtObs2_lab"))),
+                                    dtObs1_lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("dtObs1_lab"))) == true ? DateTime.MinValue : Convert.ToDateTime(reader1.GetValue(reader1.GetOrdinal("dtObs1_lab"))),
+                                    dtObs2_lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("dtObs2_lab"))) == true ? DateTime.MinValue : Convert.ToDateTime(reader1.GetValue(reader1.GetOrdinal("dtObs2_lab"))),
+
                                     numerr = 0,
                                     msg = "Datos extraídos satisfactoriamente...",
                                     resultado = true,
 
-                            };
-                            listG.Add(miClase);
+                                };
+                                listG.Add(miClase);
+                            }
                         }
+                        myConnection.Close();
                     }
-                    myConnection.Close();
+                    catch (SqlException er)
+                    {
+                        numerr = er.Number;
+                        resultado = false;
+                        msg = er.Message;
+                    }
                 }
-                catch (SqlException er)
+            }
+            return listG;
+        }
+
+
+        public int AddLAB_LABORATORIOS(LAB_LABORATORIOS miClass)
+        {
+            // Conexion a bd
+            SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
+            // Conexion SP
+            SqlCommand myCommand = new SqlCommand("SIGUTC_AddLAB_LABORATORIOS", myConnection);
+            myCommand.CommandType = CommandType.StoredProcedure;
+
+            // Creacion de parametros que se envian al SP
+            SqlParameter prmSTRCOD_LAB = new SqlParameter("@STRCOD_LAB", SqlDbType.NVarChar);
+            prmSTRCOD_LAB.Value = miClass.strCod_lab;
+            myCommand.Parameters.Add(prmSTRCOD_LAB);
+
+            SqlParameter prmSTRCOD_SEDE = new SqlParameter("@STRCOD_SEDE", SqlDbType.NVarChar);
+            prmSTRCOD_SEDE.Value = miClass.strCod_Sede;
+            myCommand.Parameters.Add(prmSTRCOD_SEDE);
+
+            SqlParameter prmSTRCOD_FAC = new SqlParameter("@STRCOD_FAC", SqlDbType.NVarChar);
+            prmSTRCOD_FAC.Value = miClass.strCod_Fac;
+            myCommand.Parameters.Add(prmSTRCOD_FAC);
+
+            SqlParameter prmSTRCOD_TIPOLAB = new SqlParameter("@STRCOD_TIPOLAB", SqlDbType.NVarChar);
+            prmSTRCOD_TIPOLAB.Value = miClass.strCod_tipoLab;
+            myCommand.Parameters.Add(prmSTRCOD_TIPOLAB);
+
+            SqlParameter prmSTRCOD_AREAC = new SqlParameter("@STRCOD_AREAC", SqlDbType.NVarChar);
+            prmSTRCOD_AREAC.Value = miClass.strCod_areac;
+            myCommand.Parameters.Add(prmSTRCOD_AREAC);
+
+            SqlParameter prmSTRNOMBRE_LAB = new SqlParameter("@STRNOMBRE_LAB", SqlDbType.NVarChar);
+            prmSTRNOMBRE_LAB.Value = miClass.strNombre_lab;
+            myCommand.Parameters.Add(prmSTRNOMBRE_LAB);
+
+            SqlParameter prmINTNUMEROEQUIPOS_LAB = new SqlParameter("@INTNUMEROEQUIPOS_LAB", SqlDbType.Int);
+            prmINTNUMEROEQUIPOS_LAB.Value = miClass.intNumeroEquipos_lab;
+            myCommand.Parameters.Add(prmINTNUMEROEQUIPOS_LAB);
+
+            SqlParameter prmSTRUBICACION_LAB = new SqlParameter("@STRUBICACION_LAB", SqlDbType.NVarChar);
+            prmSTRUBICACION_LAB.Value = miClass.strUbicacion_lab;
+            myCommand.Parameters.Add(prmSTRUBICACION_LAB);
+
+            SqlParameter prmSTRFOTOGRAFIA1_LAB = new SqlParameter("@STRFOTOGRAFIA1_LAB", SqlDbType.NVarChar);
+            prmSTRFOTOGRAFIA1_LAB.Value = miClass.strFotografia1_lab;
+            myCommand.Parameters.Add(prmSTRFOTOGRAFIA1_LAB);
+
+            SqlParameter prmSTRFOTOGRAFIA2_LAB = new SqlParameter("@STRFOTOGRAFIA2_LAB", SqlDbType.NVarChar);
+            prmSTRFOTOGRAFIA2_LAB.Value = miClass.strFotografia2_lab;
+            myCommand.Parameters.Add(prmSTRFOTOGRAFIA2_LAB);
+
+            SqlParameter prmDTFECHAREGISTRO_LAB = new SqlParameter("@DTFECHAREGISTRO_LAB", SqlDbType.DateTime);
+            prmDTFECHAREGISTRO_LAB.Value = miClass.dtFechaRegistro_lab;
+            myCommand.Parameters.Add(prmDTFECHAREGISTRO_LAB);
+
+            SqlParameter prmBITESTADO_LAB = new SqlParameter("@BITESTADO_LAB", SqlDbType.Bit);
+            prmBITESTADO_LAB.Value = miClass.bitEstado_lab;
+            myCommand.Parameters.Add(prmBITESTADO_LAB);
+
+            SqlParameter prmDTFECHA_LOG = new SqlParameter("@DTFECHA_LOG", SqlDbType.DateTime);
+            prmDTFECHA_LOG.Value = miClass.dtFecha_log;
+            myCommand.Parameters.Add(prmDTFECHA_LOG);
+
+            SqlParameter prmSTRUSER_LOG = new SqlParameter("@STRUSER_LOG", SqlDbType.NVarChar);
+            prmSTRUSER_LOG.Value = miClass.strUser_log;
+            myCommand.Parameters.Add(prmSTRUSER_LOG);
+
+            SqlParameter prmSTROBS1_LAB = new SqlParameter("@STROBS1_LAB", SqlDbType.NVarChar);
+            prmSTROBS1_LAB.Value = miClass.strObs1_lab;
+            myCommand.Parameters.Add(prmSTROBS1_LAB);
+
+            SqlParameter prmSTROBS2_LAB = new SqlParameter("@STROBS2_LAB", SqlDbType.NVarChar);
+            prmSTROBS2_LAB.Value = miClass.strObs2_lab;
+            myCommand.Parameters.Add(prmSTROBS2_LAB);
+
+            SqlParameter prmBITOBS1_LAB = new SqlParameter("@BITOBS1_LAB", SqlDbType.Bit);
+            prmBITOBS1_LAB.Value = miClass.bitObs1_lab;
+            myCommand.Parameters.Add(prmBITOBS1_LAB);
+
+            SqlParameter prmBITOBS2_LAB = new SqlParameter("@BITOBS2_LAB", SqlDbType.Bit);
+            prmBITOBS2_LAB.Value = miClass.bitObs2_lab;
+            myCommand.Parameters.Add(prmBITOBS2_LAB);
+
+            SqlParameter prmDECOBS1_LAB = new SqlParameter("@DECOBS1_LAB", SqlDbType.Decimal);
+            prmDECOBS1_LAB.Value = miClass.decObs1_lab;
+            myCommand.Parameters.Add(prmDECOBS1_LAB);
+
+            SqlParameter prmDECOBS2_LAB = new SqlParameter("@DECOBS2_LAB", SqlDbType.Decimal);
+            prmDECOBS2_LAB.Value = miClass.decObs2_lab;
+            myCommand.Parameters.Add(prmDECOBS2_LAB);
+
+            SqlParameter prmDTOBS1_LAB = new SqlParameter("@DTOBS1_LAB", SqlDbType.DateTime);
+            prmDTOBS1_LAB.Value = miClass.dtObs1_lab;
+            myCommand.Parameters.Add(prmDTOBS1_LAB);
+
+            SqlParameter prmDTOBS2_LAB = new SqlParameter("@DTOBS2_LAB", SqlDbType.DateTime);
+            prmDTOBS2_LAB.Value = miClass.dtObs2_lab;
+            myCommand.Parameters.Add(prmDTOBS2_LAB);
+
+            int intReturn = -1;
+            try
+            {
+                myConnection.Open();
+                intReturn = myCommand.ExecuteNonQuery(); // Devuelve el número de registros afectados en la bd
+                resultado = true;
+                msg = "Los datos se registraron satisfactoriamente...";
+            }
+            catch (SqlException er)
+            {
+                if (er.Number == 2627)
                 {
-                    numerr = er.Number;
-                    resultado = false;
+                    msg = "Este registro de datos ya existe, no se realizó ningún cambio...";
+                }
+                else
+                {
                     msg = er.Message;
                 }
-            }
-        }
-        return listG;
-    }
-
-
-    public int AddLAB_LABORATORIOS(LAB_LABORATORIOS miClass)
-    {
-        // Conexion a bd
-        SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
-        // Conexion SP
-        SqlCommand myCommand = new SqlCommand("SIGUTC_AddLAB_LABORATORIOS", myConnection);
-        myCommand.CommandType = CommandType.StoredProcedure;
-
-        // Creacion de parametros que se envian al SP
-        SqlParameter prmSTRCOD_LAB = new SqlParameter("@STRCOD_LAB", SqlDbType.NVarChar);
-        prmSTRCOD_LAB.Value = miClass.strCod_Lab;
-        myCommand.Parameters.Add(prmSTRCOD_LAB);
-
-        SqlParameter prmSTRCOD_SEDE = new SqlParameter("@STRCOD_SEDE", SqlDbType.NVarChar);
-        prmSTRCOD_SEDE.Value = miClass.strCod_Sede;
-        myCommand.Parameters.Add(prmSTRCOD_SEDE);
-
-        SqlParameter prmSTRCOD_FAC = new SqlParameter("@STRCOD_FAC", SqlDbType.NVarChar);
-        prmSTRCOD_FAC.Value = miClass.strCod_Fac;
-        myCommand.Parameters.Add(prmSTRCOD_FAC);
-
-        SqlParameter prmSTRNOMBRE_LAB = new SqlParameter("@STRNOMBRE_LAB", SqlDbType.NVarChar);
-        prmSTRNOMBRE_LAB.Value = miClass.strNombre_lab;
-        myCommand.Parameters.Add(prmSTRNOMBRE_LAB);
-
-        SqlParameter prmINTNUMEROEQUIPOS_LAB = new SqlParameter("@INTNUMEROEQUIPOS_LAB", SqlDbType.Int);
-        prmINTNUMEROEQUIPOS_LAB.Value = miClass.intNumeroEquipos_lab;
-        myCommand.Parameters.Add(prmINTNUMEROEQUIPOS_LAB);
-
-        SqlParameter prmSTRUBICACION_LAB = new SqlParameter("@STRUBICACION_LAB", SqlDbType.NVarChar);
-        prmSTRUBICACION_LAB.Value = miClass.strUbicacion_lab;
-        myCommand.Parameters.Add(prmSTRUBICACION_LAB);
-
-        SqlParameter prmSTRCOD_TIPOLAB = new SqlParameter("@STRCOD_TIPOLAB", SqlDbType.NVarChar);
-        prmSTRCOD_TIPOLAB.Value = miClass.strCod_tipoLab;
-        myCommand.Parameters.Add(prmSTRCOD_TIPOLAB);
-
-        SqlParameter prmSTRCOD_AREAC = new SqlParameter("@STRCOD_AREAC", SqlDbType.NVarChar);
-        prmSTRCOD_AREAC.Value = miClass.strCod_areac;
-        myCommand.Parameters.Add(prmSTRCOD_AREAC);
-
-        SqlParameter prmSTRFOTOGRAFIA1_LAB = new SqlParameter("@STRFOTOGRAFIA1_LAB", SqlDbType.NVarChar);
-        prmSTRFOTOGRAFIA1_LAB.Value = miClass.strFotografia1_lab;
-        myCommand.Parameters.Add(prmSTRFOTOGRAFIA1_LAB);
-
-        SqlParameter prmSTRFOTOGRAFIA2_LAB = new SqlParameter("@STRFOTOGRAFIA2_LAB", SqlDbType.NVarChar);
-        prmSTRFOTOGRAFIA2_LAB.Value = miClass.strFotografia2_lab;
-        myCommand.Parameters.Add(prmSTRFOTOGRAFIA2_LAB);
-
-        SqlParameter prmDTFECHAREGISTRO_LAB = new SqlParameter("@DTFECHAREGISTRO_LAB", SqlDbType.DateTime);
-        prmDTFECHAREGISTRO_LAB.Value = miClass.dtFechaRegistro_lab;
-        myCommand.Parameters.Add(prmDTFECHAREGISTRO_LAB);
-
-        SqlParameter prmBITESTADO_LAB = new SqlParameter("@BITESTADO_LAB", SqlDbType.Bit);
-        prmBITESTADO_LAB.Value = miClass.bitEstado_lab;
-        myCommand.Parameters.Add(prmBITESTADO_LAB);
-
-        SqlParameter prmDTFECHA_LOG = new SqlParameter("@DTFECHA_LOG", SqlDbType.DateTime);
-        prmDTFECHA_LOG.Value = miClass.dtFecha_log;
-        myCommand.Parameters.Add(prmDTFECHA_LOG);
-
-        SqlParameter prmSTRUSER_LOG = new SqlParameter("@STRUSER_LOG", SqlDbType.NVarChar);
-        prmSTRUSER_LOG.Value = miClass.strUser_log;
-        myCommand.Parameters.Add(prmSTRUSER_LOG);
-
-        SqlParameter prmSTROBS1_LAB = new SqlParameter("@STROBS1_LAB", SqlDbType.NVarChar);
-        prmSTROBS1_LAB.Value = miClass.strObs1_lab;
-        myCommand.Parameters.Add(prmSTROBS1_LAB);
-
-        SqlParameter prmSTROBS2_LAB = new SqlParameter("@STROBS2_LAB", SqlDbType.NVarChar);
-        prmSTROBS2_LAB.Value = miClass.strObs2_lab;
-        myCommand.Parameters.Add(prmSTROBS2_LAB);
-
-        SqlParameter prmBITOBS1_LAB = new SqlParameter("@BITOBS1_LAB", SqlDbType.Bit);
-        prmBITOBS1_LAB.Value = miClass.bitObs1_lab;
-        myCommand.Parameters.Add(prmBITOBS1_LAB);
-
-        SqlParameter prmBITOBS2_LAB = new SqlParameter("@BITOBS2_LAB", SqlDbType.Bit);
-        prmBITOBS2_LAB.Value = miClass.bitObs2_lab;
-        myCommand.Parameters.Add(prmBITOBS2_LAB);
-
-        SqlParameter prmDECOBS1_LAB = new SqlParameter("@DECOBS1_LAB", SqlDbType.Decimal);
-        prmDECOBS1_LAB.Value = miClass.decObs1_lab;
-        myCommand.Parameters.Add(prmDECOBS1_LAB);
-
-        SqlParameter prmDECOBS2_LAB = new SqlParameter("@DECOBS2_LAB", SqlDbType.Decimal);
-        prmDECOBS2_LAB.Value = miClass.decObs2_lab;
-        myCommand.Parameters.Add(prmDECOBS2_LAB);
-
-        SqlParameter prmDTOBS1_LAB = new SqlParameter("@DTOBS1_LAB", SqlDbType.DateTime);
-        prmDTOBS1_LAB.Value = miClass.dtObs1_lab;
-        myCommand.Parameters.Add(prmDTOBS1_LAB);
-
-        SqlParameter prmDTOBS2_LAB = new SqlParameter("@DTOBS2_LAB", SqlDbType.DateTime);
-        prmDTOBS2_LAB.Value = miClass.dtObs2_lab;
-        myCommand.Parameters.Add(prmDTOBS2_LAB);
-
-        int intReturn = -1;
-        try
-        {
-            myConnection.Open();
-            intReturn = myCommand.ExecuteNonQuery(); // Devuelve el número de registros afectados en la bd
-            resultado = true;
-            msg = "Los datos se registraron satisfactoriamente...";
-        }
-        catch (SqlException er)
-        {
-            if (er.Number == 2627)
-            {
-                msg = "Este registro de datos ya existe, no se realizó ningún cambio...";
-            }
-            else
-            {
-                msg = er.Message;
-            }
-            numerr = er.Number;
-            resultado = false;
-        }
-        finally
-        {
-            myCommand.Dispose();
-            myConnection.Close();
-            myConnection.Dispose();
-        }
-        return intReturn;
-    }
-
-    ///////////////// Método Add SobreCargado /////////////////
-
-
-    public int AddLAB_LABORATORIOS(
-        string _strCod_Lab,
-        string _strCod_Sede,
-        string _strCod_Fac,
-        string _strNombre_Lab,
-        int _intNumeroEquipos_lab,
-        string _strUbicacion_Lab,
-        string _strCod_tipoLab,
-        string _strCod_areac,
-        string _strFotografia1_Lab,
-        string _strFotografia2_Lab,
-        DateTime _dtFechaRegistro_lab,
-        bool _bitEstado_Lab,
-        DateTime _dtFecha_log,
-        string _strUser_log,
-        string _strObs1_lab,
-        string _strObs2_lab,
-        bool _bitObs1_lab,
-        bool _bitObs2_lab,
-        decimal _decObs1_lab,
-        decimal _decObs2_lab,
-        DateTime _dtObs1_lab,
-        DateTime _dtObs2_lab)
-    {
-        SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
-        SqlCommand myCommand = new SqlCommand("SIGUTC_AddLAB_LABORATORIOS", myConnection);
-        myCommand.CommandType = CommandType.StoredProcedure;
-        SqlParameter prmSTRCOD_LAB = new SqlParameter("@STRCOD_LAB", SqlDbType.NVarChar);
-        prmSTRCOD_LAB.Value = _strCod_Lab;
-        myCommand.Parameters.Add(prmSTRCOD_LAB);
-
-        SqlParameter prmSTRCOD_SEDE = new SqlParameter("@STRCOD_SEDE", SqlDbType.NVarChar);
-        prmSTRCOD_SEDE.Value = _strCod_Sede;
-        myCommand.Parameters.Add(prmSTRCOD_SEDE);
-
-        SqlParameter prmSTRCOD_FAC = new SqlParameter("@STRCOD_FAC", SqlDbType.NVarChar);
-        prmSTRCOD_FAC.Value = _strCod_Fac;
-        myCommand.Parameters.Add(prmSTRCOD_FAC);
-
-        SqlParameter prmSTRNOMBRE_LAB = new SqlParameter("@STRNOMBRE_LAB", SqlDbType.NVarChar);
-        prmSTRNOMBRE_LAB.Value = _strNombre_Lab;
-        myCommand.Parameters.Add(prmSTRNOMBRE_LAB);
-
-        SqlParameter prmINTNUMEROEQUIPOS_LAB = new SqlParameter("@INTNUMEROEQUIPOS_LAB", SqlDbType.Int);
-        prmINTNUMEROEQUIPOS_LAB.Value = _intNumeroEquipos_lab;
-        myCommand.Parameters.Add(prmINTNUMEROEQUIPOS_LAB);
-
-        SqlParameter prmSTRUBICACION_LAB = new SqlParameter("@STRUBICACION_LAB", SqlDbType.NVarChar);
-        prmSTRUBICACION_LAB.Value = _strUbicacion_Lab;
-        myCommand.Parameters.Add(prmSTRUBICACION_LAB);
-
-        SqlParameter prmSTRCOD_TIPOLAB = new SqlParameter("@STRCOD_TIPOLAB", SqlDbType.NVarChar);
-        prmSTRCOD_TIPOLAB.Value = _strCod_tipoLab;
-        myCommand.Parameters.Add(prmSTRCOD_TIPOLAB);
-
-        SqlParameter prmSTRCOD_AREAC = new SqlParameter("@STRCOD_AREAC", SqlDbType.NVarChar);
-        prmSTRCOD_AREAC.Value = _strCod_areac;
-        myCommand.Parameters.Add(prmSTRCOD_AREAC);
-
-        SqlParameter prmSTRFOTOGRAFIA1_LAB = new SqlParameter("@STRFOTOGRAFIA1_LAB", SqlDbType.NVarChar);
-        prmSTRFOTOGRAFIA1_LAB.Value = _strFotografia1_Lab;
-        myCommand.Parameters.Add(prmSTRFOTOGRAFIA1_LAB);
-
-        SqlParameter prmSTRFOTOGRAFIA2_LAB = new SqlParameter("@STRFOTOGRAFIA2_LAB", SqlDbType.NVarChar);
-        prmSTRFOTOGRAFIA2_LAB.Value = _strFotografia2_Lab;
-        myCommand.Parameters.Add(prmSTRFOTOGRAFIA2_LAB);
-
-        SqlParameter prmDTFECHAREGISTRO_LAB = new SqlParameter("@DTFECHAREGISTRO_LAB", SqlDbType.DateTime);
-        prmDTFECHAREGISTRO_LAB.Value = _dtFechaRegistro_lab;
-        myCommand.Parameters.Add(prmDTFECHAREGISTRO_LAB);
-
-        SqlParameter prmBITESTADO_LAB = new SqlParameter("@BITESTADO_LAB", SqlDbType.Bit);
-        prmBITESTADO_LAB.Value = _bitEstado_Lab;
-        myCommand.Parameters.Add(prmBITESTADO_LAB);
-
-        SqlParameter prmDTFECHA_LOG = new SqlParameter("@DTFECHA_LOG", SqlDbType.DateTime);
-        prmDTFECHA_LOG.Value = _dtFecha_log;
-        myCommand.Parameters.Add(prmDTFECHA_LOG);
-
-        SqlParameter prmSTRUSER_LOG = new SqlParameter("@STRUSER_LOG", SqlDbType.NVarChar);
-        prmSTRUSER_LOG.Value = _strUser_log;
-        myCommand.Parameters.Add(prmSTRUSER_LOG);
-
-        SqlParameter prmSTROBS1_LAB = new SqlParameter("@STROBS1_LAB", SqlDbType.NVarChar);
-        prmSTROBS1_LAB.Value = _strObs1_lab;
-        myCommand.Parameters.Add(prmSTROBS1_LAB);
-
-        SqlParameter prmSTROBS2_LAB = new SqlParameter("@STROBS2_LAB", SqlDbType.NVarChar);
-        prmSTROBS2_LAB.Value = _strObs2_lab;
-        myCommand.Parameters.Add(prmSTROBS2_LAB);
-
-        SqlParameter prmBITOBS1_LAB = new SqlParameter("@BITOBS1_LAB", SqlDbType.Bit);
-        prmBITOBS1_LAB.Value = _bitObs1_lab;
-        myCommand.Parameters.Add(prmBITOBS1_LAB);
-
-        SqlParameter prmBITOBS2_LAB = new SqlParameter("@BITOBS2_LAB", SqlDbType.Bit);
-        prmBITOBS2_LAB.Value = _bitObs2_lab;
-        myCommand.Parameters.Add(prmBITOBS2_LAB);
-
-        SqlParameter prmDECOBS1_LAB = new SqlParameter("@DECOBS1_LAB", SqlDbType.Decimal);
-        prmDECOBS1_LAB.Value = _decObs1_lab;
-        myCommand.Parameters.Add(prmDECOBS1_LAB);
-
-        SqlParameter prmDECOBS2_LAB = new SqlParameter("@DECOBS2_LAB", SqlDbType.Decimal);
-        prmDECOBS2_LAB.Value = _decObs2_lab;
-        myCommand.Parameters.Add(prmDECOBS2_LAB);
-
-        SqlParameter prmDTOBS1_LAB = new SqlParameter("@DTOBS1_LAB", SqlDbType.DateTime);
-        prmDTOBS1_LAB.Value = _dtObs1_lab;
-        myCommand.Parameters.Add(prmDTOBS1_LAB);
-
-        SqlParameter prmDTOBS2_LAB = new SqlParameter("@DTOBS2_LAB", SqlDbType.DateTime);
-        prmDTOBS2_LAB.Value = _dtObs2_lab;
-        myCommand.Parameters.Add(prmDTOBS2_LAB);
-
-
-        int intReturn = -1;
-        try
-        {
-            myConnection.Open();
-            intReturn = myCommand.ExecuteNonQuery();
-            resultado = true;
-            msg = "Los datos se registraron satisfactoriamente...";
-        }
-        catch (SqlException er)
-        {
-            if (er.Number == 2627)
-            {
-                msg = "Este registro de datos ya existe, no se realizó ningún cambio...";
-            }
-            else
-            {
-                msg = er.Message;
-            }
-            numerr = er.Number;
-            resultado = false;
-        }
-        finally
-        {
-            myCommand.Dispose();
-            myConnection.Close();
-            myConnection.Dispose();
-        }
-        return intReturn;
-    }
-
-    ///////////////// Método Update /////////////////
-    public int UpdateLAB_LABORATORIOS(LAB_LABORATORIOS miClass)
-    {
-        // Conexion a bd
-        SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
-        // Conexion SP
-        SqlCommand myCommand = new SqlCommand("SIGUTC_UpdateLAB_LABORATORIOS", myConnection);
-        myCommand.CommandType = CommandType.StoredProcedure;
-
-        // Creacion de parametros que se envian al SP
-        SqlParameter prmSTRCOD_LAB = new SqlParameter("@STRCOD_LAB", SqlDbType.NVarChar);
-        prmSTRCOD_LAB.Value = miClass.strCod_Lab;
-        myCommand.Parameters.Add(prmSTRCOD_LAB);
-
-        SqlParameter prmSTRCOD_SEDE = new SqlParameter("@STRCOD_SEDE", SqlDbType.NVarChar);
-        prmSTRCOD_SEDE.Value = miClass.strCod_Sede;
-        myCommand.Parameters.Add(prmSTRCOD_SEDE);
-
-        SqlParameter prmSTRCOD_FAC = new SqlParameter("@STRCOD_FAC", SqlDbType.NVarChar);
-        prmSTRCOD_FAC.Value = miClass.strCod_Fac;
-        myCommand.Parameters.Add(prmSTRCOD_FAC);
-
-        SqlParameter prmSTRNOMBRE_LAB = new SqlParameter("@STRNOMBRE_LAB", SqlDbType.NVarChar);
-        prmSTRNOMBRE_LAB.Value = miClass.strNombre_lab;
-        myCommand.Parameters.Add(prmSTRNOMBRE_LAB);
-
-        SqlParameter prmINTNUMEROEQUIPOS_LAB = new SqlParameter("@INTNUMEROEQUIPOS_LAB", SqlDbType.Int);
-        prmINTNUMEROEQUIPOS_LAB.Value = miClass.intNumeroEquipos_lab;
-        myCommand.Parameters.Add(prmINTNUMEROEQUIPOS_LAB);
-
-        SqlParameter prmSTRUBICACION_LAB = new SqlParameter("@STRUBICACION_LAB", SqlDbType.NVarChar);
-        prmSTRUBICACION_LAB.Value = miClass.strUbicacion_lab;
-        myCommand.Parameters.Add(prmSTRUBICACION_LAB);
-
-        SqlParameter prmSTRCOD_TIPOLAB = new SqlParameter("@STRCOD_TIPOLAB", SqlDbType.NVarChar);
-        prmSTRCOD_TIPOLAB.Value = miClass.strCod_tipoLab;
-        myCommand.Parameters.Add(prmSTRCOD_TIPOLAB);
-
-        SqlParameter prmSTRCOD_AREAC = new SqlParameter("@STRCOD_AREAC", SqlDbType.NVarChar);
-        prmSTRCOD_AREAC.Value = miClass.strCod_areac;
-        myCommand.Parameters.Add(prmSTRCOD_AREAC);
-
-        SqlParameter prmSTRFOTOGRAFIA1_LAB = new SqlParameter("@STRFOTOGRAFIA1_LAB", SqlDbType.NVarChar);
-        prmSTRFOTOGRAFIA1_LAB.Value = miClass.strFotografia1_lab;
-        myCommand.Parameters.Add(prmSTRFOTOGRAFIA1_LAB);
-
-        SqlParameter prmSTRFOTOGRAFIA2_LAB = new SqlParameter("@STRFOTOGRAFIA2_LAB", SqlDbType.NVarChar);
-        prmSTRFOTOGRAFIA2_LAB.Value = miClass.strFotografia2_lab;
-        myCommand.Parameters.Add(prmSTRFOTOGRAFIA2_LAB);
-
-   
-        SqlParameter prmDTFECHA_LOG = new SqlParameter("@DTFECHA_LOG", SqlDbType.DateTime);
-        prmDTFECHA_LOG.Value = miClass.dtFecha_log;
-        myCommand.Parameters.Add(prmDTFECHA_LOG);
-
-        SqlParameter prmSTRUSER_LOG = new SqlParameter("@STRUSER_LOG", SqlDbType.NVarChar);
-        prmSTRUSER_LOG.Value = miClass.strUser_log;
-        myCommand.Parameters.Add(prmSTRUSER_LOG);
-
-        
-        int intReturn = -1;
-        try
-        {
-            myConnection.Open();
-            intReturn = myCommand.ExecuteNonQuery(); // Devuelve el número de registros afectados en la bd
-            if (intReturn == 0)
-            {
+                numerr = er.Number;
                 resultado = false;
-                msg = "No se puede actualizar este registro...";
             }
-            else
+            finally
             {
+                myCommand.Dispose();
+                myConnection.Close();
+                myConnection.Dispose();
+            }
+            return intReturn;
+        }
+
+        ///////////////// Método Add SobreCargado /////////////////
+        public int AddLAB_LABORATORIOS(
+            string _strCod_lab,
+            string _strCod_Sede,
+            string _strCod_Fac,
+            string _strCod_tipoLab,
+            string _strCod_areac,
+            string _strNombre_lab,
+            int _intNumeroEquipos_lab,
+            string _strUbicacion_lab,
+            string _strFotografia1_lab,
+            string _strFotografia2_lab,
+            DateTime _dtFechaRegistro_lab,
+            bool _bitEstado_lab,
+            DateTime _dtFecha_log,
+            string _strUser_log,
+            string _strObs1_lab,
+            string _strObs2_lab,
+            bool _bitObs1_lab,
+            bool _bitObs2_lab,
+            decimal _decObs1_lab,
+            decimal _decObs2_lab,
+            DateTime _dtObs1_lab,
+            DateTime _dtObs2_lab
+            )
+        {
+            SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
+            SqlCommand myCommand = new SqlCommand("SIGUTC_AddLAB_LABORATORIOS", myConnection);
+            myCommand.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter prmSTRCOD_LAB = new SqlParameter("@STRCOD_LAB", SqlDbType.NVarChar);
+            prmSTRCOD_LAB.Value = _strCod_lab;
+            myCommand.Parameters.Add(prmSTRCOD_LAB);
+
+            SqlParameter prmSTRCOD_SEDE = new SqlParameter("@STRCOD_SEDE", SqlDbType.NVarChar);
+            prmSTRCOD_SEDE.Value = _strCod_Sede;
+            myCommand.Parameters.Add(prmSTRCOD_SEDE);
+
+            SqlParameter prmSTRCOD_FAC = new SqlParameter("@STRCOD_FAC", SqlDbType.NVarChar);
+            prmSTRCOD_FAC.Value = _strCod_Fac;
+            myCommand.Parameters.Add(prmSTRCOD_FAC);
+
+            SqlParameter prmSTRCOD_TIPOLAB = new SqlParameter("@STRCOD_TIPOLAB", SqlDbType.NVarChar);
+            prmSTRCOD_TIPOLAB.Value = _strCod_tipoLab;
+            myCommand.Parameters.Add(prmSTRCOD_TIPOLAB);
+
+            SqlParameter prmSTRCOD_AREAC = new SqlParameter("@STRCOD_AREAC", SqlDbType.NVarChar);
+            prmSTRCOD_AREAC.Value = _strCod_areac;
+            myCommand.Parameters.Add(prmSTRCOD_AREAC);
+
+            SqlParameter prmSTRNOMBRE_LAB = new SqlParameter("@STRNOMBRE_LAB", SqlDbType.NVarChar);
+            prmSTRNOMBRE_LAB.Value = _strNombre_lab;
+            myCommand.Parameters.Add(prmSTRNOMBRE_LAB);
+
+            SqlParameter prmINTNUMEROEQUIPOS_LAB = new SqlParameter("@INTNUMEROEQUIPOS_LAB", SqlDbType.Int);
+            prmINTNUMEROEQUIPOS_LAB.Value = _intNumeroEquipos_lab;
+            myCommand.Parameters.Add(prmINTNUMEROEQUIPOS_LAB);
+
+            SqlParameter prmSTRUBICACION_LAB = new SqlParameter("@STRUBICACION_LAB", SqlDbType.NVarChar);
+            prmSTRUBICACION_LAB.Value = _strUbicacion_lab;
+            myCommand.Parameters.Add(prmSTRUBICACION_LAB);
+            SqlParameter prmSTRFOTOGRAFIA1_LAB = new SqlParameter("@STRFOTOGRAFIA1_LAB", SqlDbType.NVarChar);
+            prmSTRFOTOGRAFIA1_LAB.Value = _strFotografia1_lab;
+            myCommand.Parameters.Add(prmSTRFOTOGRAFIA1_LAB);
+
+            SqlParameter prmSTRFOTOGRAFIA2_LAB = new SqlParameter("@STRFOTOGRAFIA2_LAB", SqlDbType.NVarChar);
+            prmSTRFOTOGRAFIA2_LAB.Value = _strFotografia2_lab;
+            myCommand.Parameters.Add(prmSTRFOTOGRAFIA2_LAB);
+
+            SqlParameter prmDTFECHAREGISTRO_LAB = new SqlParameter("@DTFECHAREGISTRO_LAB", SqlDbType.DateTime);
+            prmDTFECHAREGISTRO_LAB.Value = _dtFechaRegistro_lab;
+            myCommand.Parameters.Add(prmDTFECHAREGISTRO_LAB);
+
+            SqlParameter prmBITESTADO_LAB = new SqlParameter("@BITESTADO_LAB", SqlDbType.Bit);
+            prmBITESTADO_LAB.Value = _bitEstado_lab;
+            myCommand.Parameters.Add(prmBITESTADO_LAB);
+
+            SqlParameter prmDTFECHA_LOG = new SqlParameter("@DTFECHA_LOG", SqlDbType.DateTime);
+            prmDTFECHA_LOG.Value = _dtFecha_log;
+            myCommand.Parameters.Add(prmDTFECHA_LOG);
+
+            SqlParameter prmSTRUSER_LOG = new SqlParameter("@STRUSER_LOG", SqlDbType.NVarChar);
+            prmSTRUSER_LOG.Value = _strUser_log;
+            myCommand.Parameters.Add(prmSTRUSER_LOG);
+
+            SqlParameter prmSTROBS1_LAB = new SqlParameter("@STROBS1_LAB", SqlDbType.NVarChar);
+            prmSTROBS1_LAB.Value = _strObs1_lab;
+            myCommand.Parameters.Add(prmSTROBS1_LAB);
+
+            SqlParameter prmSTROBS2_LAB = new SqlParameter("@STROBS2_LAB", SqlDbType.NVarChar);
+            prmSTROBS2_LAB.Value = _strObs2_lab;
+            myCommand.Parameters.Add(prmSTROBS2_LAB);
+
+            SqlParameter prmBITOBS1_LAB = new SqlParameter("@BITOBS1_LAB", SqlDbType.Bit);
+            prmBITOBS1_LAB.Value = _bitObs1_lab;
+            myCommand.Parameters.Add(prmBITOBS1_LAB);
+
+            SqlParameter prmBITOBS2_LAB = new SqlParameter("@BITOBS2_LAB", SqlDbType.Bit);
+            prmBITOBS2_LAB.Value = _bitObs2_lab;
+            myCommand.Parameters.Add(prmBITOBS2_LAB);
+
+            SqlParameter prmDECOBS1_LAB = new SqlParameter("@DECOBS1_LAB", SqlDbType.Decimal);
+            prmDECOBS1_LAB.Value = _decObs1_lab;
+            myCommand.Parameters.Add(prmDECOBS1_LAB);
+
+            SqlParameter prmDECOBS2_LAB = new SqlParameter("@DECOBS2_LAB", SqlDbType.Decimal);
+            prmDECOBS2_LAB.Value = _decObs2_lab;
+            myCommand.Parameters.Add(prmDECOBS2_LAB);
+
+            SqlParameter prmDTOBS1_LAB = new SqlParameter("@DTOBS1_LAB", SqlDbType.DateTime);
+            prmDTOBS1_LAB.Value = _dtObs1_lab;
+            myCommand.Parameters.Add(prmDTOBS1_LAB);
+
+            SqlParameter prmDTOBS2_LAB = new SqlParameter("@DTOBS2_LAB", SqlDbType.DateTime);
+            prmDTOBS2_LAB.Value = _dtObs2_lab;
+            myCommand.Parameters.Add(prmDTOBS2_LAB);
+
+
+            int intReturn = -1;
+            try
+            {
+                myConnection.Open();
+                intReturn = myCommand.ExecuteNonQuery();
                 resultado = true;
-                msg = "El registro se actualizó satisfactoriamente...";
+                msg = "Los datos se registraron satisfactoriamente...";
             }
-        }
-        catch (SqlException er)
-        {
-            if (er.Number == 2627)
+            catch (SqlException er)
             {
-                msg = "Este registro de datos ya existe, no se realizó ningún cambio...";
-            }
-            else
-            {
-                msg = er.Message;
-            }
-            numerr = er.Number;
-            resultado = false;
-        }
-        finally
-        {
-            myCommand.Dispose();
-            myConnection.Close();
-            myConnection.Dispose();
-        }
-        return intReturn;
-    }
-
-
-    ///////////////// Método Update SobreCargado  /////////////////
-    public int UpdateLAB_LABORATORIOS(
-        string _strCod_Lab,
-        string _strCod_Sede,
-        string _strCod_Fac,
-        string _strNombre_Lab,
-        int _intNumeroEquipos_lab,
-        string _strUbicacion_Lab,
-        string _strCod_tipoLab,
-        string _strCod_areac,
-        string _strFotografia1_Lab,
-        string _strFotografia2_Lab,
-        DateTime _dtFecha_log,
-        string _strUser_log)
-    {
-        SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
-        SqlCommand myCommand = new SqlCommand("SIGUTC_UpdateLAB_LABORATORIOS", myConnection);
-        myCommand.CommandType = CommandType.StoredProcedure;
-
-        SqlParameter prmSTRCOD_LAB = new SqlParameter("@STRCOD_LAB", SqlDbType.NVarChar);
-        prmSTRCOD_LAB.Value = _strCod_Lab;
-        myCommand.Parameters.Add(prmSTRCOD_LAB);
-
-        SqlParameter prmSTRCOD_SEDE = new SqlParameter("@STRCOD_SEDE", SqlDbType.NVarChar);
-        prmSTRCOD_SEDE.Value = _strCod_Sede;
-        myCommand.Parameters.Add(prmSTRCOD_SEDE);
-
-        SqlParameter prmSTRCOD_FAC = new SqlParameter("@STRCOD_FAC", SqlDbType.NVarChar);
-        prmSTRCOD_FAC.Value = _strCod_Fac;
-        myCommand.Parameters.Add(prmSTRCOD_FAC);
-
-        SqlParameter prmSTRNOMBRE_LAB = new SqlParameter("@STRNOMBRE_LAB", SqlDbType.NVarChar);
-        prmSTRNOMBRE_LAB.Value = _strNombre_Lab;
-        myCommand.Parameters.Add(prmSTRNOMBRE_LAB);
-
-        SqlParameter prmINTNUMEROEQUIPOS_LAB = new SqlParameter("@INTNUMEROEQUIPOS_LAB", SqlDbType.Int);
-        prmINTNUMEROEQUIPOS_LAB.Value = _intNumeroEquipos_lab;
-        myCommand.Parameters.Add(prmINTNUMEROEQUIPOS_LAB);
-
-        SqlParameter prmSTRUBICACION_LAB = new SqlParameter("@STRUBICACION_LAB", SqlDbType.NVarChar);
-        prmSTRUBICACION_LAB.Value = _strUbicacion_Lab;
-        myCommand.Parameters.Add(prmSTRUBICACION_LAB);
-
-        SqlParameter prmSTRCOD_TIPOLAB = new SqlParameter("@STRCOD_TIPOLAB", SqlDbType.NVarChar);
-        prmSTRCOD_TIPOLAB.Value = _strCod_tipoLab;
-        myCommand.Parameters.Add(prmSTRCOD_TIPOLAB);
-
-        SqlParameter prmSTRCOD_AREAC = new SqlParameter("@STRCOD_AREAC", SqlDbType.NVarChar);
-        prmSTRCOD_AREAC.Value = _strCod_areac;
-        myCommand.Parameters.Add(prmSTRCOD_AREAC);
-
-        SqlParameter prmSTRFOTOGRAFIA1_LAB = new SqlParameter("@STRFOTOGRAFIA1_LAB", SqlDbType.NVarChar);
-        prmSTRFOTOGRAFIA1_LAB.Value = _strFotografia1_Lab;
-        myCommand.Parameters.Add(prmSTRFOTOGRAFIA1_LAB);
-
-        SqlParameter prmSTRFOTOGRAFIA2_LAB = new SqlParameter("@STRFOTOGRAFIA2_LAB", SqlDbType.NVarChar);
-        prmSTRFOTOGRAFIA2_LAB.Value = _strFotografia2_Lab;
-        myCommand.Parameters.Add(prmSTRFOTOGRAFIA2_LAB);
-
-        SqlParameter prmDTFECHA_LOG = new SqlParameter("@DTFECHA_LOG", SqlDbType.DateTime);
-        prmDTFECHA_LOG.Value = _dtFecha_log;
-        myCommand.Parameters.Add(prmDTFECHA_LOG);
-
-        SqlParameter prmSTRUSER_LOG = new SqlParameter("@STRUSER_LOG", SqlDbType.NVarChar);
-        prmSTRUSER_LOG.Value = _strUser_log;
-        myCommand.Parameters.Add(prmSTRUSER_LOG);
-
-        int intReturn = -1;
-        try
-        {
-            myConnection.Open();
-            intReturn = myCommand.ExecuteNonQuery();
-            if (intReturn == 0)
-            {
+                if (er.Number == 2627)
+                {
+                    msg = "Este registro de datos ya existe, no se realizó ningún cambio...";
+                }
+                else
+                {
+                    msg = er.Message;
+                }
+                numerr = er.Number;
                 resultado = false;
-                msg = "No se puede actualizar este registro...";
             }
-            else
+            finally
             {
-                resultado = true;
-                msg = "El registro se actualizó satisfactoriamente...";
+                myCommand.Dispose();
+                myConnection.Close();
+                myConnection.Dispose();
             }
+            return intReturn;
         }
-        catch (SqlException er)
+
+        ///////////////// Método Update /////////////////
+        public int UpdateLAB_LABORATORIOS(LAB_LABORATORIOS miClass)
         {
-            if (er.Number == 2627)
+            // Conexion a bd
+            SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
+            // Conexion SP
+            SqlCommand myCommand = new SqlCommand("SIGUTC_UpdateLAB_LABORATORIOS", myConnection);
+            myCommand.CommandType = CommandType.StoredProcedure;
+
+            // Creacion de parametros que se envian al SP
+            SqlParameter prmSTRCOD_LAB = new SqlParameter("@STRCOD_LAB", SqlDbType.NVarChar);
+            prmSTRCOD_LAB.Value = miClass.strCod_lab;
+            myCommand.Parameters.Add(prmSTRCOD_LAB);
+
+            SqlParameter prmSTRCOD_SEDE = new SqlParameter("@STRCOD_SEDE", SqlDbType.NVarChar);
+            prmSTRCOD_SEDE.Value = miClass.strCod_Sede;
+            myCommand.Parameters.Add(prmSTRCOD_SEDE);
+
+            SqlParameter prmSTRCOD_FAC = new SqlParameter("@STRCOD_FAC", SqlDbType.NVarChar);
+            prmSTRCOD_FAC.Value = miClass.strCod_Fac;
+            myCommand.Parameters.Add(prmSTRCOD_FAC);
+
+            SqlParameter prmSTRCOD_TIPOLAB = new SqlParameter("@STRCOD_TIPOLAB", SqlDbType.NVarChar);
+            prmSTRCOD_TIPOLAB.Value = miClass.strCod_tipoLab;
+            myCommand.Parameters.Add(prmSTRCOD_TIPOLAB);
+
+            SqlParameter prmSTRCOD_AREAC = new SqlParameter("@STRCOD_AREAC", SqlDbType.NVarChar);
+            prmSTRCOD_AREAC.Value = miClass.strCod_areac;
+            myCommand.Parameters.Add(prmSTRCOD_AREAC);
+
+            SqlParameter prmSTRNOMBRE_LAB = new SqlParameter("@STRNOMBRE_LAB", SqlDbType.NVarChar);
+            prmSTRNOMBRE_LAB.Value = miClass.strNombre_lab;
+            myCommand.Parameters.Add(prmSTRNOMBRE_LAB);
+
+            SqlParameter prmINTNUMEROEQUIPOS_LAB = new SqlParameter("@INTNUMEROEQUIPOS_LAB", SqlDbType.Int);
+            prmINTNUMEROEQUIPOS_LAB.Value = miClass.intNumeroEquipos_lab;
+            myCommand.Parameters.Add(prmINTNUMEROEQUIPOS_LAB);
+
+            SqlParameter prmSTRUBICACION_LAB = new SqlParameter("@STRUBICACION_LAB", SqlDbType.NVarChar);
+            prmSTRUBICACION_LAB.Value = miClass.strUbicacion_lab;
+            myCommand.Parameters.Add(prmSTRUBICACION_LAB);
+
+            SqlParameter prmSTRFOTOGRAFIA1_LAB = new SqlParameter("@STRFOTOGRAFIA1_LAB", SqlDbType.NVarChar);
+            prmSTRFOTOGRAFIA1_LAB.Value = miClass.strFotografia1_lab;
+            myCommand.Parameters.Add(prmSTRFOTOGRAFIA1_LAB);
+
+            SqlParameter prmSTRFOTOGRAFIA2_LAB = new SqlParameter("@STRFOTOGRAFIA2_LAB", SqlDbType.NVarChar);
+            prmSTRFOTOGRAFIA2_LAB.Value = miClass.strFotografia2_lab;
+            myCommand.Parameters.Add(prmSTRFOTOGRAFIA2_LAB);
+
+
+            SqlParameter prmDTFECHA_LOG = new SqlParameter("@DTFECHA_LOG", SqlDbType.DateTime);
+            prmDTFECHA_LOG.Value = miClass.dtFecha_log;
+            myCommand.Parameters.Add(prmDTFECHA_LOG);
+
+            SqlParameter prmSTRUSER_LOG = new SqlParameter("@STRUSER_LOG", SqlDbType.NVarChar);
+            prmSTRUSER_LOG.Value = miClass.strUser_log;
+            myCommand.Parameters.Add(prmSTRUSER_LOG);
+
+
+            int intReturn = -1;
+            try
             {
-                msg = "Este registro de datos ya existe, no se realizó ningún cambio...";
+                myConnection.Open();
+                intReturn = myCommand.ExecuteNonQuery(); // Devuelve el número de registros afectados en la bd
+                if (intReturn == 0)
+                {
+                    resultado = false;
+                    msg = "No se puede actualizar este registro...";
+                }
+                else
+                {
+                    resultado = true;
+                    msg = "El registro se actualizó satisfactoriamente...";
+                }
             }
-            else
+            catch (SqlException er)
             {
-                msg = er.Message;
-            }
-            numerr = er.Number;
-            resultado = false;
-        }
-        finally
-        {
-            myCommand.Dispose();
-            myConnection.Close();
-            myConnection.Dispose();
-        }
-        return intReturn;
-    }
-
-
-    ///////////////// Método Delete /////////////////
-    public int DelLAB_LABORATORIOS(string comodin, string filtro1, string filtro2, string filtro3, string filtro4)
-    {
-        // Conexion a bd
-        SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
-        // Conexion SP
-        SqlCommand myCommand = new SqlCommand("SIGUTC_DelLAB_LABORATORIOS", myConnection);
-        myCommand.CommandType = CommandType.StoredProcedure;
-
-        SqlParameter prmComodin = new SqlParameter("@COMODIN", SqlDbType.VarChar);
-        prmComodin.Value = comodin;
-        myCommand.Parameters.Add(prmComodin);
-
-        SqlParameter prmFiltro1 = new SqlParameter("@FILTRO1", SqlDbType.VarChar);
-        prmFiltro1.Value = filtro1;
-        myCommand.Parameters.Add(prmFiltro1);
-
-        SqlParameter prmFiltro2 = new SqlParameter("@FILTRO2", SqlDbType.VarChar);
-        prmFiltro2.Value = filtro2;
-        myCommand.Parameters.Add(prmFiltro2);
-
-        SqlParameter prmFiltro3 = new SqlParameter("@FILTRO3", SqlDbType.VarChar);
-        prmFiltro3.Value = filtro3;
-        myCommand.Parameters.Add(prmFiltro3);
-
-        SqlParameter prmFiltro4 = new SqlParameter("@FILTRO4", SqlDbType.VarChar);
-        prmFiltro4.Value = filtro4;
-        myCommand.Parameters.Add(prmFiltro4);
-
-        int intReturn = -1;
-        try
-        {
-            myConnection.Open();
-            intReturn = myCommand.ExecuteNonQuery(); // Devuelve el número de registros afectados en la bd
-            if (intReturn == 0)
-            {
+                if (er.Number == 2627)
+                {
+                    msg = "Este registro de datos ya existe, no se realizó ningún cambio...";
+                }
+                else
+                {
+                    msg = er.Message;
+                }
+                numerr = er.Number;
                 resultado = false;
-                msg = "No se puede eliminar este registro...";
             }
-            else
+            finally
             {
-                resultado = true;
-                msg = "El registro se eliminó satisfactoriamente...";
+                myCommand.Dispose();
+                myConnection.Close();
+                myConnection.Dispose();
             }
+            return intReturn;
         }
-        catch (SqlException er)
+
+
+        ///////////////// Método Update SobreCargado  /////////////////
+        public int UpdateLAB_LABORATORIOS(
+            string _strCod_lab,
+            string _strCod_Sede,
+            string _strCod_Fac,
+            string _strCod_tipoLab,
+            string _strCod_areac,
+            string _strNombre_lab,
+            int _intNumeroEquipos_lab,
+            string _strUbicacion_lab,
+            string _strFotografia1_lab,
+            string _strFotografia2_lab,
+            DateTime _dtFecha_log,
+            string _strUser_log)
         {
-            if (er.Number == 2627)
+            SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
+            SqlCommand myCommand = new SqlCommand("SIGUTC_UpdateLAB_LABORATORIOS", myConnection);
+            myCommand.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter prmSTRCOD_LAB = new SqlParameter("@STRCOD_LAB", SqlDbType.NVarChar);
+            prmSTRCOD_LAB.Value = _strCod_lab;
+            myCommand.Parameters.Add(prmSTRCOD_LAB);
+
+            SqlParameter prmSTRCOD_SEDE = new SqlParameter("@STRCOD_SEDE", SqlDbType.NVarChar);
+            prmSTRCOD_SEDE.Value = _strCod_Sede;
+            myCommand.Parameters.Add(prmSTRCOD_SEDE);
+
+            SqlParameter prmSTRCOD_FAC = new SqlParameter("@STRCOD_FAC", SqlDbType.NVarChar);
+            prmSTRCOD_FAC.Value = _strCod_Fac;
+            myCommand.Parameters.Add(prmSTRCOD_FAC);
+
+            SqlParameter prmSTRCOD_TIPOLAB = new SqlParameter("@STRCOD_TIPOLAB", SqlDbType.NVarChar);
+            prmSTRCOD_TIPOLAB.Value = _strCod_tipoLab;
+            myCommand.Parameters.Add(prmSTRCOD_TIPOLAB);
+
+            SqlParameter prmSTRCOD_AREAC = new SqlParameter("@STRCOD_AREAC", SqlDbType.NVarChar);
+            prmSTRCOD_AREAC.Value = _strCod_areac;
+            myCommand.Parameters.Add(prmSTRCOD_AREAC);
+
+            SqlParameter prmSTRNOMBRE_LAB = new SqlParameter("@STRNOMBRE_LAB", SqlDbType.NVarChar);
+            prmSTRNOMBRE_LAB.Value = _strNombre_lab;
+            myCommand.Parameters.Add(prmSTRNOMBRE_LAB);
+
+            SqlParameter prmINTNUMEROEQUIPOS_LAB = new SqlParameter("@INTNUMEROEQUIPOS_LAB", SqlDbType.Int);
+            prmINTNUMEROEQUIPOS_LAB.Value = _intNumeroEquipos_lab;
+            myCommand.Parameters.Add(prmINTNUMEROEQUIPOS_LAB);
+
+            SqlParameter prmSTRUBICACION_LAB = new SqlParameter("@STRUBICACION_LAB", SqlDbType.NVarChar);
+            prmSTRUBICACION_LAB.Value = _strUbicacion_lab;
+            myCommand.Parameters.Add(prmSTRUBICACION_LAB);
+
+            SqlParameter prmSTRFOTOGRAFIA1_LAB = new SqlParameter("@STRFOTOGRAFIA1_LAB", SqlDbType.NVarChar);
+            prmSTRFOTOGRAFIA1_LAB.Value = _strFotografia1_lab;
+            myCommand.Parameters.Add(prmSTRFOTOGRAFIA1_LAB);
+
+            SqlParameter prmSTRFOTOGRAFIA2_LAB = new SqlParameter("@STRFOTOGRAFIA2_LAB", SqlDbType.NVarChar);
+            prmSTRFOTOGRAFIA2_LAB.Value = _strFotografia2_lab;
+            myCommand.Parameters.Add(prmSTRFOTOGRAFIA2_LAB);
+
+            SqlParameter prmDTFECHA_LOG = new SqlParameter("@DTFECHA_LOG", SqlDbType.DateTime);
+            prmDTFECHA_LOG.Value = _dtFecha_log;
+            myCommand.Parameters.Add(prmDTFECHA_LOG);
+
+            SqlParameter prmSTRUSER_LOG = new SqlParameter("@STRUSER_LOG", SqlDbType.NVarChar);
+            prmSTRUSER_LOG.Value = _strUser_log;
+            myCommand.Parameters.Add(prmSTRUSER_LOG);
+
+            int intReturn = -1;
+            try
             {
-                msg = "***Este registro de datos ya existe, no se realizó ningún cambio...";
+                myConnection.Open();
+                intReturn = myCommand.ExecuteNonQuery();
+                if (intReturn == 0)
+                {
+                    resultado = false;
+                    msg = "No se puede actualizar este registro...";
+                }
+                else
+                {
+                    resultado = true;
+                    msg = "El registro se actualizó satisfactoriamente...";
+                }
             }
-            else
+            catch (SqlException er)
             {
-                msg = er.Message;
+                if (er.Number == 2627)
+                {
+                    msg = "Este registro de datos ya existe, no se realizó ningún cambio...";
+                }
+                else
+                {
+                    msg = er.Message;
+                }
+                numerr = er.Number;
+                resultado = false;
             }
-            numerr = er.Number;
-            resultado = false;
+            finally
+            {
+                myCommand.Dispose();
+                myConnection.Close();
+                myConnection.Dispose();
+            }
+            return intReturn;
         }
-        finally
+
+
+        ///////////////// Método Delete /////////////////
+        public int DelLAB_LABORATORIOS(string comodin, string filtro1, string filtro2, string filtro3, string filtro4)
         {
-            myCommand.Dispose();
-            myConnection.Close();
-            myConnection.Dispose();
+            // Conexion a bd
+            SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
+            // Conexion SP
+            SqlCommand myCommand = new SqlCommand("SIGUTC_DelLAB_LABORATORIOS", myConnection);
+            myCommand.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter prmComodin = new SqlParameter("@COMODIN", SqlDbType.VarChar);
+            prmComodin.Value = comodin;
+            myCommand.Parameters.Add(prmComodin);
+
+            SqlParameter prmFiltro1 = new SqlParameter("@FILTRO1", SqlDbType.VarChar);
+            prmFiltro1.Value = filtro1;
+            myCommand.Parameters.Add(prmFiltro1);
+
+            SqlParameter prmFiltro2 = new SqlParameter("@FILTRO2", SqlDbType.VarChar);
+            prmFiltro2.Value = filtro2;
+            myCommand.Parameters.Add(prmFiltro2);
+
+            SqlParameter prmFiltro3 = new SqlParameter("@FILTRO3", SqlDbType.VarChar);
+            prmFiltro3.Value = filtro3;
+            myCommand.Parameters.Add(prmFiltro3);
+
+            SqlParameter prmFiltro4 = new SqlParameter("@FILTRO4", SqlDbType.VarChar);
+            prmFiltro4.Value = filtro4;
+            myCommand.Parameters.Add(prmFiltro4);
+
+            int intReturn = -1;
+            try
+            {
+                myConnection.Open();
+                intReturn = myCommand.ExecuteNonQuery(); // Devuelve el número de registros afectados en la bd
+                if (intReturn == 0)
+                {
+                    resultado = false;
+                    msg = "No se puede eliminar este registro...";
+                }
+                else
+                {
+                    resultado = true;
+                    msg = "El registro se eliminó satisfactoriamente...";
+                }
+            }
+            catch (SqlException er)
+            {
+                if (er.Number == 2627)
+                {
+                    msg = "***Este registro de datos ya existe, no se realizó ningún cambio...";
+                }
+                else
+                {
+                    msg = er.Message;
+                }
+                numerr = er.Number;
+                resultado = false;
+            }
+            finally
+            {
+                myCommand.Dispose();
+                myConnection.Close();
+                myConnection.Dispose();
+            }
+            return intReturn;
         }
-        return intReturn;
     }
-}
 }

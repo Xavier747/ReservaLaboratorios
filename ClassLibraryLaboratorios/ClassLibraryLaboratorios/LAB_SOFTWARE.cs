@@ -23,8 +23,8 @@ namespace ClassLibraryLaboratorios
         string _strTipoLicencia_sof,
         string _strNombreLicencia_sof,
         int _intCantidad_sof,
-        decimal _decCostoUnitario,
-        decimal _decCostoTotal,
+        decimal _decCostoUnitario_sof,
+        decimal _decCostoTotal_sof,
         string _strDescripcion_sof,
         string _strImagen_sof,
         string _strUrl_sof,
@@ -48,8 +48,8 @@ namespace ClassLibraryLaboratorios
             strTipoLicencia_sof = _strTipoLicencia_sof;
             strNombreLicencia_sof = _strNombreLicencia_sof;
             intCantidad_sof = _intCantidad_sof;
-            decCostoUnitario = _decCostoUnitario;
-            decCostoTotal = _decCostoTotal;
+            decCostoUnitario_sof = _decCostoUnitario_sof;
+            decCostoTotal_sof = _decCostoTotal_sof;
             strDescripcion_sof = _strDescripcion_sof;
             strImagen_sof = _strImagen_sof;
             strUrl_sof = _strUrl_sof;
@@ -79,8 +79,8 @@ namespace ClassLibraryLaboratorios
         private string STRTIPOLICENCIA_SOF;
         private string STRNOMBRELICENCIA_SOF;
         private int INTCANTIDAD_SOF;
-        private decimal DECCOSTOUNITARIO;
-        private decimal DECCOSTOTOTAL;
+        private decimal DECCOSTOUNITARIO_SOF;
+        private decimal DECCOSTOTOTAL_SOF;
         private string STRDESCRIPCION_SOF;
         private string STRIMAGEN_SOF;
         private string STRURL_SOF;
@@ -185,27 +185,27 @@ namespace ClassLibraryLaboratorios
             }
         }
 
-        public decimal decCostoUnitario
+        public decimal decCostoUnitario_sof
         {
             get
             {
-                return DECCOSTOUNITARIO;
+                return DECCOSTOUNITARIO_SOF;
             }
             set
             {
-                DECCOSTOUNITARIO = value;
+                DECCOSTOUNITARIO_SOF = value;
             }
         }
 
-        public decimal decCostoTotal
+        public decimal decCostoTotal_sof
         {
             get
             {
-                return DECCOSTOTOTAL;
+                return DECCOSTOTOTAL_SOF;
             }
             set
             {
-                DECCOSTOTOTAL = value;
+                DECCOSTOTOTAL_SOF = value;
             }
         }
 
@@ -432,7 +432,7 @@ namespace ClassLibraryLaboratorios
             var listG = new List<LAB_SOFTWARE>();
             using (SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]))
             {
-                using (SqlCommand myCommand = new SqlCommand("LAB_GetLAB_SOFTWARE", myConnection))
+                using (SqlCommand myCommand = new SqlCommand("SIGUTC_GetLAB_SOFTWARE", myConnection))
                 {
                     myCommand.CommandType = CommandType.StoredProcedure;
                     SqlParameter prmComodin = new SqlParameter("@COMODIN", SqlDbType.VarChar);
@@ -471,8 +471,8 @@ namespace ClassLibraryLaboratorios
                                     strTipoLicencia_sof = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strTipoLicencia_sof"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strTipoLicencia_sof"))),
                                     strNombreLicencia_sof = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strNombreLicencia_sof"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strNombreLicencia_sof"))),
                                     intCantidad_sof = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("intCantidad_sof"))) == true ? 0 : Convert.ToInt32(reader1.GetValue(reader1.GetOrdinal("intCantidad_sof"))),
-                                    decCostoUnitario = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("decCostoUnitario"))) == true ? 0 : Convert.ToDecimal(reader1.GetValue(reader1.GetOrdinal("decCostoUnitario"))),
-                                    decCostoTotal = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("decCostoTotal"))) == true ? 0 : Convert.ToDecimal(reader1.GetValue(reader1.GetOrdinal("decCostoTotal"))),
+                                    decCostoUnitario_sof = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("decCostoUnitario_sof"))) == true ? 0 : Convert.ToDecimal(reader1.GetValue(reader1.GetOrdinal("decCostoUnitario_sof"))),
+                                    decCostoTotal_sof = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("decCostoTotal_sof"))) == true ? 0 : Convert.ToDecimal(reader1.GetValue(reader1.GetOrdinal("decCostoTotal_sof"))),
                                     strDescripcion_sof = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strDescripcion_sof"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strDescripcion_sof"))),
                                     strImagen_sof = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strImagen_sof"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strImagen_sof"))),
                                     strUrl_sof = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strUrl_sof"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strUrl_sof"))),
@@ -515,7 +515,7 @@ namespace ClassLibraryLaboratorios
             //Conexion a bd
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
             //conexion SP
-            SqlCommand myCommand = new SqlCommand("LAB_AddLAB_SOFTWARE", myConnection);
+            SqlCommand myCommand = new SqlCommand("SIGUTC_AddLAB_SOFTWARE", myConnection);
             myCommand.CommandType = CommandType.StoredProcedure;
 
             //Creacion de parametros que se envian al SP
@@ -547,13 +547,13 @@ namespace ClassLibraryLaboratorios
             prmINTCANTIDAD_SOF.Value = miClass.intCantidad_sof;
             myCommand.Parameters.Add(prmINTCANTIDAD_SOF);
 
-            SqlParameter prmDECCOSTOUNITARIO = new SqlParameter("@DECCOSTOUNITARIO", SqlDbType.Decimal);
-            prmDECCOSTOUNITARIO.Value = miClass.decCostoUnitario;
-            myCommand.Parameters.Add(prmDECCOSTOUNITARIO);
+            SqlParameter prmDECCOSTOUNITARIO_SOF = new SqlParameter("@DECCOSTOUNITARIO_SOF", SqlDbType.Decimal);
+            prmDECCOSTOUNITARIO_SOF.Value = miClass.decCostoUnitario_sof;
+            myCommand.Parameters.Add(prmDECCOSTOUNITARIO_SOF);
 
-            SqlParameter prmDECCOSTOTOTAL = new SqlParameter("@DECCOSTOTOTAL", SqlDbType.Decimal);
-            prmDECCOSTOTOTAL.Value = miClass.decCostoTotal;
-            myCommand.Parameters.Add(prmDECCOSTOTOTAL);
+            SqlParameter prmDECCOSTOTOTAL_SOF = new SqlParameter("@DECCOSTOTOTAL_SOF", SqlDbType.Decimal);
+            prmDECCOSTOTOTAL_SOF.Value = miClass.decCostoTotal_sof;
+            myCommand.Parameters.Add(prmDECCOSTOTOTAL_SOF);
 
             SqlParameter prmSTRDESCRIPCION_SOF = new SqlParameter("@STRDESCRIPCION_SOF", SqlDbType.NVarChar);
             prmSTRDESCRIPCION_SOF.Value = miClass.strDescripcion_sof;
@@ -654,8 +654,8 @@ namespace ClassLibraryLaboratorios
         string _strTipoLicencia_sof,
         string _strNombreLicencia_sof,
         int _intCantidad_sof,
-        decimal _decCostoUnitario,
-        decimal _decCostoTotal,
+        decimal _decCostoUnitario_sof,
+        decimal _decCostoTotal_sof,
         string _strDescripcion_sof,
         string _strImagen_sof,
         string _strUrl_sof,
@@ -675,7 +675,7 @@ namespace ClassLibraryLaboratorios
             //Conexion a bd
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
             //conexion SP
-            SqlCommand myCommand = new SqlCommand("LAB_AddLAB_SOFTWARE", myConnection);
+            SqlCommand myCommand = new SqlCommand(" SIGUTC_AddLAB_SOFTWARE", myConnection);
             myCommand.CommandType = CommandType.StoredProcedure;
 
             //Creacion de parametros que se envian al SP
@@ -707,13 +707,13 @@ namespace ClassLibraryLaboratorios
             prmINTCANTIDAD_SOF.Value = _intCantidad_sof;
             myCommand.Parameters.Add(prmINTCANTIDAD_SOF);
 
-            SqlParameter prmDECCOSTOUNITARIO = new SqlParameter("@DECCOSTOUNITARIO", SqlDbType.Decimal);
-            prmDECCOSTOUNITARIO.Value = _decCostoUnitario;
-            myCommand.Parameters.Add(prmDECCOSTOUNITARIO);
+            SqlParameter prmDECCOSTOUNITARIO_SOF = new SqlParameter("@DECCOSTOUNITARIO_SOF", SqlDbType.Decimal);
+            prmDECCOSTOUNITARIO_SOF.Value = _decCostoUnitario_sof;
+            myCommand.Parameters.Add(prmDECCOSTOUNITARIO_SOF);
 
-            SqlParameter prmDECCOSTOTOTAL = new SqlParameter("@DECCOSTOTOTAL", SqlDbType.Decimal);
-            prmDECCOSTOTOTAL.Value = _decCostoTotal;
-            myCommand.Parameters.Add(prmDECCOSTOTOTAL);
+            SqlParameter prmDECCOSTOTOTAL_SOF = new SqlParameter("@DECCOSTOTOTAL_SOF", SqlDbType.Decimal);
+            prmDECCOSTOTOTAL_SOF.Value = _decCostoTotal_sof;
+            myCommand.Parameters.Add(prmDECCOSTOTOTAL_SOF);
 
             SqlParameter prmSTRDESCRIPCION_SOF = new SqlParameter("@STRDESCRIPCION_SOF", SqlDbType.NVarChar);
             prmSTRDESCRIPCION_SOF.Value = _strDescripcion_sof;
@@ -812,7 +812,7 @@ namespace ClassLibraryLaboratorios
             //Conexion a bd
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
             //conexion SP
-            SqlCommand myCommand = new SqlCommand("LAB_UpdateLAB_SOFTWARE", myConnection);
+            SqlCommand myCommand = new SqlCommand("SIGUTC_UpdateLAB_SOFTWARE", myConnection);
             myCommand.CommandType = CommandType.StoredProcedure;
 
             //Creacion de parametros que se envian al SP
@@ -844,13 +844,13 @@ namespace ClassLibraryLaboratorios
             prmINTCANTIDAD_SOF.Value = miClass.intCantidad_sof;
             myCommand.Parameters.Add(prmINTCANTIDAD_SOF);
 
-            SqlParameter prmDECCOSTOUNITARIO = new SqlParameter("@DECCOSTOUNITARIO", SqlDbType.Decimal);
-            prmDECCOSTOUNITARIO.Value = miClass.decCostoUnitario;
-            myCommand.Parameters.Add(prmDECCOSTOUNITARIO);
+            SqlParameter prmDECCOSTOUNITARIO_SOF = new SqlParameter("@DECCOSTOUNITARIO_SOF", SqlDbType.Decimal);
+            prmDECCOSTOUNITARIO_SOF.Value = miClass.decCostoUnitario_sof;
+            myCommand.Parameters.Add(prmDECCOSTOUNITARIO_SOF);
 
-            SqlParameter prmDECCOSTOTOTAL = new SqlParameter("@DECCOSTOTOTAL", SqlDbType.Decimal);
-            prmDECCOSTOTOTAL.Value = miClass.decCostoTotal;
-            myCommand.Parameters.Add(prmDECCOSTOTOTAL);
+            SqlParameter prmDECCOSTOTOTAL_SOF = new SqlParameter("@DECCOSTOTOTAL_SOF", SqlDbType.Decimal);
+            prmDECCOSTOTOTAL_SOF.Value = miClass.decCostoTotal_sof;
+            myCommand.Parameters.Add(prmDECCOSTOTOTAL_SOF);
 
             SqlParameter prmSTRDESCRIPCION_SOF = new SqlParameter("@STRDESCRIPCION_SOF", SqlDbType.NVarChar);
             prmSTRDESCRIPCION_SOF.Value = miClass.strDescripcion_sof;
@@ -912,8 +912,8 @@ namespace ClassLibraryLaboratorios
             string _strTipoLicencia_sof,
             string _strNombreLicencia_sof,
             int _intCantidad_sof,
-            decimal _decCostoUnitario,
-            decimal _decCostoTotal,
+            decimal _decCostoUnitario_sof,
+            decimal _decCostoTotal_sof,
             string _strDescripcion_sof,
             string _strImagen_sof,
             string _strUrl_sof,
@@ -923,7 +923,7 @@ namespace ClassLibraryLaboratorios
             //Conexion a bd
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
             //conexion SP
-            SqlCommand myCommand = new SqlCommand("LAB_UpdateLAB_SOFTWARE", myConnection);
+            SqlCommand myCommand = new SqlCommand("SIGUTC_UpdateLAB_SOFTWARE", myConnection);
             myCommand.CommandType = CommandType.StoredProcedure;
 
             //Creacion de parametros que se envian al SP
@@ -955,13 +955,13 @@ namespace ClassLibraryLaboratorios
             prmINTCANTIDAD_SOF.Value = _intCantidad_sof;
             myCommand.Parameters.Add(prmINTCANTIDAD_SOF);
 
-            SqlParameter prmDECCOSTOUNITARIO = new SqlParameter("@DECCOSTOUNITARIO", SqlDbType.Decimal);
-            prmDECCOSTOUNITARIO.Value = _decCostoUnitario;
-            myCommand.Parameters.Add(prmDECCOSTOUNITARIO);
+            SqlParameter prmDECCOSTOUNITARIO_SOF = new SqlParameter("@DECCOSTOUNITARIO_SOF", SqlDbType.Decimal);
+            prmDECCOSTOUNITARIO_SOF.Value = _decCostoUnitario_sof;
+            myCommand.Parameters.Add(prmDECCOSTOUNITARIO_SOF);
 
-            SqlParameter prmDECCOSTOTOTAL = new SqlParameter("@DECCOSTOTOTAL", SqlDbType.Decimal);
-            prmDECCOSTOTOTAL.Value = _decCostoTotal;
-            myCommand.Parameters.Add(prmDECCOSTOTOTAL);
+            SqlParameter prmDECCOSTOTOTAL_SOF = new SqlParameter("@DECCOSTOTOTAL_SOF", SqlDbType.Decimal);
+            prmDECCOSTOTOTAL_SOF.Value = _decCostoTotal_sof;
+            myCommand.Parameters.Add(prmDECCOSTOTOTAL_SOF);
 
             SqlParameter prmSTRDESCRIPCION_SOF = new SqlParameter("@STRDESCRIPCION_SOF", SqlDbType.NVarChar);
             prmSTRDESCRIPCION_SOF.Value = _strDescripcion_sof;
@@ -984,7 +984,7 @@ namespace ClassLibraryLaboratorios
             prmSTRUSER_LOG.Value = _strUser_log;
             myCommand.Parameters.Add(prmSTRUSER_LOG);
 
-            
+
 
             int intReturb = -1;
             try
@@ -1030,7 +1030,7 @@ namespace ClassLibraryLaboratorios
             //Conexion a bd
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
             //conexion SP
-            SqlCommand myCommand = new SqlCommand("LAB_DelLAB_SOFTWARE", myConnection);
+            SqlCommand myCommand = new SqlCommand("SIGUTC_DelLAB_SOFTWARE", myConnection);
             myCommand.CommandType = CommandType.StoredProcedure;
 
             SqlParameter prmComodin = new SqlParameter("@COMODIN", SqlDbType.VarChar);

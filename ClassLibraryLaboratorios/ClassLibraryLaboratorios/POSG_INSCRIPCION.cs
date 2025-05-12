@@ -1598,6 +1598,73 @@ namespace ClassLibraryLaboratorios
 
         }
 
+        ///////////////// Método Delete /////////////////
+        public int DeleteLAB_RESPONSABLE(string comodin, string filtro1, string filtro2, string filtro3, string filtro4)
+        {
+            //Conexion a bd
+            SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
+            //conexion SP
+            SqlCommand myCommand = new SqlCommand("SIGUTC_DeleteLAB_RESPONSABLE", myConnection);
+            myCommand.CommandType = CommandType.StoredProcedure;
 
+            //Creacion de parametros que se envian al SP
+            SqlParameter prmComodin = new SqlParameter("@Comodin", SqlDbType.VarChar);
+            prmComodin.Value = comodin;
+            myCommand.Parameters.Add(prmComodin);
+
+            SqlParameter prmFiltro1 = new SqlParameter("@FILTRO1", SqlDbType.VarChar);
+            prmFiltro1.Value = filtro1;
+            myCommand.Parameters.Add(prmFiltro1);
+
+            SqlParameter prmFiltro2 = new SqlParameter("@FILTRO2", SqlDbType.VarChar);
+            prmFiltro2.Value = filtro2;
+            myCommand.Parameters.Add(prmFiltro2);
+
+            SqlParameter prmFiltro3 = new SqlParameter("@FILTRO3", SqlDbType.VarChar);
+            prmFiltro3.Value = filtro3;
+            myCommand.Parameters.Add(prmFiltro3);
+
+            SqlParameter prmFiltro4 = new SqlParameter("@FILTRO4", SqlDbType.VarChar);
+            prmFiltro4.Value = filtro4;
+            myCommand.Parameters.Add(prmFiltro4);
+
+            int intReturb = -1;
+
+            try
+            {
+                myConnection.Open();
+                intReturb = myCommand.ExecuteNonQuery(); //devuelve el número de registros afectados en la bd
+                if (intReturb == 0)
+                {
+                    resultado = false;
+                    msg = "No se realizaron cambios en la base de datos...";
+                }
+                else
+                {
+                    resultado = true;
+                    msg = "Los datos se eliminaron satisfactoriamente...";
+                }
+            }
+            catch (SqlException er)
+            {
+                if (er.Number == 2627)
+                {
+                    msg = "Este registro de datos ya existe, no se realizó ningún cambio...";
+                }
+                else
+                {
+                    msg = er.Message;
+                }
+                numerr = er.Number;
+                resultado = false;
+            }
+            finally
+            {
+                myCommand.Dispose();
+                myConnection.Close();
+                myConnection.Dispose();
+            }
+            return intReturb;
+        }
     }
 }

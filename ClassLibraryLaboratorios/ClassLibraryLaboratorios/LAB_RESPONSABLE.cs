@@ -346,8 +346,8 @@ namespace ClassLibraryLaboratorios
                                     bitEstado_respo = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("bitEstado_respo"))) == true ? false : Convert.ToBoolean(reader1.GetValue(reader1.GetOrdinal("bitEstado_respo"))),
                                     dtFecha_log = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("dtFecha_log"))) == true ? DateTime.Now : Convert.ToDateTime(reader1.GetValue(reader1.GetOrdinal("dtFecha_log"))),
                                     strUser_log = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strUser_log"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strUser_log"))),
-                                    strObs1_respo = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("Responsable"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("Responsable"))),
-                                    strObs2_respo = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("IMAGEN_ALU"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("IMAGEN_ALU"))),
+                                    strObs1_respo = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strObs1_respo"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strObs1_respo"))),
+                                    strObs2_respo = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strObs2_respo"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strObs2_respo"))),
                                     bitObs1_respo = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("bitObs1_respo"))) == true ? false : Convert.ToBoolean(reader1.GetValue(reader1.GetOrdinal("bitObs1_respo"))),
                                     bitObs2_respo = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("bitObs2_respo"))) == true ? false : Convert.ToBoolean(reader1.GetValue(reader1.GetOrdinal("bitObs2_respo"))),
                                     decObs1_respo = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("decObs1_respo"))) == true ? 0 : Convert.ToDecimal(reader1.GetValue(reader1.GetOrdinal("decObs1_respo"))),
@@ -499,7 +499,7 @@ namespace ClassLibraryLaboratorios
             decimal _decObs2_respo,
             DateTime _dtObs1_respo,
             DateTime _dtObs2_respo
-        )
+            )
         {
             //Conexion a bd
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
@@ -637,7 +637,6 @@ namespace ClassLibraryLaboratorios
             prmSTRUSER_LOG.Value = miClass.strUser_log;
             myCommand.Parameters.Add(prmSTRUSER_LOG);
 
-
             int intReturb = -1;
 
             try
@@ -685,7 +684,7 @@ namespace ClassLibraryLaboratorios
             string _strTipo_respo,
             DateTime _dtFecha_log,
             string _strUser_log
-        )
+            )
         {
             //Conexion a bd
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
@@ -710,17 +709,13 @@ namespace ClassLibraryLaboratorios
             prmSTRTIPO_RESPO.Value = _strTipo_respo;
             myCommand.Parameters.Add(prmSTRTIPO_RESPO);
 
-
-
             SqlParameter prmDTFECHA_LOG = new SqlParameter("@dtFecha_log", SqlDbType.DateTime);
             prmDTFECHA_LOG.Value = _dtFecha_log;
             myCommand.Parameters.Add(prmDTFECHA_LOG);
 
             SqlParameter prmSTRUSER_LOG = new SqlParameter("@strUser_log", SqlDbType.NVarChar);
             prmSTRUSER_LOG.Value = _strUser_log;
-            myCommand.Parameters.Add(prmSTRUSER_LOG);
-
-            
+            myCommand.Parameters.Add(prmSTRUSER_LOG);            
 
             int intReturb = -1;
 
@@ -761,5 +756,73 @@ namespace ClassLibraryLaboratorios
             return intReturb;
         }
 
+        ///////////////// Método Delete /////////////////
+        public int DeleteLAB_RESPONSABLE(string comodin, string filtro1, string filtro2, string filtro3, string filtro4)
+        {
+            //Conexion a bd
+            SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
+            //conexion SP
+            SqlCommand myCommand = new SqlCommand("SIGUTC_DeleteLAB_RESPONSABLE", myConnection);
+            myCommand.CommandType = CommandType.StoredProcedure;
+
+            //Creacion de parametros que se envian al SP
+            SqlParameter prmComodin = new SqlParameter("@Comodin", SqlDbType.VarChar);
+            prmComodin.Value = comodin;
+            myCommand.Parameters.Add(prmComodin);
+
+            SqlParameter prmFiltro1 = new SqlParameter("@FILTRO1", SqlDbType.VarChar);
+            prmFiltro1.Value = filtro1;
+            myCommand.Parameters.Add(prmFiltro1);
+
+            SqlParameter prmFiltro2 = new SqlParameter("@FILTRO2", SqlDbType.VarChar);
+            prmFiltro2.Value = filtro2;
+            myCommand.Parameters.Add(prmFiltro2);
+
+            SqlParameter prmFiltro3 = new SqlParameter("@FILTRO3", SqlDbType.VarChar);
+            prmFiltro3.Value = filtro3;
+            myCommand.Parameters.Add(prmFiltro3);
+
+            SqlParameter prmFiltro4 = new SqlParameter("@FILTRO4", SqlDbType.VarChar);
+            prmFiltro4.Value = filtro4;
+            myCommand.Parameters.Add(prmFiltro4);
+
+            int intReturb = -1;
+
+            try
+            {
+                myConnection.Open();
+                intReturb = myCommand.ExecuteNonQuery(); //devuelve el número de registros afectados en la bd
+                if (intReturb == 0)
+                {
+                    resultado = false;
+                    msg = "No se realizaron cambios en la base de datos...";
+                }
+                else
+                {
+                    resultado = true;
+                    msg = "Los datos se eliminaron satisfactoriamente...";
+                }
+            }
+            catch (SqlException er)
+            {
+                if (er.Number == 2627)
+                {
+                    msg = "Este registro de datos ya existe, no se realizó ningún cambio...";
+                }
+                else
+                {
+                    msg = er.Message;
+                }
+                numerr = er.Number;
+                resultado = false;
+            }
+            finally
+            {
+                myCommand.Dispose();
+                myConnection.Close();
+                myConnection.Dispose();
+            }
+            return intReturb;
+        }
     }
 }
