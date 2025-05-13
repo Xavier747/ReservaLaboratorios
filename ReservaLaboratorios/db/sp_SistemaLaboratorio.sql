@@ -225,7 +225,7 @@ GO
 -- Author:  Desarrollo UTC
 -- Create date: 29/05/24
 -- =============================================
-CREATE PROCEDURE SIGUTC_GetSoftware
+create PROCEDURE SIGUTC_GetSoftware
 @Comodin VARCHAR(100)
 , @FILTRO1 VARCHAR(100)
 , @FILTRO2 VARCHAR(100)
@@ -262,11 +262,46 @@ BEGIN --SP
 		and strCod_Fac = @FILTRO1
 		and strCod_Sede = @FILTRO2
 		END
-	ELSE IF @Comodin = 'xLaboratorioSoftware'
+END
+
+-- =====SELECT==================================
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:  Desarrollo UTC
+-- Create date: 29/05/24
+-- =============================================
+CREATE PROCEDURE SIGUTC_GetLAB_LABSOFTWARE
+@Comodin VARCHAR(100)
+, @FILTRO1 VARCHAR(100)
+, @FILTRO2 VARCHAR(100)
+, @FILTRO3 VARCHAR(100)
+, @FILTRO4 VARCHAR(100)
+AS
+SET NOCOUNT OFF;
+BEGIN --SP
+	IF @Comodin = 'xLaboratorioSoftware'
 		BEGIN
-		SELECT labSof.strCod_labSoft
+		SELECT 
+		labSof.strCod_labSoft
+		, labSof.strCod_Sede
+		, labSof.strCod_Fac
 		, labSof.strCod_sof
-		, labSof.strCod_lab 
+		, labSof.strCod_lab
+		, labSof.dtFechaRegistro_labSoft
+		, labSof.bitEstado_labSoft
+		, labSof.dtFecha_log
+		, labSof.strUser_log
+		, labSof.strObs1_labSoft
+		, labSof.strObs2_labSoft
+		, labSof.bitObs1_labSoft
+		, labSof.bitObs2_labSoft
+		, labSof.decObs1_labSoft
+		, labSof.decObs2_labSoft
+		, labSof.dtObs1_labSoft
+		, labSof.dtObs2_labSoft
 		FROM LAB_LABORATORIOS lab
 		INNER JOIN LAB_LABSOFTWARE labSof
 		ON labSof.strCod_lab = lab.strCod_lab
@@ -275,7 +310,25 @@ BEGIN --SP
 		END
 	ELSE IF @Comodin = 'xEstadoLabSoft'
 		BEGIN
-		SELECT * FROM
+		SELECT
+		strCod_labSoft
+		, strCod_Sede
+		, strCod_Fac
+		, strCod_sof
+		, strCod_lab
+		, dtFechaRegistro_labSoft
+		, bitEstado_labSoft
+		, dtFecha_log
+		, strUser_log
+		, strObs1_labSoft
+		, strObs2_labSoft
+		, bitObs1_labSoft
+		, bitObs2_labSoft
+		, decObs1_labSoft
+		, decObs2_labSoft
+		, dtObs1_labSoft
+		, dtObs2_labSoft
+		FROM
 		LAB_LABSOFTWARE
 		WHERE bitEstado_labSoft = 0
 		AND strCod_lab = @FILTRO1
@@ -644,7 +697,26 @@ AS
 			lab.strNombre_lab LIKE '%' + @FILTRO1 + '%';
 			 
 		end*/
-		ELSE IF @Comodin = 'xLabExclusivo'
+		ELSE IF @Comodin = 'xCarreraLabExc'
+		BEGIN --xCarreraLabExc
+			SELECT * 
+			FROM LAB_EXCLUSIVO
+			WHERE strCod_Car = @FILTRO1
+			AND bitEstado_labEx = 1
+		END --xCarreraLabExc
+END --SP
+
+CREATE PROCEDURE SIGUTC_GetLAB_EXCLUSIVO
+@Comodin VARCHAR(100)
+, @FILTRO1 VARCHAR(100)
+, @FILTRO2 VARCHAR(100)
+, @FILTRO3 VARCHAR(100)
+, @FILTRO4 VARCHAR(100)
+
+AS
+ SET NOCOUNT OFF;
+ BEGIN --SP
+		IF @Comodin = 'xLabExclusivo'
 		BEGIN --xLabExclusivo
 			SELECT labExc.strCod_labEx
 			, car.strNombre_Car 
@@ -656,14 +728,7 @@ AS
 			WHERE lab.strCod_lab = @FILTRO1 
 			AND labExc.bitEstado_labEx = 1
 		END --xLabExclusivo
-		ELSE IF @Comodin = 'xCarreraLabExc'
-		BEGIN --xCarreraLabExc
-			SELECT * 
-			FROM LAB_EXCLUSIVO
-			WHERE strCod_Car = @FILTRO1
-			AND bitEstado_labEx = 1
-		END --xCarreraLabExc
-END --SP
+END
 
 -- =====UPDATE==================================
 SET ANSI_NULLS ON
