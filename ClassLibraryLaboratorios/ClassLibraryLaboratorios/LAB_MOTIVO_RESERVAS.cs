@@ -17,6 +17,7 @@ namespace ClassLibraryLaboratorios
             string _strCod_motRes,
             string _strNombre_motRes,
             DateTime _dtFechaRegistro_motRes,
+            string _strEstado_motRes,
             bool _bitEstado_motRes,
             DateTime _dtFecha_log,
             string _strUser_log,
@@ -32,6 +33,7 @@ namespace ClassLibraryLaboratorios
             strCod_motRes = _strCod_motRes;
             strNombre_motRes = _strNombre_motRes;
             dtFechaRegistro_motRes = _dtFechaRegistro_motRes;
+            strEstado_motRes = _strEstado_motRes;
             bitEstado_motRes = _bitEstado_motRes;
             dtFecha_log = _dtFecha_log;
             strUser_log = _strUser_log;
@@ -53,6 +55,7 @@ namespace ClassLibraryLaboratorios
         private string STRCOD_MOTRES;
         private string STRNOMBRE_MOTRES;
         private DateTime DTFECHAREGISTRO_MOTRES;
+        private string STRESTADO_MOTRES;
         private bool BITESTADO_MOTRES;
         private DateTime DTFECCHA_LOG;
         private string STRUSER_LOG;
@@ -139,6 +142,18 @@ namespace ClassLibraryLaboratorios
             set
             {
                 DTFECHAREGISTRO_MOTRES = value;
+            }
+        }
+
+        public string strEstado_motRes
+        {
+            get
+            {
+                return STRESTADO_MOTRES;
+            }
+            set
+            {
+                STRESTADO_MOTRES = value;
             }
         }
 
@@ -318,6 +333,7 @@ namespace ClassLibraryLaboratorios
                                     strCod_motRes = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strCod_motRes"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strCod_motRes"))),
                                     strNombre_motRes = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strNombre_motRes"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strNombre_motRes"))),
                                     dtFechaRegistro_motRes = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("dtFechaRegistro_motRes"))) == true ? DateTime.Now : Convert.ToDateTime(reader1.GetValue(reader1.GetOrdinal("dtFechaRegistro_motRes"))),
+                                    strEstado_motRes = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strEstado_motRes"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strEstado_motRes"))),
                                     bitEstado_motRes = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("bitEstado_motRes"))) == true ? false : Convert.ToBoolean(reader1.GetValue(reader1.GetOrdinal("bitEstado_motRes"))),
                                     dtFecha_log = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("dtFecha_log"))) == true ? DateTime.Now : Convert.ToDateTime(reader1.GetValue(reader1.GetOrdinal("dtFecha_log"))),
                                     strUser_log = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strUser_log"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strUser_log"))),
@@ -368,6 +384,10 @@ namespace ClassLibraryLaboratorios
             SqlParameter prmDTFECHAREGISTRO_MOTRES = new SqlParameter("@DTFECHAREGISTRO_MOTRES", SqlDbType.DateTime);
             prmDTFECHAREGISTRO_MOTRES.Value = miClass.dtFechaRegistro_motRes;
             myCommand.Parameters.Add(prmDTFECHAREGISTRO_MOTRES);
+
+            SqlParameter prmSTRESTADO_MOTRES = new SqlParameter("@STRESTADO_MOTRES", SqlDbType.NVarChar);
+            prmSTRESTADO_MOTRES.Value = miClass.strEstado_motRes;
+            myCommand.Parameters.Add(prmSTRESTADO_MOTRES);
 
             SqlParameter prmBITESTADO_MOTRES = new SqlParameter("@BITESTADO_MOTRES", SqlDbType.Bit);
             prmBITESTADO_MOTRES.Value = miClass.bitEstado_motRes;
@@ -476,6 +496,10 @@ namespace ClassLibraryLaboratorios
             prmDTFECHAREGISTRO_MOTRES.Value = _dtFechaRegistro_motRes;
             myCommand.Parameters.Add(prmDTFECHAREGISTRO_MOTRES);
 
+            SqlParameter prmSTRESTADO_MOTRES = new SqlParameter("@STRESTADO_MOTRES", SqlDbType.NVarChar);
+            prmSTRESTADO_MOTRES.Value = _strEstado_motRes;
+            myCommand.Parameters.Add(prmSTRESTADO_MOTRES);
+
             SqlParameter prmBITESTADO_MOTRES = new SqlParameter("@BITESTADO_MOTRES", SqlDbType.Bit);
             prmBITESTADO_MOTRES.Value = _bitEstado_motRes;
             myCommand.Parameters.Add(prmBITESTADO_MOTRES);
@@ -571,6 +595,10 @@ namespace ClassLibraryLaboratorios
             SqlParameter prmDTFECHAREGISTRO_MOTRES = new SqlParameter("@DTFECHAREGISTRO_MOTRES", SqlDbType.DateTime);
             prmDTFECHAREGISTRO_MOTRES.Value = miClass.dtFechaRegistro_motRes;
             myCommand.Parameters.Add(prmDTFECHAREGISTRO_MOTRES);
+
+            SqlParameter prmSTRESTADO_MOTRES = new SqlParameter("@STRESTADO_MOTRES", SqlDbType.NVarChar);
+            prmSTRESTADO_MOTRES.Value = miClass.strEstado_motRes;
+            myCommand.Parameters.Add(prmSTRESTADO_MOTRES);
 
             SqlParameter prmBITESTADO_MOTRES = new SqlParameter("@BITESTADO_MOTRES", SqlDbType.Bit);
             prmBITESTADO_MOTRES.Value = miClass.bitEstado_motRes;
@@ -687,6 +715,10 @@ namespace ClassLibraryLaboratorios
             SqlParameter prmDTFECHAREGISTRO_MOTRES = new SqlParameter("@DTFECHAREGISTRO_MOTRES", SqlDbType.DateTime);
             prmDTFECHAREGISTRO_MOTRES.Value = _dtFechaRegistro_motRes;
             myCommand.Parameters.Add(prmDTFECHAREGISTRO_MOTRES);
+
+            SqlParameter prmSTRESTADO_MOTRES = new SqlParameter("@STRESTADO_MOTRES", SqlDbType.NVarChar);
+            prmSTRESTADO_MOTRES.Value = _strEstado_motRes;
+            myCommand.Parameters.Add(prmSTRESTADO_MOTRES);
 
             SqlParameter prmBITESTADO_MOTRES = new SqlParameter("@BITESTADO_MOTRES", SqlDbType.Bit);
             prmBITESTADO_MOTRES.Value = _bitEstado_motRes;
@@ -841,13 +873,3 @@ namespace ClassLibraryLaboratorios
     }
 
 }
-
-
-
-
-
-
-
-
-
-
