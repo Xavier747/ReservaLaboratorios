@@ -468,6 +468,7 @@ namespace ClassLibraryLaboratorios
               string _strCod_motRes,
               string _strNombre_motRes,
               DateTime _dtFechaRegistro_motRes,
+              string _strEstado_motRes,
               bool _bitEstado_motRes,
               DateTime _dtFecha_log,
               string _strUser_log,
@@ -592,17 +593,9 @@ namespace ClassLibraryLaboratorios
             prmSTRNOMBRE_MOTRES.Value = miClass.strNombre_motRes;
             myCommand.Parameters.Add(prmSTRNOMBRE_MOTRES);
 
-            SqlParameter prmDTFECHAREGISTRO_MOTRES = new SqlParameter("@DTFECHAREGISTRO_MOTRES", SqlDbType.DateTime);
-            prmDTFECHAREGISTRO_MOTRES.Value = miClass.dtFechaRegistro_motRes;
-            myCommand.Parameters.Add(prmDTFECHAREGISTRO_MOTRES);
-
             SqlParameter prmSTRESTADO_MOTRES = new SqlParameter("@STRESTADO_MOTRES", SqlDbType.NVarChar);
             prmSTRESTADO_MOTRES.Value = miClass.strEstado_motRes;
             myCommand.Parameters.Add(prmSTRESTADO_MOTRES);
-
-            SqlParameter prmBITESTADO_MOTRES = new SqlParameter("@BITESTADO_MOTRES", SqlDbType.Bit);
-            prmBITESTADO_MOTRES.Value = miClass.bitEstado_motRes;
-            myCommand.Parameters.Add(prmBITESTADO_MOTRES);
 
             SqlParameter prmDTFECHA_LOG = new SqlParameter("@DTFECHA_LOG", SqlDbType.DateTime);
             prmDTFECHA_LOG.Value = miClass.dtFecha_log;
@@ -611,38 +604,6 @@ namespace ClassLibraryLaboratorios
             SqlParameter prmSTRUSER_LOG = new SqlParameter("@STRUSER_LOG", SqlDbType.NVarChar);
             prmSTRUSER_LOG.Value = miClass.strUser_log;
             myCommand.Parameters.Add(prmSTRUSER_LOG);
-
-            SqlParameter prmSTROBS1_LAB = new SqlParameter("@STROBS1_LAB", SqlDbType.NVarChar);
-            prmSTROBS1_LAB.Value = miClass.strObs1_lab;
-            myCommand.Parameters.Add(prmSTROBS1_LAB);
-
-            SqlParameter prmSTROBS2_LAB = new SqlParameter("@STROBS2_LAB", SqlDbType.NVarChar);
-            prmSTROBS2_LAB.Value = miClass.strObs2_lab;
-            myCommand.Parameters.Add(prmSTROBS2_LAB);
-
-            SqlParameter prmBITOBS1_LAB = new SqlParameter("@BITOBS1_LAB", SqlDbType.Bit);
-            prmBITOBS1_LAB.Value = miClass.bitObs1_lab;
-            myCommand.Parameters.Add(prmBITOBS1_LAB);
-
-            SqlParameter prmBITOBS2_LAB = new SqlParameter("@BITOBS2_LAB", SqlDbType.Bit);
-            prmBITOBS2_LAB.Value = miClass.bitObs2_lab;
-            myCommand.Parameters.Add(prmBITOBS2_LAB);
-
-            SqlParameter prmDECOBS1_LAB = new SqlParameter("@DECOBS1_LAB", SqlDbType.Decimal);
-            prmDECOBS1_LAB.Value = miClass.decObs1_lab;
-            myCommand.Parameters.Add(prmDECOBS1_LAB);
-
-            SqlParameter prmDECOBS2_LAB = new SqlParameter("@DECOBS2_LAB", SqlDbType.Decimal);
-            prmDECOBS2_LAB.Value = miClass.decObs2_lab;
-            myCommand.Parameters.Add(prmDECOBS2_LAB);
-
-            SqlParameter prmDTOBS1_LAB = new SqlParameter("@DTOBS1_LAB", SqlDbType.DateTime);
-            prmDTOBS1_LAB.Value = miClass.dtObs1_lab;
-            myCommand.Parameters.Add(prmDTOBS1_LAB);
-
-            SqlParameter prmDTOBS2_LAB = new SqlParameter("@DTOBS2_LAB", SqlDbType.DateTime);
-            prmDTOBS2_LAB.Value = miClass.dtObs2_lab;
-            myCommand.Parameters.Add(prmDTOBS2_LAB);
 
             int intReturn = -1;
             try
@@ -687,18 +648,10 @@ namespace ClassLibraryLaboratorios
         public int UpdateLAB_MOTIVO_RESERVAS(
             string _strCod_motRes,
             string _strNombre_motRes,
-            DateTime _dtFechaRegistro_motRes,
-            bool _bitEstado_motRes,
+            string _strEstado_motRes,
             DateTime _dtFecha_log,
-            string _strUser_log,
-            string _strObs1_lab,
-            string _strObs2_lab,
-            bool _bitObs1_lab,
-            bool _bitObs2_lab,
-            decimal _decObs1_lab,
-            decimal _decObs2_lab,
-            DateTime _dtObs1_lab,
-            DateTime _dtObs2_lab)
+            string _strUser_log
+            )
         {
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
             SqlCommand myCommand = new SqlCommand("SIGUTC_UpdateLAB_MOTIVO_RESERVAS", myConnection);
@@ -712,17 +665,9 @@ namespace ClassLibraryLaboratorios
             prmSTRNOMBRE_MOTRES.Value = _strNombre_motRes;
             myCommand.Parameters.Add(prmSTRNOMBRE_MOTRES);
 
-            SqlParameter prmDTFECHAREGISTRO_MOTRES = new SqlParameter("@DTFECHAREGISTRO_MOTRES", SqlDbType.DateTime);
-            prmDTFECHAREGISTRO_MOTRES.Value = _dtFechaRegistro_motRes;
-            myCommand.Parameters.Add(prmDTFECHAREGISTRO_MOTRES);
-
             SqlParameter prmSTRESTADO_MOTRES = new SqlParameter("@STRESTADO_MOTRES", SqlDbType.NVarChar);
             prmSTRESTADO_MOTRES.Value = _strEstado_motRes;
             myCommand.Parameters.Add(prmSTRESTADO_MOTRES);
-
-            SqlParameter prmBITESTADO_MOTRES = new SqlParameter("@BITESTADO_MOTRES", SqlDbType.Bit);
-            prmBITESTADO_MOTRES.Value = _bitEstado_motRes;
-            myCommand.Parameters.Add(prmBITESTADO_MOTRES);
 
             SqlParameter prmDTFECHA_LOG = new SqlParameter("@DTFECHA_LOG", SqlDbType.DateTime);
             prmDTFECHA_LOG.Value = _dtFecha_log;
@@ -731,38 +676,6 @@ namespace ClassLibraryLaboratorios
             SqlParameter prmSTRUSER_LOG = new SqlParameter("@STRUSER_LOG", SqlDbType.NVarChar);
             prmSTRUSER_LOG.Value = _strUser_log;
             myCommand.Parameters.Add(prmSTRUSER_LOG);
-
-            SqlParameter prmSTROBS1_LAB = new SqlParameter("@STROBS1_LAB", SqlDbType.NVarChar);
-            prmSTROBS1_LAB.Value = _strObs1_lab;
-            myCommand.Parameters.Add(prmSTROBS1_LAB);
-
-            SqlParameter prmSTROBS2_LAB = new SqlParameter("@STROBS2_LAB", SqlDbType.NVarChar);
-            prmSTROBS2_LAB.Value = _strObs2_lab;
-            myCommand.Parameters.Add(prmSTROBS2_LAB);
-
-            SqlParameter prmBITOBS1_LAB = new SqlParameter("@BITOBS1_LAB", SqlDbType.Bit);
-            prmBITOBS1_LAB.Value = _bitObs1_lab;
-            myCommand.Parameters.Add(prmBITOBS1_LAB);
-
-            SqlParameter prmBITOBS2_LAB = new SqlParameter("@BITOBS2_LAB", SqlDbType.Bit);
-            prmBITOBS2_LAB.Value = _bitObs2_lab;
-            myCommand.Parameters.Add(prmBITOBS2_LAB);
-
-            SqlParameter prmDECOBS1_LAB = new SqlParameter("@DECOBS1_LAB", SqlDbType.Decimal);
-            prmDECOBS1_LAB.Value = _decObs1_lab;
-            myCommand.Parameters.Add(prmDECOBS1_LAB);
-
-            SqlParameter prmDECOBS2_LAB = new SqlParameter("@DECOBS2_LAB", SqlDbType.Decimal);
-            prmDECOBS2_LAB.Value = _decObs2_lab;
-            myCommand.Parameters.Add(prmDECOBS2_LAB);
-
-            SqlParameter prmDTOBS1_LAB = new SqlParameter("@DTOBS1_LAB", SqlDbType.DateTime);
-            prmDTOBS1_LAB.Value = _dtObs1_lab;
-            myCommand.Parameters.Add(prmDTOBS1_LAB);
-
-            SqlParameter prmDTOBS2_LAB = new SqlParameter("@DTOBS2_LAB", SqlDbType.DateTime);
-            prmDTOBS2_LAB.Value = _dtObs2_lab;
-            myCommand.Parameters.Add(prmDTOBS2_LAB);
 
             int intReturn = -1;
 
