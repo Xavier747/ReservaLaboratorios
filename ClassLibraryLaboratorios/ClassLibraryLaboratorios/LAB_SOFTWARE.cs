@@ -627,7 +627,7 @@ namespace ClassLibraryLaboratorios
             {
                 if (er.Number == 2627)
                 {
-                    msg = "Este registro de datos ya existe, no se realizó ningún cambio...";
+                    msg = "Los datos se registraron satisfactoriamente...";
                 }
                 else
                 {

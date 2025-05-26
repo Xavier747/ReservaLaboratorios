@@ -44,7 +44,7 @@
     <Compile Include="LAB_EXCLUSIVO.cs" />
     <Compile Include="LAB_LABORATORIOS.cs" />
     <Compile Include="LAB_LABSOFTWARE.cs" />
-    <Compile Include="LAB_MOTIVO_RESERVAS.cs" />
+    <Compile Include="LAB_RESERSOFTWARE.cs" />
     <Compile Include="LAB_RESERVA.cs" />
     <Compile Include="LAB_RESPONSABLE.cs" />
     <Compile Include="LAB_SOFTWARE.cs" />
