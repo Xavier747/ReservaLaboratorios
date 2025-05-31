@@ -360,61 +360,62 @@ namespace ClassLibraryLaboratorios
             myCommand.CommandType = CommandType.StoredProcedure;
 
             //Creacion de parametros que se envian al SP
-            SqlParameter prmSTRCOD_TIPOLAB = new SqlParameter("@strCod_tipoLab", SqlDbType.NVarChar);
+            SqlParameter prmSTRCOD_TIPOLAB = new SqlParameter("@STRCOD_TIPOLAB", SqlDbType.NVarChar);
             prmSTRCOD_TIPOLAB.Value = miClass.strCod_tipoLab;
             myCommand.Parameters.Add(prmSTRCOD_TIPOLAB);
 
-            SqlParameter prmSTRNOMBRE_TIPOLAB = new SqlParameter("@strNombre_tipoLab", SqlDbType.NVarChar);
+            SqlParameter prmSTRNOMBRE_TIPOLAB = new SqlParameter("@STRNOMBRE_TIPOLAB", SqlDbType.NVarChar);
             prmSTRNOMBRE_TIPOLAB.Value = miClass.strNombre_tipoLab;
             myCommand.Parameters.Add(prmSTRNOMBRE_TIPOLAB);
 
-            SqlParameter prmDTFECHAREGISTRO_TIPOLAB = new SqlParameter("@dtFechaRegistro_tipoLab", SqlDbType.DateTime);
+            SqlParameter prmDTFECHAREGISTRO_TIPOLAB = new SqlParameter("@DTFECHAREGISTRO_TIPOLAB", SqlDbType.DateTime);
             prmDTFECHAREGISTRO_TIPOLAB.Value = miClass.dtFechaRegistro_tipoLab;
             myCommand.Parameters.Add(prmDTFECHAREGISTRO_TIPOLAB);
 
-            SqlParameter prmBITESTADO_TIPOLAB = new SqlParameter("@bitEstado_tipoLab", SqlDbType.Bit);
+            SqlParameter prmBITESTADO_TIPOLAB = new SqlParameter("@BITESTADO_TIPOLAB", SqlDbType.Bit);
             prmBITESTADO_TIPOLAB.Value = miClass.bitEstado_tipoLab;
             myCommand.Parameters.Add(prmBITESTADO_TIPOLAB);
 
-            SqlParameter prmDTFECHA_LOG = new SqlParameter("@dtFecha_log", SqlDbType.DateTime);
+            SqlParameter prmDTFECHA_LOG = new SqlParameter("@DTFECHA_LOG", SqlDbType.DateTime);
             prmDTFECHA_LOG.Value = miClass.dtFecha_log;
             myCommand.Parameters.Add(prmDTFECHA_LOG);
 
-            SqlParameter prmSTRUSER_LOG = new SqlParameter("@strUser_log", SqlDbType.NVarChar);
+            SqlParameter prmSTRUSER_LOG = new SqlParameter("@STRUSER_LOG", SqlDbType.NVarChar);
             prmSTRUSER_LOG.Value = miClass.strUser_log;
             myCommand.Parameters.Add(prmSTRUSER_LOG);
 
-            SqlParameter prmSTROBS1_TIPOLAB = new SqlParameter("@strObs1_tipoLab", SqlDbType.NVarChar);
+            SqlParameter prmSTROBS1_TIPOLAB = new SqlParameter("@STROBS1_TIPOLAB", SqlDbType.NVarChar);
             prmSTROBS1_TIPOLAB.Value = miClass.strObs1_tipoLab;
             myCommand.Parameters.Add(prmSTROBS1_TIPOLAB);
 
-            SqlParameter prmSTROBS2_TIPOLAB = new SqlParameter("@strObs2_tipoLab", SqlDbType.NVarChar);
+            SqlParameter prmSTROBS2_TIPOLAB = new SqlParameter("@STROBS2_TIPOLAB", SqlDbType.NVarChar);
             prmSTROBS2_TIPOLAB.Value = miClass.strObs2_tipoLab;
             myCommand.Parameters.Add(prmSTROBS2_TIPOLAB);
 
-            SqlParameter prmBITOBS1_TIPOLAB = new SqlParameter("@bitObs1_tipoLab", SqlDbType.Bit);
+            SqlParameter prmBITOBS1_TIPOLAB = new SqlParameter("@BITOBS1_TIPOLAB", SqlDbType.Bit);
             prmBITOBS1_TIPOLAB.Value = miClass.bitObs1_tipoLab;
             myCommand.Parameters.Add(prmBITOBS1_TIPOLAB);
 
-            SqlParameter prmBITOBS2_TIPOLAB = new SqlParameter("@bitObs2_tipoLab", SqlDbType.Bit);
+            SqlParameter prmBITOBS2_TIPOLAB = new SqlParameter("@BITOBS2_TIPOLAB", SqlDbType.Bit);
             prmBITOBS2_TIPOLAB.Value = miClass.bitObs2_tipoLab;
             myCommand.Parameters.Add(prmBITOBS2_TIPOLAB);
 
-            SqlParameter prmDECOBS1_TIPOLAB = new SqlParameter("@decObs1_tipoLab", SqlDbType.Decimal);
+            SqlParameter prmDECOBS1_TIPOLAB = new SqlParameter("@DECOBS1_TIPOLAB", SqlDbType.Decimal);
             prmDECOBS1_TIPOLAB.Value = miClass.decObs1_tipoLab;
             myCommand.Parameters.Add(prmDECOBS1_TIPOLAB);
 
-            SqlParameter prmDECOBS2_TIPOLAB = new SqlParameter("@decObs2_tipoLab", SqlDbType.Decimal);
+            SqlParameter prmDECOBS2_TIPOLAB = new SqlParameter("@DECOBS2_TIPOLAB", SqlDbType.Decimal);
             prmDECOBS2_TIPOLAB.Value = miClass.decObs2_tipoLab;
             myCommand.Parameters.Add(prmDECOBS2_TIPOLAB);
 
-            SqlParameter prmDTOBS1_TIPOLAB = new SqlParameter("@dtObs1_tipoLab", SqlDbType.DateTime);
+            SqlParameter prmDTOBS1_TIPOLAB = new SqlParameter("@DTOBS1_TIPOLAB", SqlDbType.DateTime);
             prmDTOBS1_TIPOLAB.Value = miClass.dtObs1_tipoLab;
             myCommand.Parameters.Add(prmDTOBS1_TIPOLAB);
 
-            SqlParameter prmDTOBS2_TIPOLAB = new SqlParameter("@dtObs2_tipoLab", SqlDbType.DateTime);
+            SqlParameter prmDTOBS2_TIPOLAB = new SqlParameter("@DTOBS2_TIPOLAB", SqlDbType.DateTime);
             prmDTOBS2_TIPOLAB.Value = miClass.dtObs2_tipoLab;
             myCommand.Parameters.Add(prmDTOBS2_TIPOLAB);
+
 
             int intReturb = -1;
             try
@@ -471,7 +472,8 @@ namespace ClassLibraryLaboratorios
             myCommand.CommandType = CommandType.StoredProcedure;
 
             //Creacion de parametros que se envian al SP
-            SqlParameter prmSTRCOD_TIPOLAB = new SqlParameter("@strCod_tipoLab", SqlDbType.NVarChar);
+
+            SqlParameter prmSTRCOD_TIPOLAB = new SqlParameter("@STRCOD_TIPOLAB", SqlDbType.NVarChar);
             prmSTRCOD_TIPOLAB.Value = _strCod_tipoLab;
             myCommand.Parameters.Add(prmSTRCOD_TIPOLAB);
 
@@ -479,51 +481,51 @@ namespace ClassLibraryLaboratorios
             prmSTRNOMBRE_TIPOLAB.Value = _strNombre_tipoLab;
             myCommand.Parameters.Add(prmSTRNOMBRE_TIPOLAB);
 
-            SqlParameter prmDTFECHAREGISTRO_TIPOLAB = new SqlParameter("@dtFechaRegistro_tipoLab", SqlDbType.DateTime);
+            SqlParameter prmDTFECHAREGISTRO_TIPOLAB = new SqlParameter("@DTFECHAREGISTRO_TIPOLAB", SqlDbType.DateTime);
             prmDTFECHAREGISTRO_TIPOLAB.Value = _dtFechaRegistro_tipoLab;
             myCommand.Parameters.Add(prmDTFECHAREGISTRO_TIPOLAB);
 
-            SqlParameter prmBITESTADO_TIPOLAB = new SqlParameter("@bitEstado_tipoLab", SqlDbType.Bit);
+            SqlParameter prmBITESTADO_TIPOLAB = new SqlParameter("@BITESTADO_TIPOLAB", SqlDbType.Bit);
             prmBITESTADO_TIPOLAB.Value = _bitEstado_tipoLab;
             myCommand.Parameters.Add(prmBITESTADO_TIPOLAB);
 
-            SqlParameter prmDTFECHA_LOG = new SqlParameter("@dtFecha_log", SqlDbType.DateTime);
+            SqlParameter prmDTFECHA_LOG = new SqlParameter("@DTFECHA_LOG", SqlDbType.DateTime);
             prmDTFECHA_LOG.Value = _dtFecha_log;
             myCommand.Parameters.Add(prmDTFECHA_LOG);
 
-            SqlParameter prmSTRUSER_LOG = new SqlParameter("@strUser_log", SqlDbType.NVarChar);
+            SqlParameter prmSTRUSER_LOG = new SqlParameter("@STRUSER_LOG", SqlDbType.NVarChar);
             prmSTRUSER_LOG.Value = _strUser_log;
             myCommand.Parameters.Add(prmSTRUSER_LOG);
 
-            SqlParameter prmSTROBS1_TIPOLAB = new SqlParameter("@strObs1_tipoLab", SqlDbType.NVarChar);
+            SqlParameter prmSTROBS1_TIPOLAB = new SqlParameter("@STROBS1_TIPOLAB", SqlDbType.NVarChar);
             prmSTROBS1_TIPOLAB.Value = _strObs1_tipoLab;
             myCommand.Parameters.Add(prmSTROBS1_TIPOLAB);
 
-            SqlParameter prmSTROBS2_TIPOLAB = new SqlParameter("@strObs2_tipoLab", SqlDbType.NVarChar);
+            SqlParameter prmSTROBS2_TIPOLAB = new SqlParameter("@STROBS2_TIPOLAB", SqlDbType.NVarChar);
             prmSTROBS2_TIPOLAB.Value = _strObs2_tipoLab;
             myCommand.Parameters.Add(prmSTROBS2_TIPOLAB);
 
-            SqlParameter prmBITOBS1_TIPOLAB = new SqlParameter("@bitObs1_tipoLab", SqlDbType.Bit);
+            SqlParameter prmBITOBS1_TIPOLAB = new SqlParameter("@BITOBS1_TIPOLAB", SqlDbType.Bit);
             prmBITOBS1_TIPOLAB.Value = _bitObs1_tipoLab;
             myCommand.Parameters.Add(prmBITOBS1_TIPOLAB);
 
-            SqlParameter prmBITOBS2_TIPOLAB = new SqlParameter("@bitObs2_tipoLab", SqlDbType.Bit);
+            SqlParameter prmBITOBS2_TIPOLAB = new SqlParameter("@BITOBS2_TIPOLAB", SqlDbType.Bit);
             prmBITOBS2_TIPOLAB.Value = _bitObs2_tipoLab;
             myCommand.Parameters.Add(prmBITOBS2_TIPOLAB);
 
-            SqlParameter prmDECOBS1_TIPOLAB = new SqlParameter("@decObs1_tipoLab", SqlDbType.Decimal);
+            SqlParameter prmDECOBS1_TIPOLAB = new SqlParameter("@DECOBS1_TIPOLAB", SqlDbType.Decimal);
             prmDECOBS1_TIPOLAB.Value = _decObs1_tipoLab;
             myCommand.Parameters.Add(prmDECOBS1_TIPOLAB);
 
-            SqlParameter prmDECOBS2_TIPOLAB = new SqlParameter("@decObs2_tipoLab", SqlDbType.Decimal);
+            SqlParameter prmDECOBS2_TIPOLAB = new SqlParameter("@DECOBS2_TIPOLAB", SqlDbType.Decimal);
             prmDECOBS2_TIPOLAB.Value = _decObs2_tipoLab;
             myCommand.Parameters.Add(prmDECOBS2_TIPOLAB);
 
-            SqlParameter prmDTOBS1_TIPOLAB = new SqlParameter("@dtObs1_tipoLab", SqlDbType.DateTime);
+            SqlParameter prmDTOBS1_TIPOLAB = new SqlParameter("@DTOBS1_TIPOLAB", SqlDbType.DateTime);
             prmDTOBS1_TIPOLAB.Value = _dtObs1_tipoLab;
             myCommand.Parameters.Add(prmDTOBS1_TIPOLAB);
 
-            SqlParameter prmDTOBS2_TIPOLAB = new SqlParameter("@dtObs2_tipoLab", SqlDbType.DateTime);
+            SqlParameter prmDTOBS2_TIPOLAB = new SqlParameter("@DTOBS2_TIPOLAB", SqlDbType.DateTime);
             prmDTOBS2_TIPOLAB.Value = _dtObs2_tipoLab;
             myCommand.Parameters.Add(prmDTOBS2_TIPOLAB);
 
@@ -569,23 +571,27 @@ namespace ClassLibraryLaboratorios
             myCommand.CommandType = CommandType.StoredProcedure;
 
             //Creacion de parametros que se envian al SP
-            SqlParameter prmSTRCOD_TIPOLAB = new SqlParameter("@strCod_tipoLab", SqlDbType.NVarChar);
+
+            SqlParameter prmSTRCOD_TIPOLAB = new SqlParameter("@STRCOD_TIPOLAB", SqlDbType.NVarChar);
             prmSTRCOD_TIPOLAB.Value = miClass.strCod_tipoLab;
             myCommand.Parameters.Add(prmSTRCOD_TIPOLAB);
 
-            SqlParameter prmSTRNOMBRE_TIPOLAB = new SqlParameter("@strNombre_tipoLab", SqlDbType.NVarChar);
+            SqlParameter prmSTRNOMBRE_TIPOLAB = new SqlParameter("@STRNOMBRE_TIPOLAB", SqlDbType.NVarChar);
             prmSTRNOMBRE_TIPOLAB.Value = miClass.strNombre_tipoLab;
             myCommand.Parameters.Add(prmSTRNOMBRE_TIPOLAB);
 
-            SqlParameter prmDTFECHA_LOG = new SqlParameter("@dtFecha_log", SqlDbType.DateTime);
+            SqlParameter prmBITESTADO_TIPOLAB = new SqlParameter("@BITESTADO_TIPOLAB", SqlDbType.Bit);
+            prmBITESTADO_TIPOLAB.Value = miClass.bitEstado_tipoLab;
+            myCommand.Parameters.Add(prmBITESTADO_TIPOLAB);
+
+            SqlParameter prmDTFECHA_LOG = new SqlParameter("@DTFECHA_LOG", SqlDbType.DateTime);
             prmDTFECHA_LOG.Value = miClass.dtFecha_log;
             myCommand.Parameters.Add(prmDTFECHA_LOG);
 
-            SqlParameter prmSTRUSER_LOG = new SqlParameter("@strUser_log", SqlDbType.NVarChar);
+            SqlParameter prmSTRUSER_LOG = new SqlParameter("@STRUSER_LOG", SqlDbType.NVarChar);
             prmSTRUSER_LOG.Value = miClass.strUser_log;
             myCommand.Parameters.Add(prmSTRUSER_LOG);
 
-           
 
             int intReturb = -1;
             try
@@ -630,7 +636,8 @@ namespace ClassLibraryLaboratorios
             string _strCod_tipoLab,
             string _strNombre_tipoLab,
             DateTime _dtFecha_log,
-            string _strUser_log
+            string _strUser_log,
+            bool _bitEstado_tipoLab
         )
         {
             //Conexion a bd
@@ -640,21 +647,27 @@ namespace ClassLibraryLaboratorios
             myCommand.CommandType = CommandType.StoredProcedure;
 
             //Creacion de parametros que se envian al SP
-            SqlParameter prmSTRCOD_TIPOLAB = new SqlParameter("@strCod_tipoLab", SqlDbType.NVarChar);
+            SqlParameter prmSTRCOD_TIPOLAB = new SqlParameter("@STRCOD_TIPOLAB", SqlDbType.NVarChar);
             prmSTRCOD_TIPOLAB.Value = _strCod_tipoLab;
             myCommand.Parameters.Add(prmSTRCOD_TIPOLAB);
 
-            SqlParameter prmSTRNOMBRE_TIPOLAB = new SqlParameter("@strNombre_tipoLab", SqlDbType.NVarChar);
+            SqlParameter prmSTRNOMBRE_TIPOLAB = new SqlParameter("@STRNOMBRE_TIPOLAB", SqlDbType.NVarChar);
             prmSTRNOMBRE_TIPOLAB.Value = _strNombre_tipoLab;
             myCommand.Parameters.Add(prmSTRNOMBRE_TIPOLAB);
 
-            SqlParameter prmDTFECHA_LOG = new SqlParameter("@dtFecha_log", SqlDbType.DateTime);
+            SqlParameter prmBITESTADO_TIPOLAB = new SqlParameter("@BITESTADO_TIPOLAB", SqlDbType.Bit);
+            prmBITESTADO_TIPOLAB.Value = _bitEstado_tipoLab;
+            myCommand.Parameters.Add(prmBITESTADO_TIPOLAB);
+
+            SqlParameter prmDTFECHA_LOG = new SqlParameter("@DTFECHA_LOG", SqlDbType.DateTime);
             prmDTFECHA_LOG.Value = _dtFecha_log;
             myCommand.Parameters.Add(prmDTFECHA_LOG);
 
-            SqlParameter prmSTRUSER_LOG = new SqlParameter("@strUser_log", SqlDbType.NVarChar);
+            SqlParameter prmSTRUSER_LOG = new SqlParameter("@STRUSER_LOG", SqlDbType.NVarChar);
             prmSTRUSER_LOG.Value = _strUser_log;
             myCommand.Parameters.Add(prmSTRUSER_LOG);
+
+
 
             int intReturb = -1;
 
@@ -705,7 +718,7 @@ namespace ClassLibraryLaboratorios
             SqlCommand myCommand = new SqlCommand("SIGUTC_DelLAB_TIPO", myConnection);
             myCommand.CommandType = CommandType.StoredProcedure;
 
-            SqlParameter prmComodin = new SqlParameter("@Comodin", SqlDbType.VarChar);
+            SqlParameter prmComodin = new SqlParameter("@COMODIN", SqlDbType.VarChar);
             prmComodin.Value = comodin;
             myCommand.Parameters.Add(prmComodin);
 
@@ -745,7 +758,7 @@ namespace ClassLibraryLaboratorios
             {
                 if (er.Number == 2627)
                 {
-                    msg = "Este registro de datos ya existe, no se realizó ningún cambio...";
+                    msg = "***Este registro de datos ya existe, no se realizó ningún cambio...";
                 }
                 else
                 {

@@ -768,14 +768,6 @@ namespace ClassLibraryLaboratorios
             prmSTRCOD_LAB.Value = miClass.strCod_lab;
             myCommand.Parameters.Add(prmSTRCOD_LAB);
 
-            SqlParameter prmSTRCOD_SEDE = new SqlParameter("@STRCOD_SEDE", SqlDbType.NVarChar);
-            prmSTRCOD_SEDE.Value = miClass.strCod_Sede;
-            myCommand.Parameters.Add(prmSTRCOD_SEDE);
-
-            SqlParameter prmSTRCOD_FAC = new SqlParameter("@STRCOD_FAC", SqlDbType.NVarChar);
-            prmSTRCOD_FAC.Value = miClass.strCod_Fac;
-            myCommand.Parameters.Add(prmSTRCOD_FAC);
-
             SqlParameter prmSTRCOD_TIPOLAB = new SqlParameter("@STRCOD_TIPOLAB", SqlDbType.NVarChar);
             prmSTRCOD_TIPOLAB.Value = miClass.strCod_tipoLab;
             myCommand.Parameters.Add(prmSTRCOD_TIPOLAB);
@@ -803,7 +795,6 @@ namespace ClassLibraryLaboratorios
             SqlParameter prmSTRFOTOGRAFIA2_LAB = new SqlParameter("@STRFOTOGRAFIA2_LAB", SqlDbType.NVarChar);
             prmSTRFOTOGRAFIA2_LAB.Value = miClass.strFotografia2_lab;
             myCommand.Parameters.Add(prmSTRFOTOGRAFIA2_LAB);
-
 
             SqlParameter prmDTFECHA_LOG = new SqlParameter("@DTFECHA_LOG", SqlDbType.DateTime);
             prmDTFECHA_LOG.Value = miClass.dtFecha_log;
@@ -856,8 +847,6 @@ namespace ClassLibraryLaboratorios
         ///////////////// Método Update SobreCargado  /////////////////
         public int UpdateLAB_LABORATORIOS(
             string _strCod_lab,
-            string _strCod_Sede,
-            string _strCod_Fac,
             string _strCod_tipoLab,
             string _strCod_areac,
             string _strNombre_lab,
@@ -875,14 +864,6 @@ namespace ClassLibraryLaboratorios
             SqlParameter prmSTRCOD_LAB = new SqlParameter("@STRCOD_LAB", SqlDbType.NVarChar);
             prmSTRCOD_LAB.Value = _strCod_lab;
             myCommand.Parameters.Add(prmSTRCOD_LAB);
-
-            SqlParameter prmSTRCOD_SEDE = new SqlParameter("@STRCOD_SEDE", SqlDbType.NVarChar);
-            prmSTRCOD_SEDE.Value = _strCod_Sede;
-            myCommand.Parameters.Add(prmSTRCOD_SEDE);
-
-            SqlParameter prmSTRCOD_FAC = new SqlParameter("@STRCOD_FAC", SqlDbType.NVarChar);
-            prmSTRCOD_FAC.Value = _strCod_Fac;
-            myCommand.Parameters.Add(prmSTRCOD_FAC);
 
             SqlParameter prmSTRCOD_TIPOLAB = new SqlParameter("@STRCOD_TIPOLAB", SqlDbType.NVarChar);
             prmSTRCOD_TIPOLAB.Value = _strCod_tipoLab;

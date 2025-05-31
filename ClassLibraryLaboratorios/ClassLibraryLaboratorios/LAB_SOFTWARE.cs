@@ -627,7 +627,7 @@ namespace ClassLibraryLaboratorios
             {
                 if (er.Number == 2627)
                 {
-                    msg = "Los datos se registraron satisfactoriamente...";
+                    msg = "Este registro de datos ya existe, no se realizó ningún cambio...";
                 }
                 else
                 {
@@ -820,14 +820,6 @@ namespace ClassLibraryLaboratorios
             prmSTRCOD_SOF.Value = miClass.strCod_sof;
             myCommand.Parameters.Add(prmSTRCOD_SOF);
 
-            SqlParameter prmSTRCOD_SEDE = new SqlParameter("@STRCOD_SEDE", SqlDbType.NVarChar);
-            prmSTRCOD_SEDE.Value = miClass.strCod_Sede;
-            myCommand.Parameters.Add(prmSTRCOD_SEDE);
-
-            SqlParameter prmSTRCOD_FAC = new SqlParameter("@STRCOD_FAC", SqlDbType.NVarChar);
-            prmSTRCOD_FAC.Value = miClass.strCod_Fac;
-            myCommand.Parameters.Add(prmSTRCOD_FAC);
-
             SqlParameter prmSTRNOMBRE_SOF = new SqlParameter("@STRNOMBRE_SOF", SqlDbType.NVarChar);
             prmSTRNOMBRE_SOF.Value = miClass.strNombre_sof;
             myCommand.Parameters.Add(prmSTRNOMBRE_SOF);
@@ -863,6 +855,10 @@ namespace ClassLibraryLaboratorios
             SqlParameter prmSTRURL_SOF = new SqlParameter("@STRURL_SOF", SqlDbType.NVarChar);
             prmSTRURL_SOF.Value = miClass.strUrl_sof;
             myCommand.Parameters.Add(prmSTRURL_SOF);
+
+            SqlParameter prmBITESTADO_SOF = new SqlParameter("@BITESTADO_SOF", SqlDbType.Bit);
+            prmBITESTADO_SOF.Value = miClass.bitEstado_sof;
+            myCommand.Parameters.Add(prmBITESTADO_SOF);
 
             SqlParameter prmDTFECHA_LOG = new SqlParameter("@DTFECHA_LOG", SqlDbType.DateTime);
             prmDTFECHA_LOG.Value = miClass.dtFecha_log;
@@ -917,6 +913,7 @@ namespace ClassLibraryLaboratorios
             string _strDescripcion_sof,
             string _strImagen_sof,
             string _strUrl_sof,
+            bool bitEstado_sof,
             DateTime _dtFecha_log,
             string _strUser_log)
         {
@@ -930,14 +927,6 @@ namespace ClassLibraryLaboratorios
             SqlParameter prmSTRCOD_SOF = new SqlParameter("@STRCOD_SOF", SqlDbType.NVarChar);
             prmSTRCOD_SOF.Value = _strCod_sof;
             myCommand.Parameters.Add(prmSTRCOD_SOF);
-
-            SqlParameter prmSTRCOD_SEDE = new SqlParameter("@STRCOD_SEDE", SqlDbType.NVarChar);
-            prmSTRCOD_SEDE.Value = _strCod_Sede;
-            myCommand.Parameters.Add(prmSTRCOD_SEDE);
-
-            SqlParameter prmSTRCOD_FAC = new SqlParameter("@STRCOD_FAC", SqlDbType.NVarChar);
-            prmSTRCOD_FAC.Value = _strCod_Fac;
-            myCommand.Parameters.Add(prmSTRCOD_FAC);
 
             SqlParameter prmSTRNOMBRE_SOF = new SqlParameter("@STRNOMBRE_SOF", SqlDbType.NVarChar);
             prmSTRNOMBRE_SOF.Value = _strNombre_sof;
@@ -975,6 +964,9 @@ namespace ClassLibraryLaboratorios
             prmSTRURL_SOF.Value = _strUrl_sof;
             myCommand.Parameters.Add(prmSTRURL_SOF);
 
+            SqlParameter prmBITESTADO_SOF = new SqlParameter("@BITESTADO_SOF", SqlDbType.Bit);
+            prmBITESTADO_SOF.Value = bitEstado_sof;
+            myCommand.Parameters.Add(prmBITESTADO_SOF);
 
             SqlParameter prmDTFECHA_LOG = new SqlParameter("@DTFECHA_LOG", SqlDbType.DateTime);
             prmDTFECHA_LOG.Value = _dtFecha_log;
@@ -1061,19 +1053,19 @@ namespace ClassLibraryLaboratorios
                 if (intReturb == 0)
                 {
                     resultado = false;
-                    msg = "No se puede eliminar este registro...";
+                    msg = "No se realizaron cambios en la base de datos...";
                 }
                 else
                 {
                     resultado = true;
-                    msg = "El registro se eliminó satisfactoriamente...";
+                    msg = "Los datos se eliminaron satisfactoriamente...";
                 }
             }
             catch (SqlException er)
             {
                 if (er.Number == 2627)
                 {
-                    msg = "***Este registro de datos ya existe, no se realizó ningún cambio...";
+                    msg = "Este registro de datos ya existe, no se realizó ningún cambio...";
                 }
                 else
                 {
