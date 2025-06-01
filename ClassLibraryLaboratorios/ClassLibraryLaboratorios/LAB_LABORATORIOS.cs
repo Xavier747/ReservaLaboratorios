@@ -796,6 +796,10 @@ namespace ClassLibraryLaboratorios
             prmSTRFOTOGRAFIA2_LAB.Value = miClass.strFotografia2_lab;
             myCommand.Parameters.Add(prmSTRFOTOGRAFIA2_LAB);
 
+            SqlParameter prmBITESTADO_LAB = new SqlParameter("@BITESTADO_LAB", SqlDbType.Bit);
+            prmBITESTADO_LAB.Value = miClass.bitEstado_lab;
+            myCommand.Parameters.Add(prmBITESTADO_LAB);
+
             SqlParameter prmDTFECHA_LOG = new SqlParameter("@DTFECHA_LOG", SqlDbType.DateTime);
             prmDTFECHA_LOG.Value = miClass.dtFecha_log;
             myCommand.Parameters.Add(prmDTFECHA_LOG);
@@ -854,6 +858,7 @@ namespace ClassLibraryLaboratorios
             string _strUbicacion_lab,
             string _strFotografia1_lab,
             string _strFotografia2_lab,
+            bool _bitEstado_lab,
             DateTime _dtFecha_log,
             string _strUser_log)
         {
@@ -892,6 +897,10 @@ namespace ClassLibraryLaboratorios
             SqlParameter prmSTRFOTOGRAFIA2_LAB = new SqlParameter("@STRFOTOGRAFIA2_LAB", SqlDbType.NVarChar);
             prmSTRFOTOGRAFIA2_LAB.Value = _strFotografia2_lab;
             myCommand.Parameters.Add(prmSTRFOTOGRAFIA2_LAB);
+
+            SqlParameter prmBITESTADO_LAB = new SqlParameter("@BITESTADO_LAB", SqlDbType.Bit);
+            prmBITESTADO_LAB.Value = _bitEstado_lab;
+            myCommand.Parameters.Add(prmBITESTADO_LAB);
 
             SqlParameter prmDTFECHA_LOG = new SqlParameter("@DTFECHA_LOG", SqlDbType.DateTime);
             prmDTFECHA_LOG.Value = _dtFecha_log;

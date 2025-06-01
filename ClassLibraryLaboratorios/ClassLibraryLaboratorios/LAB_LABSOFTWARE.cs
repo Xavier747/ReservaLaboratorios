@@ -643,21 +643,9 @@ namespace ClassLibraryLaboratorios
             prmSTRCOD_LABSOFT.Value = miClass.strCod_labSoft;
             myCommand.Parameters.Add(prmSTRCOD_LABSOFT);
 
-            SqlParameter prmSTRCOD_SEDE = new SqlParameter("@STRCOD_SEDE", SqlDbType.NVarChar);
-            prmSTRCOD_SEDE.Value = miClass.strCod_Sede;
-            myCommand.Parameters.Add(prmSTRCOD_SEDE);
-
-            SqlParameter prmSTRCOD_FAC = new SqlParameter("@STRCOD_FAC", SqlDbType.NVarChar);
-            prmSTRCOD_FAC.Value = miClass.strCod_Fac;
-            myCommand.Parameters.Add(prmSTRCOD_FAC);
-
-            SqlParameter prmSTRCOD_SOF = new SqlParameter("@STRCOD_SOF", SqlDbType.NVarChar);
-            prmSTRCOD_SOF.Value = miClass.strCod_sof;
-            myCommand.Parameters.Add(prmSTRCOD_SOF);
-
-            SqlParameter prmSTRCOD_LAB = new SqlParameter("@STRCOD_LAB", SqlDbType.NVarChar);
-            prmSTRCOD_LAB.Value = miClass.strCod_lab;
-            myCommand.Parameters.Add(prmSTRCOD_LAB);
+            SqlParameter prmBITESTADO_LABSOFT = new SqlParameter("@BITESTADO_LABSOFT", SqlDbType.Bit);
+            prmBITESTADO_LABSOFT.Value = miClass.bitEstado_labSoft;
+            myCommand.Parameters.Add(prmBITESTADO_LABSOFT);
 
             SqlParameter prmDTFECHA_LOG = new SqlParameter("@DTFECHA_LOG", SqlDbType.DateTime);
             prmDTFECHA_LOG.Value = miClass.dtFecha_log;
@@ -709,10 +697,7 @@ namespace ClassLibraryLaboratorios
 
         public int UpdateLAB_LABSOFTWARE(
             string _strCod_labSoft,
-            string _strCod_Sede,
-            string _strCod_Fac,
-            string _strCod_sof,
-            string _strCod_lab,
+            bool _bitEstado_labSoft,
             DateTime _dtFecha_log,
             string _strUser_log)
         {
@@ -724,21 +709,9 @@ namespace ClassLibraryLaboratorios
             prmSTRCOD_LABSOFT.Value = _strCod_labSoft;
             myCommand.Parameters.Add(prmSTRCOD_LABSOFT);
 
-            SqlParameter prmSTRCOD_SEDE = new SqlParameter("@STRCOD_SEDE", SqlDbType.NVarChar);
-            prmSTRCOD_SEDE.Value = _strCod_Sede;
-            myCommand.Parameters.Add(prmSTRCOD_SEDE);
-
-            SqlParameter prmSTRCOD_FAC = new SqlParameter("@STRCOD_FAC", SqlDbType.NVarChar);
-            prmSTRCOD_FAC.Value = _strCod_Fac;
-            myCommand.Parameters.Add(prmSTRCOD_FAC);
-
-            SqlParameter prmSTRCOD_SOF = new SqlParameter("@STRCOD_SOF", SqlDbType.NVarChar);
-            prmSTRCOD_SOF.Value = _strCod_sof;
-            myCommand.Parameters.Add(prmSTRCOD_SOF);
-
-            SqlParameter prmSTRCOD_LAB = new SqlParameter("@STRCOD_LAB", SqlDbType.NVarChar);
-            prmSTRCOD_LAB.Value = _strCod_lab;
-            myCommand.Parameters.Add(prmSTRCOD_LAB);
+            SqlParameter prmBITESTADO_LABSOFT = new SqlParameter("@BITESTADO_LABSOFT", SqlDbType.Bit);
+            prmBITESTADO_LABSOFT.Value = _bitEstado_labSoft;
+            myCommand.Parameters.Add(prmBITESTADO_LABSOFT);
 
             SqlParameter prmDTFECHA_LOG = new SqlParameter("@DTFECHA_LOG", SqlDbType.DateTime);
             prmDTFECHA_LOG.Value = _dtFecha_log;

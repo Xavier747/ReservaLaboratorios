@@ -913,7 +913,7 @@ namespace ClassLibraryLaboratorios
             string _strDescripcion_sof,
             string _strImagen_sof,
             string _strUrl_sof,
-            bool bitEstado_sof,
+            bool _bitEstado_sof,
             DateTime _dtFecha_log,
             string _strUser_log)
         {
@@ -965,7 +965,7 @@ namespace ClassLibraryLaboratorios
             myCommand.Parameters.Add(prmSTRURL_SOF);
 
             SqlParameter prmBITESTADO_SOF = new SqlParameter("@BITESTADO_SOF", SqlDbType.Bit);
-            prmBITESTADO_SOF.Value = bitEstado_sof;
+            prmBITESTADO_SOF.Value = _bitEstado_sof;
             myCommand.Parameters.Add(prmBITESTADO_SOF);
 
             SqlParameter prmDTFECHA_LOG = new SqlParameter("@DTFECHA_LOG", SqlDbType.DateTime);
