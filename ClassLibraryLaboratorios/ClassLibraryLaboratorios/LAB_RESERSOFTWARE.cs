@@ -9,7 +9,7 @@ using System.Web.Configuration;
 
 namespace ClassLibraryLaboratorios
 {
-    class LAB_RESERSOFTWARE
+    public class LAB_RESERSOFTWARE
     {
         public LAB_RESERSOFTWARE()
         {
@@ -24,7 +24,6 @@ namespace ClassLibraryLaboratorios
             string _strCod_reser,
             string _strNombre_resof,
             DateTime _dtRegistro_resof,
-            bool _bitEstado_resof,
             DateTime _dtFecha_log,
             string _strUser_log,
             string _strObs1_resof,
@@ -44,7 +43,6 @@ namespace ClassLibraryLaboratorios
             strCod_reser = _strCod_reser;
             strNombre_resof = _strNombre_resof;
             dtRegistro_resof = _dtRegistro_resof;
-            bitEstado_resof = _bitEstado_resof;
             dtFecha_log = _dtFecha_log;
             strUser_log = _strUser_log;
             strObs1_resof = _strObs1_resof;
@@ -64,7 +62,6 @@ namespace ClassLibraryLaboratorios
         private string STRCOD_RESER;
         private string STRNOMBRE_RESOF;
         private DateTime DTREGISTRO_RESOF;
-        private bool BITESTADO_RESOF;
         private DateTime DTFECHA_LOG;
         private string STRUSER_LOG;
         private string STROBS1_RESOF;
@@ -161,18 +158,6 @@ namespace ClassLibraryLaboratorios
             set
             {
                 DTREGISTRO_RESOF = value;
-            }
-        }
-
-        public bool bitEstado_resof
-        {
-            get
-            {
-                return BITESTADO_RESOF;
-            }
-            set
-            {
-                BITESTADO_RESOF = value;
             }
         }
 
@@ -379,7 +364,6 @@ namespace ClassLibraryLaboratorios
                                     strCod_reser = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strCod_reser"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strCod_reser"))),
                                     strNombre_resof = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strNombre_resof"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strNombre_resof"))),
                                     dtRegistro_resof = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("dtRegistro_resof"))) == true ? DateTime.Now : Convert.ToDateTime(reader1.GetValue(reader1.GetOrdinal("dtRegistro_resof"))),
-                                    bitEstado_resof = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("bitEstado_resof"))) == true ? false : Convert.ToBoolean(reader1.GetValue(reader1.GetOrdinal("bitEstado_resof"))),
                                     dtFecha_log = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("dtFecha_log"))) == true ? DateTime.Now : Convert.ToDateTime(reader1.GetValue(reader1.GetOrdinal("dtFecha_log"))),
                                     strUser_log = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strUser_log"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strUser_log"))),
                                     strObs1_resof = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strObs1_resof"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strObs1_resof"))),
@@ -449,10 +433,6 @@ namespace ClassLibraryLaboratorios
             SqlParameter prmDTREGISTRO_RESOF = new SqlParameter("@DTREGISTRO_RESOF", SqlDbType.DateTime);
             prmDTREGISTRO_RESOF.Value = miClass.dtRegistro_resof;
             myCommand.Parameters.Add(prmDTREGISTRO_RESOF);
-
-            SqlParameter prmBITESTADO_RESOF = new SqlParameter("@BITESTADO_RESOF", SqlDbType.Bit);
-            prmBITESTADO_RESOF.Value = miClass.bitEstado_resof;
-            myCommand.Parameters.Add(prmBITESTADO_RESOF);
 
             SqlParameter prmDTFECHA_LOG = new SqlParameter("@DTFECHA_LOG", SqlDbType.DateTime);
             prmDTFECHA_LOG.Value = miClass.dtFecha_log;
@@ -533,7 +513,6 @@ namespace ClassLibraryLaboratorios
             string _strCod_reser,
             string _strNombre_resof,
             DateTime _dtRegistro_resof,
-            bool _bitEstado_resof,
             DateTime _dtFecha_log,
             string _strUser_log,
             string _strObs1_resof,
@@ -580,10 +559,6 @@ namespace ClassLibraryLaboratorios
             SqlParameter prmDTREGISTRO_RESOF = new SqlParameter("@DTREGISTRO_RESOF", SqlDbType.DateTime);
             prmDTREGISTRO_RESOF.Value = _dtRegistro_resof;
             myCommand.Parameters.Add(prmDTREGISTRO_RESOF);
-
-            SqlParameter prmBITESTADO_RESOF = new SqlParameter("@BITESTADO_RESOF", SqlDbType.Bit);
-            prmBITESTADO_RESOF.Value = _bitEstado_resof;
-            myCommand.Parameters.Add(prmBITESTADO_RESOF);
 
             SqlParameter prmDTFECHA_LOG = new SqlParameter("@DTFECHA_LOG", SqlDbType.DateTime);
             prmDTFECHA_LOG.Value = _dtFecha_log;

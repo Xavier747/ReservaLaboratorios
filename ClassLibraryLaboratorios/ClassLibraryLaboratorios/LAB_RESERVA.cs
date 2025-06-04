@@ -20,13 +20,14 @@ namespace ClassLibraryLaboratorios
             string _cedula_alu,
             string _strCod_unidTem,
             string _strTema_reser,
+            string _strTipo_reser,
             string _strDescripcion_reser,
             string _strMateriales_reser,
             DateTime _dtFechainicio_reser,
             DateTime _dtFechaFin_reser,
             int _intTotalAsistente_reser,
             string _strColor_reser,
-            string _strEstado_reser,
+            DateTime _dtFechaRegistro_reser,
             bool _bitEstado_reser,
             DateTime _dtFecha_log,
             string _strUser_log,
@@ -46,13 +47,14 @@ namespace ClassLibraryLaboratorios
             cedula_alu = _cedula_alu;
             strCod_unidTem = _strCod_unidTem;
             strTema_reser = _strTema_reser;
+            strTipo_reser = _strTipo_reser;
             strDescripcion_reser = _strDescripcion_reser;
             strMateriales_reser = _strMateriales_reser;
             dtFechainicio_reser = _dtFechainicio_reser;
             dtFechaFin_reser = _dtFechaFin_reser;
             intTotalAsistente_reser = _intTotalAsistente_reser;
             strColor_reser = _strColor_reser;
-            strEstado_reser = _strEstado_reser;
+            dtFechaRegistro_reser = _dtFechaRegistro_reser;
             bitEstado_reser = _bitEstado_reser;
             dtFecha_log = _dtFecha_log;
             strUser_log = _strUser_log;
@@ -77,13 +79,14 @@ namespace ClassLibraryLaboratorios
         private string CEDULA_ALU;
         private string STRCOD_UNIDTEM;
         private string STRTEMA_RESER;
+        private string STRTIPO_RESER;
         private string STRDESCRIPCION_RESER;
         private string STRMATERIALES_RESER;
         private DateTime DTFECHAINICIO_RESER;
         private DateTime DTFECHAFIN_RESER;
         private int INTTOTALASISTENTE_RESER;
         private string STRCOLOR_RESER;
-        private string STRESTADO_RESER;
+        private DateTime DTFECHAREGISTRO_RESER;
         private bool BITESTADO_RESER;
         private DateTime DTFECHA_LOG;
         private string STRUSER_LOG;
@@ -174,6 +177,18 @@ namespace ClassLibraryLaboratorios
             }
         }
 
+        public string strTipo_reser
+        {
+            get
+            {
+                return STRTIPO_RESER;
+            }
+            set
+            {
+                STRTIPO_RESER = value;
+            }
+        }
+
         public string strDescripcion_reser
         {
             get
@@ -246,15 +261,15 @@ namespace ClassLibraryLaboratorios
             }
         }
 
-        public string strEstado_reser
+        public DateTime dtFechaRegistro_reser
         {
             get
             {
-                return STRESTADO_RESER;
+                return DTFECHAREGISTRO_RESER;
             }
             set
             {
-                STRESTADO_RESER = value;
+                DTFECHAREGISTRO_RESER = value;
             }
         }
 
@@ -471,13 +486,14 @@ namespace ClassLibraryLaboratorios
                                     cedula_alu = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("cedula_alu"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("cedula_alu"))),
                                     strCod_unidTem = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strCod_unidTem"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strCod_unidTem"))),
                                     strTema_reser = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strTema_reser"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strTema_reser"))),
+                                    strTipo_reser = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strTipo_reser"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strTipo_reser"))),
                                     strDescripcion_reser = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strDescripcion_reser"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strDescripcion_reser"))),
                                     strMateriales_reser = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strMateriales_reser"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strMateriales_reser"))),
                                     dtFechainicio_reser = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("dtFechainicio_reser"))) == true ? DateTime.MinValue : Convert.ToDateTime(reader1.GetValue(reader1.GetOrdinal("dtFechainicio_reser"))),
                                     dtFechaFin_reser = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("dtFechaFin_reser"))) == true ? DateTime.MinValue : Convert.ToDateTime(reader1.GetValue(reader1.GetOrdinal("dtFechaFin_reser"))),
                                     intTotalAsistente_reser = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("intTotalAsistente_reser"))) == true ? 0 : Convert.ToInt32(reader1.GetValue(reader1.GetOrdinal("intTotalAsistente_reser"))),
                                     strColor_reser = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strColor_reser"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strColor_reser"))),
-                                    strEstado_reser = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strEstado_reser"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strEstado_reser"))),
+                                    dtFechaRegistro_reser = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("dtFechaRegistro_reser"))) == true ? DateTime.MinValue : Convert.ToDateTime(reader1.GetValue(reader1.GetOrdinal("dtFechaRegistro_reser"))),
                                     bitEstado_reser = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("bitEstado_reser"))) == true ? false : Convert.ToBoolean(reader1.GetValue(reader1.GetOrdinal("bitEstado_reser"))),
                                     dtFecha_log = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("dtFecha_log"))) == true ? DateTime.MinValue : Convert.ToDateTime(reader1.GetValue(reader1.GetOrdinal("dtFecha_log"))),
                                     strUser_log = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strUser_log"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strUser_log"))),
@@ -545,6 +561,10 @@ namespace ClassLibraryLaboratorios
             prmSTRTEMA_RESER.Value = miClass.strTema_reser;
             myCommand.Parameters.Add(prmSTRTEMA_RESER);
 
+            SqlParameter prmSTRTIPO_RESER = new SqlParameter("@STRTIPO_RESER", SqlDbType.NVarChar);
+            prmSTRTIPO_RESER.Value = miClass.strTipo_reser;
+            myCommand.Parameters.Add(prmSTRTIPO_RESER);
+
             SqlParameter prmSTRDESCRIPCION_RESER = new SqlParameter("@STRDESCRIPCION_RESER", SqlDbType.NVarChar);
             prmSTRDESCRIPCION_RESER.Value = miClass.strDescripcion_reser;
             myCommand.Parameters.Add(prmSTRDESCRIPCION_RESER);
@@ -569,9 +589,9 @@ namespace ClassLibraryLaboratorios
             prmSTRCOLOR_RESER.Value = miClass.strColor_reser;
             myCommand.Parameters.Add(prmSTRCOLOR_RESER);
 
-            SqlParameter prmSTRESTADO_RESER = new SqlParameter("@STRESTADO_RESER", SqlDbType.NVarChar);
-            prmSTRESTADO_RESER.Value = miClass.strEstado_reser;
-            myCommand.Parameters.Add(prmSTRESTADO_RESER);
+            SqlParameter prmDTFECHAREGISTRO_RESER = new SqlParameter("@DTFECHAREGISTRO_RESER", SqlDbType.DateTime);
+            prmDTFECHAREGISTRO_RESER.Value = miClass.dtFechaRegistro_reser;
+            myCommand.Parameters.Add(prmDTFECHAREGISTRO_RESER);
 
             SqlParameter prmBITESTADO_RESER = new SqlParameter("@BITESTADO_RESER", SqlDbType.Bit);
             prmBITESTADO_RESER.Value = miClass.bitEstado_reser;
@@ -655,13 +675,14 @@ namespace ClassLibraryLaboratorios
             string _cedula_alu,
             string _strCod_unidTem,
             string _strTema_reser,
+            string _strTipo_reser,
             string _strDescripcion_reser,
             string _strMateriales_reser,
             DateTime _dtFechainicio_reser,
             DateTime _dtFechaFin_reser,
             int _intTotalAsistente_reser,
             string _strColor_reser,
-            string _strEstado_reser,
+            DateTime _dtFechaRegistro_reser,
             bool _bitEstado_reser,
             DateTime _dtFecha_log,
             string _strUser_log,
@@ -707,6 +728,10 @@ namespace ClassLibraryLaboratorios
             prmSTRTEMA_RESER.Value = _strTema_reser;
             myCommand.Parameters.Add(prmSTRTEMA_RESER);
 
+            SqlParameter prmSTRTIPO_RESER = new SqlParameter("@STRTIPO_RESER", SqlDbType.NVarChar);
+            prmSTRTIPO_RESER.Value = _strTipo_reser;
+            myCommand.Parameters.Add(prmSTRTIPO_RESER);
+
             SqlParameter prmSTRDESCRIPCION_RESER = new SqlParameter("@STRDESCRIPCION_RESER", SqlDbType.NVarChar);
             prmSTRDESCRIPCION_RESER.Value = _strDescripcion_reser;
             myCommand.Parameters.Add(prmSTRDESCRIPCION_RESER);
@@ -731,9 +756,9 @@ namespace ClassLibraryLaboratorios
             prmSTRCOLOR_RESER.Value = _strColor_reser;
             myCommand.Parameters.Add(prmSTRCOLOR_RESER);
 
-            SqlParameter prmSTRESTADO_RESER = new SqlParameter("@STRESTADO_RESER", SqlDbType.NVarChar);
-            prmSTRESTADO_RESER.Value = _strEstado_reser;
-            myCommand.Parameters.Add(prmSTRESTADO_RESER);
+            SqlParameter prmDTFECHAREGISTRO_RESER = new SqlParameter("@DTFECHAREGISTRO_RESER", SqlDbType.DateTime);
+            prmDTFECHAREGISTRO_RESER.Value = _dtFechaRegistro_reser;
+            myCommand.Parameters.Add(prmDTFECHAREGISTRO_RESER);
 
             SqlParameter prmBITESTADO_RESER = new SqlParameter("@BITESTADO_RESER", SqlDbType.Bit);
             prmBITESTADO_RESER.Value = _bitEstado_reser;
@@ -835,6 +860,10 @@ namespace ClassLibraryLaboratorios
             prmSTRTEMA_RESER.Value = miClass.strTema_reser;
             myCommand.Parameters.Add(prmSTRTEMA_RESER);
 
+            SqlParameter prmSTRTIPO_RESER = new SqlParameter("@STRTIPO_RESER", SqlDbType.NVarChar);
+            prmSTRTIPO_RESER.Value = miClass.strTipo_reser;
+            myCommand.Parameters.Add(prmSTRTIPO_RESER);
+
             SqlParameter prmSTRDESCRIPCION_RESER = new SqlParameter("@STRDESCRIPCION_RESER", SqlDbType.NVarChar);
             prmSTRDESCRIPCION_RESER.Value = miClass.strDescripcion_reser;
             myCommand.Parameters.Add(prmSTRDESCRIPCION_RESER);
@@ -847,9 +876,9 @@ namespace ClassLibraryLaboratorios
             prmSTRCOLOR_RESER.Value = miClass.strColor_reser;
             myCommand.Parameters.Add(prmSTRCOLOR_RESER);
 
-            SqlParameter prmSTRESTADO_RESER = new SqlParameter("@STRESTADO_RESER", SqlDbType.NVarChar);
-            prmSTRESTADO_RESER.Value = miClass.strEstado_reser;
-            myCommand.Parameters.Add(prmSTRESTADO_RESER);
+            SqlParameter prmBITESTADO_RESER = new SqlParameter("@BITESTADO_RESER", SqlDbType.Bit);
+            prmBITESTADO_RESER.Value = miClass.bitEstado_reser;
+            myCommand.Parameters.Add(prmBITESTADO_RESER);
 
             SqlParameter prmDTFECHA_LOG = new SqlParameter("@DTFECHA_LOG", SqlDbType.DateTime);
             prmDTFECHA_LOG.Value = miClass.dtFecha_log;
@@ -904,10 +933,11 @@ namespace ClassLibraryLaboratorios
             string _cedula_alu,
             string _strCod_unidTem,
             string _strTema_reser,
+            string _strTipo_reser,
             string _strDescripcion_reser,
             string _strMateriales_reser,
             string _strColor_reser,
-            string _strEstado_reser,
+            bool _bitEstado_reser,
             DateTime _dtFecha_log,
             string _strUser_log
             )
@@ -935,6 +965,10 @@ namespace ClassLibraryLaboratorios
             prmSTRTEMA_RESER.Value = _strTema_reser;
             myCommand.Parameters.Add(prmSTRTEMA_RESER);
 
+            SqlParameter prmSTRTIPO_RESER = new SqlParameter("@STRTIPO_RESER", SqlDbType.NVarChar);
+            prmSTRTIPO_RESER.Value = _strTipo_reser;
+            myCommand.Parameters.Add(prmSTRTIPO_RESER);
+
             SqlParameter prmSTRDESCRIPCION_RESER = new SqlParameter("@STRDESCRIPCION_RESER", SqlDbType.NVarChar);
             prmSTRDESCRIPCION_RESER.Value = _strDescripcion_reser;
             myCommand.Parameters.Add(prmSTRDESCRIPCION_RESER);
@@ -947,9 +981,9 @@ namespace ClassLibraryLaboratorios
             prmSTRCOLOR_RESER.Value = _strColor_reser;
             myCommand.Parameters.Add(prmSTRCOLOR_RESER);
 
-            SqlParameter prmSTRESTADO_RESER = new SqlParameter("@STRESTADO_RESER", SqlDbType.NVarChar);
-            prmSTRESTADO_RESER.Value = _strEstado_reser;
-            myCommand.Parameters.Add(prmSTRESTADO_RESER);
+            SqlParameter prmBITESTADO_RESER = new SqlParameter("@BITESTADO_RESER", SqlDbType.Bit);
+            prmBITESTADO_RESER.Value = _bitEstado_reser;
+            myCommand.Parameters.Add(prmBITESTADO_RESER);
 
             SqlParameter prmDTFECHA_LOG = new SqlParameter("@DTFECHA_LOG", SqlDbType.DateTime);
             prmDTFECHA_LOG.Value = _dtFecha_log;
