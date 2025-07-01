@@ -1039,7 +1039,7 @@ namespace ClassLibraryLaboratorios
             //Conexion a bd
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
             //conexion SP
-            SqlCommand myCommand = new SqlCommand("SIGUTC_DeleteLAB_RESERVA", myConnection);
+            SqlCommand myCommand = new SqlCommand("SIGUTC_DelLAB_RESERVA", myConnection);
             myCommand.CommandType = CommandType.StoredProcedure;
 
             //Creacion de parametros que se envian al SP
