@@ -20,7 +20,8 @@ namespace ClassLibraryLaboratorios
             string _cedula_alu,
             string _strCod_unidTem,
             string _strTema_reser,
-            string _strTipo_reser,
+            string _strProposito_reser,
+            bool _bitTipo_reser,
             string _strDescripcion_reser,
             string _strMateriales_reser,
             DateTime _dtFechainicio_reser,
@@ -47,7 +48,8 @@ namespace ClassLibraryLaboratorios
             cedula_alu = _cedula_alu;
             strCod_unidTem = _strCod_unidTem;
             strTema_reser = _strTema_reser;
-            strTipo_reser = _strTipo_reser;
+            strProposito_reser = _strProposito_reser;
+            bitTipo_reser = _bitTipo_reser;
             strDescripcion_reser = _strDescripcion_reser;
             strMateriales_reser = _strMateriales_reser;
             dtFechainicio_reser = _dtFechainicio_reser;
@@ -79,7 +81,8 @@ namespace ClassLibraryLaboratorios
         private string CEDULA_ALU;
         private string STRCOD_UNIDTEM;
         private string STRTEMA_RESER;
-        private string STRTIPO_RESER;
+        private string STRPROPOSITO_RESER;
+        private bool BITTIPO_RESER;
         private string STRDESCRIPCION_RESER;
         private string STRMATERIALES_RESER;
         private DateTime DTFECHAINICIO_RESER;
@@ -177,15 +180,27 @@ namespace ClassLibraryLaboratorios
             }
         }
 
-        public string strTipo_reser
+        public string strProposito_reser
         {
             get
             {
-                return STRTIPO_RESER;
+                return STRPROPOSITO_RESER;
             }
             set
             {
-                STRTIPO_RESER = value;
+                STRPROPOSITO_RESER = value;
+            }
+        }
+
+        public bool bitTipo_reser
+        {
+            get
+            {
+                return BITTIPO_RESER;
+            }
+            set
+            {
+                BITTIPO_RESER = value;
             }
         }
 
@@ -486,7 +501,8 @@ namespace ClassLibraryLaboratorios
                                     cedula_alu = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("cedula_alu"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("cedula_alu"))),
                                     strCod_unidTem = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strCod_unidTem"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strCod_unidTem"))),
                                     strTema_reser = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strTema_reser"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strTema_reser"))),
-                                    strTipo_reser = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strTipo_reser"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strTipo_reser"))),
+                                    strProposito_reser = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strProposito_reser"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strProposito_reser"))),
+                                    bitTipo_reser = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("bitTipo_reser"))) == true ? false : Convert.ToBoolean(reader1.GetValue(reader1.GetOrdinal("bitTipo_reser"))),
                                     strDescripcion_reser = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strDescripcion_reser"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strDescripcion_reser"))),
                                     strMateriales_reser = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strMateriales_reser"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strMateriales_reser"))),
                                     dtFechainicio_reser = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("dtFechainicio_reser"))) == true ? DateTime.MinValue : Convert.ToDateTime(reader1.GetValue(reader1.GetOrdinal("dtFechainicio_reser"))),
@@ -561,9 +577,13 @@ namespace ClassLibraryLaboratorios
             prmSTRTEMA_RESER.Value = miClass.strTema_reser;
             myCommand.Parameters.Add(prmSTRTEMA_RESER);
 
-            SqlParameter prmSTRTIPO_RESER = new SqlParameter("@STRTIPO_RESER", SqlDbType.NVarChar);
-            prmSTRTIPO_RESER.Value = miClass.strTipo_reser;
-            myCommand.Parameters.Add(prmSTRTIPO_RESER);
+            SqlParameter prmSTRPROPOSITO_RESER = new SqlParameter("@STRPROPOSITO_RESER", SqlDbType.NVarChar);
+            prmSTRPROPOSITO_RESER.Value = miClass.strProposito_reser;
+            myCommand.Parameters.Add(prmSTRPROPOSITO_RESER);
+
+            SqlParameter prmBITTIPO_RESER = new SqlParameter("@BITTIPO_RESER", SqlDbType.Bit);
+            prmBITTIPO_RESER.Value = miClass.bitTipo_reser;
+            myCommand.Parameters.Add(prmBITTIPO_RESER);
 
             SqlParameter prmSTRDESCRIPCION_RESER = new SqlParameter("@STRDESCRIPCION_RESER", SqlDbType.NVarChar);
             prmSTRDESCRIPCION_RESER.Value = miClass.strDescripcion_reser;
@@ -668,14 +688,15 @@ namespace ClassLibraryLaboratorios
         }
 
         ///////////////// Método Add SobreCargado /////////////////
-        public int Add(
+        public int AddLAB_RESERVA(
             string _strCod_reser,
             string _strCod_lab,
             string _strCod_Mate,
             string _cedula_alu,
             string _strCod_unidTem,
             string _strTema_reser,
-            string _strTipo_reser,
+            string _strProposito_reser,
+            bool _bitTipo_reser,
             string _strDescripcion_reser,
             string _strMateriales_reser,
             DateTime _dtFechainicio_reser,
@@ -728,9 +749,13 @@ namespace ClassLibraryLaboratorios
             prmSTRTEMA_RESER.Value = _strTema_reser;
             myCommand.Parameters.Add(prmSTRTEMA_RESER);
 
-            SqlParameter prmSTRTIPO_RESER = new SqlParameter("@STRTIPO_RESER", SqlDbType.NVarChar);
-            prmSTRTIPO_RESER.Value = _strTipo_reser;
-            myCommand.Parameters.Add(prmSTRTIPO_RESER);
+            SqlParameter prmSTRPROPOSITO_RESER = new SqlParameter("@STRPROPOSITO_RESER", SqlDbType.NVarChar);
+            prmSTRPROPOSITO_RESER.Value = _strProposito_reser;
+            myCommand.Parameters.Add(prmSTRPROPOSITO_RESER);
+
+            SqlParameter prmBITTIPO_RESER = new SqlParameter("@BITTIPO_RESER", SqlDbType.Bit);
+            prmBITTIPO_RESER.Value = _bitTipo_reser;
+            myCommand.Parameters.Add(prmBITTIPO_RESER);
 
             SqlParameter prmSTRDESCRIPCION_RESER = new SqlParameter("@STRDESCRIPCION_RESER", SqlDbType.NVarChar);
             prmSTRDESCRIPCION_RESER.Value = _strDescripcion_reser;
@@ -860,9 +885,9 @@ namespace ClassLibraryLaboratorios
             prmSTRTEMA_RESER.Value = miClass.strTema_reser;
             myCommand.Parameters.Add(prmSTRTEMA_RESER);
 
-            SqlParameter prmSTRTIPO_RESER = new SqlParameter("@STRTIPO_RESER", SqlDbType.NVarChar);
-            prmSTRTIPO_RESER.Value = miClass.strTipo_reser;
-            myCommand.Parameters.Add(prmSTRTIPO_RESER);
+            SqlParameter prmSTRPROPOSITO_RESER = new SqlParameter("@STRPROPOSITO_RESER", SqlDbType.NVarChar);
+            prmSTRPROPOSITO_RESER.Value = miClass.strProposito_reser;
+            myCommand.Parameters.Add(prmSTRPROPOSITO_RESER);
 
             SqlParameter prmSTRDESCRIPCION_RESER = new SqlParameter("@STRDESCRIPCION_RESER", SqlDbType.NVarChar);
             prmSTRDESCRIPCION_RESER.Value = miClass.strDescripcion_reser;
@@ -965,9 +990,9 @@ namespace ClassLibraryLaboratorios
             prmSTRTEMA_RESER.Value = _strTema_reser;
             myCommand.Parameters.Add(prmSTRTEMA_RESER);
 
-            SqlParameter prmSTRTIPO_RESER = new SqlParameter("@STRTIPO_RESER", SqlDbType.NVarChar);
-            prmSTRTIPO_RESER.Value = _strTipo_reser;
-            myCommand.Parameters.Add(prmSTRTIPO_RESER);
+            SqlParameter prmSTRPROPOSITO_RESER = new SqlParameter("@STRPROPOSITO_RESER", SqlDbType.NVarChar);
+            prmSTRPROPOSITO_RESER.Value = _strTipo_reser;
+            myCommand.Parameters.Add(prmSTRPROPOSITO_RESER);
 
             SqlParameter prmSTRDESCRIPCION_RESER = new SqlParameter("@STRDESCRIPCION_RESER", SqlDbType.NVarChar);
             prmSTRDESCRIPCION_RESER.Value = _strDescripcion_reser;

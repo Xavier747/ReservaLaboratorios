@@ -20,6 +20,7 @@ namespace ClassLibraryLaboratorios
             string _strCod_tipoLab,
             string _strCod_areac,
             string _strNombre_lab,
+            string _strDescripcion_lab,
             int _intNumeroEquipos_lab,
             string _strUbicacion_lab,
             string _strFotografia1_lab,
@@ -43,6 +44,7 @@ namespace ClassLibraryLaboratorios
             strCod_tipoLab = _strCod_tipoLab;
             strCod_areac = _strCod_areac;
             strNombre_lab = _strNombre_lab;
+            strDescripcion_lab = _strDescripcion_lab;
             intNumeroEquipos_lab = _intNumeroEquipos_lab;
             strUbicacion_lab = _strUbicacion_lab;
             strFotografia1_lab = _strFotografia1_lab;
@@ -72,6 +74,7 @@ namespace ClassLibraryLaboratorios
         private string STRCOD_TIPOLAB;
         private string STRCOD_AREAC;
         private string STRNOMBRE_LAB;
+        private string STRDESCRIPCION_LAB;
         private int INTNUMEROEQUIPOS_LAB;
         private string STRUBICACION_LAB;
         private string STRFOTOGRAFIA1_LAB;
@@ -164,6 +167,18 @@ namespace ClassLibraryLaboratorios
             set
             {
                 STRNOMBRE_LAB = value;
+            }
+        }
+
+        public string strDescripcion_lab
+        {
+            get
+            {
+                return STRDESCRIPCION_LAB;
+            }
+            set
+            {
+                STRDESCRIPCION_LAB = value;
             }
         }
 
@@ -440,6 +455,7 @@ namespace ClassLibraryLaboratorios
                                     strCod_tipoLab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strCod_tipoLab"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strCod_tipoLab"))),
                                     strCod_areac = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strCod_areac"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strCod_areac"))),
                                     strNombre_lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strNombre_lab"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strNombre_lab"))),
+                                    strDescripcion_lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strDescripcion_lab"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strDescripcion_lab"))),
                                     intNumeroEquipos_lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("intNumeroEquipos_lab"))) == true ? 0 : Convert.ToInt32(reader1.GetValue(reader1.GetOrdinal("intNumeroEquipos_lab"))),
                                     strUbicacion_lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strUbicacion_lab"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strUbicacion_lab"))),
                                     strFotografia1_lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strFotografia1_lab"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strFotografia1_lab"))),
@@ -511,6 +527,10 @@ namespace ClassLibraryLaboratorios
             SqlParameter prmSTRNOMBRE_LAB = new SqlParameter("@STRNOMBRE_LAB", SqlDbType.NVarChar);
             prmSTRNOMBRE_LAB.Value = miClass.strNombre_lab;
             myCommand.Parameters.Add(prmSTRNOMBRE_LAB);
+
+            SqlParameter prmSTRDESCRIPCION_LAB = new SqlParameter("@STRDESCRIPCION_LAB", SqlDbType.NVarChar);
+            prmSTRDESCRIPCION_LAB.Value = miClass.strDescripcion_lab;
+            myCommand.Parameters.Add(prmSTRDESCRIPCION_LAB);
 
             SqlParameter prmINTNUMEROEQUIPOS_LAB = new SqlParameter("@INTNUMEROEQUIPOS_LAB", SqlDbType.Int);
             prmINTNUMEROEQUIPOS_LAB.Value = miClass.intNumeroEquipos_lab;
@@ -614,6 +634,7 @@ namespace ClassLibraryLaboratorios
             string _strCod_tipoLab,
             string _strCod_areac,
             string _strNombre_lab,
+            string _strDescripcion_lab,
             int _intNumeroEquipos_lab,
             string _strUbicacion_lab,
             string _strFotografia1_lab,
@@ -659,6 +680,10 @@ namespace ClassLibraryLaboratorios
             SqlParameter prmSTRNOMBRE_LAB = new SqlParameter("@STRNOMBRE_LAB", SqlDbType.NVarChar);
             prmSTRNOMBRE_LAB.Value = _strNombre_lab;
             myCommand.Parameters.Add(prmSTRNOMBRE_LAB);
+
+            SqlParameter prmSTRDESCRIPCION_LAB = new SqlParameter("@STRDESCRIPCION_LAB", SqlDbType.NVarChar);
+            prmSTRDESCRIPCION_LAB.Value = _strDescripcion_lab;
+            myCommand.Parameters.Add(prmSTRDESCRIPCION_LAB);
 
             SqlParameter prmINTNUMEROEQUIPOS_LAB = new SqlParameter("@INTNUMEROEQUIPOS_LAB", SqlDbType.Int);
             prmINTNUMEROEQUIPOS_LAB.Value = _intNumeroEquipos_lab;
@@ -780,6 +805,10 @@ namespace ClassLibraryLaboratorios
             prmSTRNOMBRE_LAB.Value = miClass.strNombre_lab;
             myCommand.Parameters.Add(prmSTRNOMBRE_LAB);
 
+            SqlParameter prmSTRDESCRIPCION_LAB = new SqlParameter("@STRDESCRIPCION_LAB", SqlDbType.NVarChar);
+            prmSTRDESCRIPCION_LAB.Value = miClass.strDescripcion_lab;
+            myCommand.Parameters.Add(prmSTRDESCRIPCION_LAB);
+
             SqlParameter prmINTNUMEROEQUIPOS_LAB = new SqlParameter("@INTNUMEROEQUIPOS_LAB", SqlDbType.Int);
             prmINTNUMEROEQUIPOS_LAB.Value = miClass.intNumeroEquipos_lab;
             myCommand.Parameters.Add(prmINTNUMEROEQUIPOS_LAB);
@@ -854,6 +883,7 @@ namespace ClassLibraryLaboratorios
             string _strCod_tipoLab,
             string _strCod_areac,
             string _strNombre_lab,
+            string _strDescripcion_lab,
             int _intNumeroEquipos_lab,
             string _strUbicacion_lab,
             string _strFotografia1_lab,
@@ -881,6 +911,10 @@ namespace ClassLibraryLaboratorios
             SqlParameter prmSTRNOMBRE_LAB = new SqlParameter("@STRNOMBRE_LAB", SqlDbType.NVarChar);
             prmSTRNOMBRE_LAB.Value = _strNombre_lab;
             myCommand.Parameters.Add(prmSTRNOMBRE_LAB);
+
+            SqlParameter prmSTRDESCRIPCION_LAB = new SqlParameter("@STRDESCRIPCION_LAB", SqlDbType.NVarChar);
+            prmSTRDESCRIPCION_LAB.Value = _strDescripcion_lab;
+            myCommand.Parameters.Add(prmSTRDESCRIPCION_LAB);
 
             SqlParameter prmINTNUMEROEQUIPOS_LAB = new SqlParameter("@INTNUMEROEQUIPOS_LAB", SqlDbType.Int);
             prmINTNUMEROEQUIPOS_LAB.Value = _intNumeroEquipos_lab;
