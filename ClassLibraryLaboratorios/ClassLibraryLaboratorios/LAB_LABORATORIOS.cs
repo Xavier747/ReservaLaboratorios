@@ -17,9 +17,9 @@ namespace ClassLibraryLaboratorios
             string _strCod_lab,
             string _strCod_Sede,
             string _strCod_Fac,
-            string _strCod_tipoLab,
             string _strCod_areac,
             string _strNombre_lab,
+            string _strTipo_lab,
             string _strDescripcion_lab,
             int _intNumeroEquipos_lab,
             string _strUbicacion_lab,
@@ -41,9 +41,9 @@ namespace ClassLibraryLaboratorios
             strCod_lab = _strCod_lab;
             strCod_Sede = _strCod_Sede;
             strCod_Fac = _strCod_Fac;
-            strCod_tipoLab = _strCod_tipoLab;
             strCod_areac = _strCod_areac;
             strNombre_lab = _strNombre_lab;
+            strTipo_lab = _strTipo_lab;
             strDescripcion_lab = _strDescripcion_lab;
             intNumeroEquipos_lab = _intNumeroEquipos_lab;
             strUbicacion_lab = _strUbicacion_lab;
@@ -71,9 +71,9 @@ namespace ClassLibraryLaboratorios
         private string STRCOD_LAB;
         private string STRCOD_SEDE;
         private string STRCOD_FAC;
-        private string STRCOD_TIPOLAB;
         private string STRCOD_AREAC;
         private string STRNOMBRE_LAB;
+        private string STRtIPO_LAB;
         private string STRDESCRIPCION_LAB;
         private int INTNUMEROEQUIPOS_LAB;
         private string STRUBICACION_LAB;
@@ -134,18 +134,6 @@ namespace ClassLibraryLaboratorios
             }
         }
 
-        public string strCod_tipoLab
-        {
-            get
-            {
-                return STRCOD_TIPOLAB;
-            }
-            set
-            {
-                STRCOD_TIPOLAB = value;
-            }
-        }
-
         public string strCod_areac
         {
             get
@@ -167,6 +155,18 @@ namespace ClassLibraryLaboratorios
             set
             {
                 STRNOMBRE_LAB = value;
+            }
+        }
+
+        public string strTipo_lab
+        {
+            get
+            {
+                return STRtIPO_LAB;
+            }
+            set
+            {
+                STRtIPO_LAB = value;
             }
         }
 
@@ -414,7 +414,8 @@ namespace ClassLibraryLaboratorios
         public List<LAB_LABORATORIOS> LoadLAB_LABORATORIOS(string comodin, string filtro1, string filtro2, string filtro3, string filtro4)
         {
             var listG = new List<LAB_LABORATORIOS>();
-            using (SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]))
+            //using (SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]))
+            using (SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["db_conexion"]))
             {
                 using (SqlCommand myCommand = new SqlCommand("SIGUTC_GetLAB_LABORATORIOS", myConnection))
                 {
@@ -452,9 +453,9 @@ namespace ClassLibraryLaboratorios
                                     strCod_lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strCod_lab"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strCod_lab"))),
                                     strCod_Sede = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strCod_Sede"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strCod_Sede"))),
                                     strCod_Fac = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strCod_Fac"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strCod_Fac"))),
-                                    strCod_tipoLab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strCod_tipoLab"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strCod_tipoLab"))),
                                     strCod_areac = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strCod_areac"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strCod_areac"))),
                                     strNombre_lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strNombre_lab"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strNombre_lab"))),
+                                    strTipo_lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strTipo_lab"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strTipo_lab"))),
                                     strDescripcion_lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strDescripcion_lab"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strDescripcion_lab"))),
                                     intNumeroEquipos_lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("intNumeroEquipos_lab"))) == true ? 0 : Convert.ToInt32(reader1.GetValue(reader1.GetOrdinal("intNumeroEquipos_lab"))),
                                     strUbicacion_lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strUbicacion_lab"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strUbicacion_lab"))),
@@ -498,7 +499,9 @@ namespace ClassLibraryLaboratorios
         public int AddLAB_LABORATORIOS(LAB_LABORATORIOS miClass)
         {
             // Conexion a bd
+            //SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
+
             // Conexion SP
             SqlCommand myCommand = new SqlCommand("SIGUTC_AddLAB_LABORATORIOS", myConnection);
             myCommand.CommandType = CommandType.StoredProcedure;
@@ -516,10 +519,6 @@ namespace ClassLibraryLaboratorios
             prmSTRCOD_FAC.Value = miClass.strCod_Fac;
             myCommand.Parameters.Add(prmSTRCOD_FAC);
 
-            SqlParameter prmSTRCOD_TIPOLAB = new SqlParameter("@STRCOD_TIPOLAB", SqlDbType.NVarChar);
-            prmSTRCOD_TIPOLAB.Value = miClass.strCod_tipoLab;
-            myCommand.Parameters.Add(prmSTRCOD_TIPOLAB);
-
             SqlParameter prmSTRCOD_AREAC = new SqlParameter("@STRCOD_AREAC", SqlDbType.NVarChar);
             prmSTRCOD_AREAC.Value = miClass.strCod_areac;
             myCommand.Parameters.Add(prmSTRCOD_AREAC);
@@ -527,6 +526,10 @@ namespace ClassLibraryLaboratorios
             SqlParameter prmSTRNOMBRE_LAB = new SqlParameter("@STRNOMBRE_LAB", SqlDbType.NVarChar);
             prmSTRNOMBRE_LAB.Value = miClass.strNombre_lab;
             myCommand.Parameters.Add(prmSTRNOMBRE_LAB);
+
+            SqlParameter prmSTRTIPO_LAB = new SqlParameter("@STRTIPO_LAB", SqlDbType.NVarChar);
+            prmSTRTIPO_LAB.Value = miClass.strTipo_lab;
+            myCommand.Parameters.Add(prmSTRTIPO_LAB);
 
             SqlParameter prmSTRDESCRIPCION_LAB = new SqlParameter("@STRDESCRIPCION_LAB", SqlDbType.NVarChar);
             prmSTRDESCRIPCION_LAB.Value = miClass.strDescripcion_lab;
@@ -631,9 +634,9 @@ namespace ClassLibraryLaboratorios
             string _strCod_lab,
             string _strCod_Sede,
             string _strCod_Fac,
-            string _strCod_tipoLab,
             string _strCod_areac,
             string _strNombre_lab,
+            string _strTipo_lab,
             string _strDescripcion_lab,
             int _intNumeroEquipos_lab,
             string _strUbicacion_lab,
@@ -653,7 +656,9 @@ namespace ClassLibraryLaboratorios
             DateTime _dtObs2_lab
             )
         {
+            //SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
+
             SqlCommand myCommand = new SqlCommand("SIGUTC_AddLAB_LABORATORIOS", myConnection);
             myCommand.CommandType = CommandType.StoredProcedure;
 
@@ -669,10 +674,6 @@ namespace ClassLibraryLaboratorios
             prmSTRCOD_FAC.Value = _strCod_Fac;
             myCommand.Parameters.Add(prmSTRCOD_FAC);
 
-            SqlParameter prmSTRCOD_TIPOLAB = new SqlParameter("@STRCOD_TIPOLAB", SqlDbType.NVarChar);
-            prmSTRCOD_TIPOLAB.Value = _strCod_tipoLab;
-            myCommand.Parameters.Add(prmSTRCOD_TIPOLAB);
-
             SqlParameter prmSTRCOD_AREAC = new SqlParameter("@STRCOD_AREAC", SqlDbType.NVarChar);
             prmSTRCOD_AREAC.Value = _strCod_areac;
             myCommand.Parameters.Add(prmSTRCOD_AREAC);
@@ -680,6 +681,10 @@ namespace ClassLibraryLaboratorios
             SqlParameter prmSTRNOMBRE_LAB = new SqlParameter("@STRNOMBRE_LAB", SqlDbType.NVarChar);
             prmSTRNOMBRE_LAB.Value = _strNombre_lab;
             myCommand.Parameters.Add(prmSTRNOMBRE_LAB);
+
+            SqlParameter prmSTRTIPO_LAB = new SqlParameter("@STRTIPO_LAB", SqlDbType.NVarChar);
+            prmSTRTIPO_LAB.Value = _strTipo_lab;
+            myCommand.Parameters.Add(prmSTRTIPO_LAB);
 
             SqlParameter prmSTRDESCRIPCION_LAB = new SqlParameter("@STRDESCRIPCION_LAB", SqlDbType.NVarChar);
             prmSTRDESCRIPCION_LAB.Value = _strDescripcion_lab;
@@ -783,7 +788,9 @@ namespace ClassLibraryLaboratorios
         public int UpdateLAB_LABORATORIOS(LAB_LABORATORIOS miClass)
         {
             // Conexion a bd
+            //SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
+
             // Conexion SP
             SqlCommand myCommand = new SqlCommand("SIGUTC_UpdateLAB_LABORATORIOS", myConnection);
             myCommand.CommandType = CommandType.StoredProcedure;
@@ -793,10 +800,6 @@ namespace ClassLibraryLaboratorios
             prmSTRCOD_LAB.Value = miClass.strCod_lab;
             myCommand.Parameters.Add(prmSTRCOD_LAB);
 
-            SqlParameter prmSTRCOD_TIPOLAB = new SqlParameter("@STRCOD_TIPOLAB", SqlDbType.NVarChar);
-            prmSTRCOD_TIPOLAB.Value = miClass.strCod_tipoLab;
-            myCommand.Parameters.Add(prmSTRCOD_TIPOLAB);
-
             SqlParameter prmSTRCOD_AREAC = new SqlParameter("@STRCOD_AREAC", SqlDbType.NVarChar);
             prmSTRCOD_AREAC.Value = miClass.strCod_areac;
             myCommand.Parameters.Add(prmSTRCOD_AREAC);
@@ -804,6 +807,10 @@ namespace ClassLibraryLaboratorios
             SqlParameter prmSTRNOMBRE_LAB = new SqlParameter("@STRNOMBRE_LAB", SqlDbType.NVarChar);
             prmSTRNOMBRE_LAB.Value = miClass.strNombre_lab;
             myCommand.Parameters.Add(prmSTRNOMBRE_LAB);
+
+            SqlParameter prmSTRTIPO_LAB = new SqlParameter("@STRTIPO_LAB", SqlDbType.NVarChar);
+            prmSTRTIPO_LAB.Value = miClass.strTipo_lab;
+            myCommand.Parameters.Add(prmSTRTIPO_LAB);
 
             SqlParameter prmSTRDESCRIPCION_LAB = new SqlParameter("@STRDESCRIPCION_LAB", SqlDbType.NVarChar);
             prmSTRDESCRIPCION_LAB.Value = miClass.strDescripcion_lab;
@@ -880,9 +887,9 @@ namespace ClassLibraryLaboratorios
         ///////////////// Método Update SobreCargado  /////////////////
         public int UpdateLAB_LABORATORIOS(
             string _strCod_lab,
-            string _strCod_tipoLab,
             string _strCod_areac,
             string _strNombre_lab,
+            string _strTipo_lab,
             string _strDescripcion_lab,
             int _intNumeroEquipos_lab,
             string _strUbicacion_lab,
@@ -892,17 +899,15 @@ namespace ClassLibraryLaboratorios
             DateTime _dtFecha_log,
             string _strUser_log)
         {
+            //SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
+
             SqlCommand myCommand = new SqlCommand("SIGUTC_UpdateLAB_LABORATORIOS", myConnection);
             myCommand.CommandType = CommandType.StoredProcedure;
 
             SqlParameter prmSTRCOD_LAB = new SqlParameter("@STRCOD_LAB", SqlDbType.NVarChar);
             prmSTRCOD_LAB.Value = _strCod_lab;
             myCommand.Parameters.Add(prmSTRCOD_LAB);
-
-            SqlParameter prmSTRCOD_TIPOLAB = new SqlParameter("@STRCOD_TIPOLAB", SqlDbType.NVarChar);
-            prmSTRCOD_TIPOLAB.Value = _strCod_tipoLab;
-            myCommand.Parameters.Add(prmSTRCOD_TIPOLAB);
 
             SqlParameter prmSTRCOD_AREAC = new SqlParameter("@STRCOD_AREAC", SqlDbType.NVarChar);
             prmSTRCOD_AREAC.Value = _strCod_areac;
@@ -911,6 +916,10 @@ namespace ClassLibraryLaboratorios
             SqlParameter prmSTRNOMBRE_LAB = new SqlParameter("@STRNOMBRE_LAB", SqlDbType.NVarChar);
             prmSTRNOMBRE_LAB.Value = _strNombre_lab;
             myCommand.Parameters.Add(prmSTRNOMBRE_LAB);
+
+            SqlParameter prmSTRTIPO_LAB = new SqlParameter("@STRTIPO_LAB", SqlDbType.NVarChar);
+            prmSTRTIPO_LAB.Value = _strTipo_lab;
+            myCommand.Parameters.Add(prmSTRTIPO_LAB);
 
             SqlParameter prmSTRDESCRIPCION_LAB = new SqlParameter("@STRDESCRIPCION_LAB", SqlDbType.NVarChar);
             prmSTRDESCRIPCION_LAB.Value = _strDescripcion_lab;
@@ -987,7 +996,9 @@ namespace ClassLibraryLaboratorios
         public int DelLAB_LABORATORIOS(string comodin, string filtro1, string filtro2, string filtro3, string filtro4)
         {
             // Conexion a bd
+            //SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
+
             // Conexion SP
             SqlCommand myCommand = new SqlCommand("SIGUTC_DelLAB_LABORATORIOS", myConnection);
             myCommand.CommandType = CommandType.StoredProcedure;

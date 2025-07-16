@@ -9,11 +9,11 @@ using System.Web.Configuration;
 
 namespace ClassLibraryLaboratorios
 {
-    public class LAB_LABSOFTWARE
+    public class LAB_SOFTWARED
     {
-        public LAB_LABSOFTWARE() { }
+        public LAB_SOFTWARED() { }
 
-        public LAB_LABSOFTWARE(
+        public LAB_SOFTWARED(
             string _strCod_labSoft,
             string _strCod_Sede,
             string _strCod_Fac,
@@ -320,10 +320,11 @@ namespace ClassLibraryLaboratorios
 
         ///////////////// Método Get /////////////////
 
-        public List<LAB_LABSOFTWARE> LoadLAB_LABSOFTWARE(string comodin, string filtro1, string filtro2, string filtro3, string filtro4)
+        public List<LAB_SOFTWARED> LoadLAB_LABSOFTWARE(string comodin, string filtro1, string filtro2, string filtro3, string filtro4)
         {
-            var listG = new List<LAB_LABSOFTWARE>();
-            using (SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]))
+            var listG = new List<LAB_SOFTWARED>();
+            //using (SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]))
+            using (SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["db_conexion"]))
             {
                 using (SqlCommand myCommand = new SqlCommand("SIGUTC_GetLAB_LABSOFTWARE", myConnection))
                 {
@@ -356,7 +357,7 @@ namespace ClassLibraryLaboratorios
                         {
                             while (reader1.Read())
                             {
-                                LAB_LABSOFTWARE miClase = new LAB_LABSOFTWARE()
+                                LAB_SOFTWARED miClase = new LAB_SOFTWARED()
                                 {
                                     strCod_labSoft = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strCod_LabSoft"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strCod_LabSoft"))),
                                     strCod_Sede = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strCod_Sede"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strCod_Sede"))),
@@ -397,10 +398,12 @@ namespace ClassLibraryLaboratorios
 
         ///////////////// Método Add /////////////////
 
-        public int AddLAB_LABSOFTWARE(LAB_LABSOFTWARE miClass)
+        public int AddLAB_LABSOFTWARE(LAB_SOFTWARED miClass)
         {
             // Conexion a bd
+            //SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
+
             // Conexion SP
             SqlCommand myCommand = new SqlCommand("SIGUTC_AddLAB_LABSOFTWARE", myConnection);
             myCommand.CommandType = CommandType.StoredProcedure;
@@ -525,7 +528,9 @@ namespace ClassLibraryLaboratorios
             DateTime _dtObs1_labSoft,
             DateTime _dtObs2_labSoft)
         {
+            //SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
+
             SqlCommand myCommand = new SqlCommand("SIGUTC_AddLAB_LABSOFTWARE", myConnection);
             myCommand.CommandType = CommandType.StoredProcedure;
 
@@ -630,10 +635,12 @@ namespace ClassLibraryLaboratorios
 
         ///////////////// Método Update /////////////////
 
-        public int UpdateLAB_LABSOFTWARE(LAB_LABSOFTWARE miClass)
+        public int UpdateLAB_LABSOFTWARE(LAB_SOFTWARED miClass)
         {
             // Conexion a bd
+            //SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
+
             // Conexion SP
             SqlCommand myCommand = new SqlCommand("SIGUTC_UpdateLAB_LABSOFTWARE", myConnection);
             myCommand.CommandType = CommandType.StoredProcedure;
@@ -701,7 +708,9 @@ namespace ClassLibraryLaboratorios
             DateTime _dtFecha_log,
             string _strUser_log)
         {
+            //SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
+
             SqlCommand myCommand = new SqlCommand("SIGUTC_UpdateLAB_LABSOFTWARE", myConnection);
             myCommand.CommandType = CommandType.StoredProcedure;
 
@@ -765,7 +774,9 @@ namespace ClassLibraryLaboratorios
         public int DelLAB_LABSOFTWARE(string comodin, string filtro1, string filtro2, string filtro3, string filtro4)
         {
             // Conexion a bd
+            //SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
+
             // Conexion SP
             SqlCommand myCommand = new SqlCommand("SIGUTC_DelLAB_LABSOFTWARE", myConnection);
             myCommand.CommandType = CommandType.StoredProcedure;

@@ -9,11 +9,11 @@ using System.Web.Configuration;
 
 namespace ClassLibraryLaboratorios
 {
-    public class LAB_RESERVA
+    public class LAB_RESERVAC
     {
-        public LAB_RESERVA() { }
+        public LAB_RESERVAC() { }
 
-        public LAB_RESERVA(
+        public LAB_RESERVAC(
             string _strCod_reser,
             string _strCod_lab,
             string _strCod_Mate,
@@ -457,11 +457,12 @@ namespace ClassLibraryLaboratorios
         }
 
         ///////////////// Método Get /////////////////
-        public List<LAB_RESERVA> LoadLAB_RESERVA(string comodin, string filtro1, string filtro2, string filtro3, string filtro4)
+        public List<LAB_RESERVAC> LoadLAB_RESERVA(string comodin, string filtro1, string filtro2, string filtro3, string filtro4)
         {
-            var listG = new List<LAB_RESERVA>();
+            var listG = new List<LAB_RESERVAC>();
 
             using (SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]))
+            //using (SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["db_conexion"]))
             {
                 using (SqlCommand myCommand = new SqlCommand("SIGUTC_GetLAB_RESERVA", myConnection))
                 {
@@ -493,7 +494,7 @@ namespace ClassLibraryLaboratorios
                         {
                             while (reader1.Read())
                             {
-                                LAB_RESERVA miClase = new LAB_RESERVA()
+                                LAB_RESERVAC miClase = new LAB_RESERVAC()
                                 {
                                     strCod_reser = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strCod_reser"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strCod_reser"))),
                                     strCod_lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strCod_lab"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strCod_lab"))),
@@ -544,10 +545,12 @@ namespace ClassLibraryLaboratorios
         }
 
         ///////////////// Método Add /////////////////
-        public int AddLAB_RESERVA(LAB_RESERVA miClass)
+        public int AddLAB_RESERVA(LAB_RESERVAC miClass)
         {
             //Conexion a bd
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
+            //SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["db_conexion"])
+
             //conexion SP
             SqlCommand myCommand = new SqlCommand("SIGUTC_AddLAB_RESERVA", myConnection);
             myCommand.CommandType = CommandType.StoredProcedure;
@@ -719,6 +722,7 @@ namespace ClassLibraryLaboratorios
         {
             //Conexion a bd
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
+            //SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["db_conexion"])
 
             //conexion SP
             SqlCommand myCommand = new SqlCommand("SIGUTC_AddLAB_RESERVA", myConnection);
@@ -860,10 +864,12 @@ namespace ClassLibraryLaboratorios
         }
 
         ///////////////// Método Update /////////////////
-        public int UpdateLAB_RESERVA(LAB_RESERVA miClass)
+        public int UpdateLAB_RESERVA(LAB_RESERVAC miClass)
         {
             //Conexion a bd
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
+            //SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["db_conexion"])
+
             //conexion SP
             SqlCommand myCommand = new SqlCommand("SIGUTC_UpdateLAB_RESERVA", myConnection);
             myCommand.CommandType = CommandType.StoredProcedure;
@@ -969,6 +975,8 @@ namespace ClassLibraryLaboratorios
         {
             //Conexion a bd
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
+            //SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["db_conexion"])
+
             //conexion SP
             SqlCommand myCommand = new SqlCommand("SIGUTC_UpdateLAB_RESERVA", myConnection);
             myCommand.CommandType = CommandType.StoredProcedure;
@@ -1063,6 +1071,8 @@ namespace ClassLibraryLaboratorios
         {
             //Conexion a bd
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
+            //SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["db_conexion"])
+
             //conexion SP
             SqlCommand myCommand = new SqlCommand("SIGUTC_DelLAB_RESERVA", myConnection);
             myCommand.CommandType = CommandType.StoredProcedure;

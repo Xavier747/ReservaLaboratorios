@@ -9,14 +9,14 @@ using System.Web.Configuration;
 
 namespace ClassLibraryLaboratorios
 {
-    public class LAB_RESERSOFTWARE
+    public class LAB_RESERVAD
     {
-        public LAB_RESERSOFTWARE()
+        public LAB_RESERVAD()
         {
 
         }
 
-        public LAB_RESERSOFTWARE(
+        public LAB_RESERVAD(
             string _strCod_resof,
             string _strCod_sof,
             string _strCod_Sede,
@@ -319,11 +319,12 @@ namespace ClassLibraryLaboratorios
 
         ///////////////// Método Get /////////////////
 
-        public List<LAB_RESERSOFTWARE> LoadLAB_RESERSOFTWARE(string comodin, string filtro1, string filtro2, string filtro3, string filtro4)
+        public List<LAB_RESERVAD> LoadLAB_RESERSOFTWARE(string comodin, string filtro1, string filtro2, string filtro3, string filtro4)
         {
-            var listG = new List<LAB_RESERSOFTWARE>();
+            var listG = new List<LAB_RESERVAD>();
 
             using (SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]))
+            //using (SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["db_conexion"]))
             {
                 using (SqlCommand myCommand = new SqlCommand("SIGUTC_GetLAB_RESERSOFTWARE", myConnection))
                 {
@@ -355,7 +356,7 @@ namespace ClassLibraryLaboratorios
                         {
                             while (reader1.Read())
                             {
-                                LAB_RESERSOFTWARE miClase = new LAB_RESERSOFTWARE()
+                                LAB_RESERVAD miClase = new LAB_RESERVAD()
                                 {
                                     strCod_resof = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strCod_resof"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strCod_resof"))),
                                     strCod_sof = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strCod_sof"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strCod_sof"))),
@@ -397,10 +398,12 @@ namespace ClassLibraryLaboratorios
 
         ///////////////// Método Add /////////////////
 
-        public int AddLAB_RESERSOFTWARE(LAB_RESERSOFTWARE miClass)
+        public int AddLAB_RESERSOFTWARE(LAB_RESERVAD miClass)
         {
             //Conexion a bd
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
+            //SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["db_conexion"])
+
             //conexion SP
             SqlCommand myCommand = new SqlCommand("SIGUTC_AddLAB_RESERSOFTWARE", myConnection);
             myCommand.CommandType = CommandType.StoredProcedure;
@@ -527,6 +530,8 @@ namespace ClassLibraryLaboratorios
         {
             //Conexion a bd
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
+            //SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["db_conexion"])
+
             //conexion SP
             SqlCommand myCommand = new SqlCommand("SIGUTC_AddLAB_RESERSOFTWARE", myConnection);
             myCommand.CommandType = CommandType.StoredProcedure;
@@ -636,6 +641,8 @@ namespace ClassLibraryLaboratorios
         {
             //Conexion a bd
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
+            //SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["db_conexion"])
+
             //conexion SP
             SqlCommand myCommand = new SqlCommand("SIGUTC_DelLAB_RESERSOFTWARE", myConnection);
             myCommand.CommandType = CommandType.StoredProcedure;

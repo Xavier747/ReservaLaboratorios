@@ -203,6 +203,8 @@ INSERT INTO PERSONAL VALUES ('1789054321', 'Andrea Torres', 'user-woman.jpeg', '
 INSERT INTO PERSONAL VALUES ('1908765432', 'Diego Herrera', 'user-man.jpeg', 'diego.herrera@utc.edu.ec', 'pass9204');
 INSERT INTO PERSONAL VALUES ('1556789023', 'Sofía Ramírez', 'user-woman.jpeg', 'sofia.ramirez@utc.edu.ec', 'pass3782');
 
+INSERT INTO PERSONAL VALUES ('0501901557', 'Viera', 'Diaz', 'Mariana', 'user-woman.jpeg', 'mariana.viera@utc.edu.ec', '0501901557');
+
 -- Insertar registros en la tabla 'CARRERA'
 INSERT INTO UB_CARRERAS VALUES ('EMANA', 'CAREN', 'LMIAGR', 'AGRONOMÍA');
 INSERT INTO UB_CARRERAS VALUES ('EMANA', 'CAREN', 'LMIAID', 'AGROINDUSTRIA');

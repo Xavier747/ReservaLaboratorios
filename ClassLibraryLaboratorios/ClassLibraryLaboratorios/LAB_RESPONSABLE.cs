@@ -304,7 +304,8 @@ namespace ClassLibraryLaboratorios
         public List<LAB_RESPONSABLE> LoadLAB_RESPONSABLE(string comodin, string filtro1, string filtro2, string filtro3, string filtro4)
         {
             var listG = new List<LAB_RESPONSABLE>();
-            using (SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]))
+            //using (SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]))
+            using (SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["db_conexion"]))
             {
                 using (SqlCommand myCommand = new SqlCommand("SIGUTC_GetLAB_RESPONSABLE", myConnection))
                 {
@@ -380,7 +381,9 @@ namespace ClassLibraryLaboratorios
         public int AddLAB_RESPONSABLE(LAB_RESPONSABLE miClase)
         {
             //Conexion a bd
+            //SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
+
             //conexion SP
             SqlCommand myCommand = new SqlCommand("SIGUTC_AddLAB_RESPONSABLE", myConnection);
             myCommand.CommandType = CommandType.StoredProcedure;
@@ -505,7 +508,9 @@ namespace ClassLibraryLaboratorios
             )
         {
             //Conexion a bd
+            //SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
+
             //conexion SP
             SqlCommand myCommand = new SqlCommand("SIGUTC_AddLAB_RESPONSABLE", myConnection);
             myCommand.CommandType = CommandType.StoredProcedure;
@@ -612,7 +617,9 @@ namespace ClassLibraryLaboratorios
         public int UpdateLAB_RESPONSABLE(LAB_RESPONSABLE miClass)
         {
             //Conexion a bd
+            //SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
+
             //conexion SP
             SqlCommand myCommand = new SqlCommand("SIGUTC_UpdateLAB_RESPONSABLE", myConnection);
             myCommand.CommandType = CommandType.StoredProcedure;
@@ -684,7 +691,9 @@ namespace ClassLibraryLaboratorios
             )
         {
             //Conexion a bd
+            //SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
+
             //conexion SP
             SqlCommand myCommand = new SqlCommand("SIGUTC_UpdateLAB_RESPONSABLE", myConnection);
             myCommand.CommandType = CommandType.StoredProcedure;
@@ -752,7 +761,9 @@ namespace ClassLibraryLaboratorios
         public int DeleteLAB_RESPONSABLE(string comodin, string filtro1, string filtro2, string filtro3, string filtro4)
         {
             //Conexion a bd
+            //SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
+
             //conexion SP
             SqlCommand myCommand = new SqlCommand("SIGUTC_DeleteLAB_RESPONSABLE", myConnection);
             myCommand.CommandType = CommandType.StoredProcedure;
