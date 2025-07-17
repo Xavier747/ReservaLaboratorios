@@ -370,7 +370,7 @@ namespace ClassLibraryLaboratorios
         {
             // Conexion a bd
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
-            //SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["db_conexion"])
+            //SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"])
 
             // Conexion SP
             SqlCommand myCommand = new SqlCommand("SIGUTC_AddLAB_USO", myConnection);
@@ -488,7 +488,7 @@ namespace ClassLibraryLaboratorios
             DateTime _dtObs2_exter)
         {
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
-            //SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["db_conexion"])
+            //SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"])
 
             SqlCommand myCommand = new SqlCommand("SIGUTC_AddLAB_USO", myConnection);
             myCommand.CommandType = CommandType.StoredProcedure;

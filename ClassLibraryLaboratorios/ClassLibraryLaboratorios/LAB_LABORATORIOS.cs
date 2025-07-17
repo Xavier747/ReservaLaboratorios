@@ -415,7 +415,7 @@ namespace ClassLibraryLaboratorios
         {
             var listG = new List<LAB_LABORATORIOS>();
             //using (SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]))
-            using (SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["db_conexion"]))
+            using (SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]))
             {
                 using (SqlCommand myCommand = new SqlCommand("SIGUTC_GetLAB_LABORATORIOS", myConnection))
                 {

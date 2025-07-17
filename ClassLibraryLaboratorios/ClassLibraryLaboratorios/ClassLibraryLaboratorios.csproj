@@ -43,11 +43,11 @@
   <ItemGroup>
     <Compile Include="LAB_EXCLUSIVO.cs" />
     <Compile Include="LAB_LABORATORIOS.cs" />
-    <Compile Include="LAB_SOFTWARED.cs" />
+    <Compile Include="LAB_LABSOFTWARE.cs" />
     <Compile Include="LAB_RESERVAD.cs" />
     <Compile Include="LAB_RESERVAC.cs" />
     <Compile Include="LAB_RESPONSABLE.cs" />
-    <Compile Include="LAB_SOFTWAREC.cs" />
+    <Compile Include="LAB_SOFTWARE.cs" />
     <Compile Include="LAB_USO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -9,13 +9,13 @@ using System.Web.Configuration;
 
 namespace ClassLibraryLaboratorios
 {
-    public class LAB_SOFTWAREC
+    public class LAB_SOFTWARE
     {
-        public LAB_SOFTWAREC()
+        public LAB_SOFTWARE()
         {
         }
 
-        public LAB_SOFTWAREC(
+        public LAB_SOFTWARE(
         string _strCod_sof,
         string _strCod_Sede,
         string _strCod_Fac,
@@ -427,11 +427,11 @@ namespace ClassLibraryLaboratorios
         }
 
         ///////////////// Método Get /////////////////
-        public List<LAB_SOFTWAREC> LoadLAB_SOFTWARE(string comodin, string filtro1, string filtro2, string filtro3, string filtro4)
+        public List<LAB_SOFTWARE> LoadLAB_SOFTWARE(string comodin, string filtro1, string filtro2, string filtro3, string filtro4)
         {
-            var listG = new List<LAB_SOFTWAREC>();
+            var listG = new List<LAB_SOFTWARE>();
             //using (SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]))
-            using (SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["db_conexion"]))
+            using (SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]))
             {
                 using (SqlCommand myCommand = new SqlCommand("SIGUTC_GetLAB_SOFTWARE", myConnection))
                 {
@@ -463,7 +463,7 @@ namespace ClassLibraryLaboratorios
                         {
                             while (reader1.Read())
                             {
-                                LAB_SOFTWAREC miClase = new LAB_SOFTWAREC()
+                                LAB_SOFTWARE miClase = new LAB_SOFTWARE()
                                 {
                                     strCod_sof = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strcod_sof"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strcod_sof"))),
                                     strCod_Sede = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strcod_Sede"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strcod_Sede"))),
@@ -511,7 +511,7 @@ namespace ClassLibraryLaboratorios
         }
 
         ///////////////// Método Add /////////////////
-        public int AddLAB_SOFTWARE(LAB_SOFTWAREC miClass)
+        public int AddLAB_SOFTWARE(LAB_SOFTWARE miClass)
         {
             //Conexion a bd
             //SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
@@ -812,7 +812,7 @@ namespace ClassLibraryLaboratorios
         }
 
         ///////////////// Método Update /////////////////
-        public int UpdateLAB_SOFTWARE(LAB_SOFTWAREC miClass)
+        public int UpdateLAB_SOFTWARE(LAB_SOFTWARE miClass)
         {
             //Conexion a bd
             //SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);

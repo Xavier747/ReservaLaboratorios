@@ -317,7 +317,7 @@ namespace ClassLibraryLaboratorios
         {
             var listG = new List<LAB_EXCLUSIVO>();
             using (SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]))
-            //using (SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["db_conexion"]))
+            //using (SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]))
             {
                 using (SqlCommand myCommand = new SqlCommand("SIGUTC_GetLAB_EXCLUSIVO", myConnection))
                 {
@@ -393,7 +393,7 @@ namespace ClassLibraryLaboratorios
         {
             //Conexion a bd
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
-            //SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["db_conexion"])
+            //SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"])
 
             SqlCommand myCommand = new SqlCommand("SIGUTC_AddLAB_EXCLUSIVO", myConnection);
             myCommand.CommandType = CommandType.StoredProcedure;
@@ -521,7 +521,7 @@ namespace ClassLibraryLaboratorios
             DateTime _dtObs2_labEx)
         {
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
-            //SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["db_conexion"])
+            //SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"])
 
             SqlCommand myCommand = new SqlCommand("SIGUTC_AddLAB_EXCLUSIVO", myConnection);
             myCommand.CommandType = CommandType.StoredProcedure;
@@ -632,7 +632,7 @@ namespace ClassLibraryLaboratorios
         public int UpdateLAB_EXCLUSIVO(LAB_EXCLUSIVO miClass)
         {
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
-            //SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["db_conexion"])
+            //SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"])
 
             SqlCommand myCommand = new SqlCommand("SIGUTC_UpdateLAB_EXCLUSIVO", myConnection);
             myCommand.CommandType = CommandType.StoredProcedure;
@@ -703,7 +703,7 @@ namespace ClassLibraryLaboratorios
             )
         {
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
-            //SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["db_conexion"])
+            //SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"])
 
             SqlCommand myCommand = new SqlCommand("SIGUTC_UpdateLAB_EXCLUSIVO", myConnection);
             myCommand.CommandType = CommandType.StoredProcedure;
@@ -767,7 +767,7 @@ namespace ClassLibraryLaboratorios
         public int DelLAB_EXCLUSIVO(string comodin, string filtro1, string filtro2, string filtro3, string filtro4)
         {
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
-            //SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["db_conexion"])
+            //SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"])
 
             SqlCommand myCommand = new SqlCommand("SIGUTC_DelLAB_EXCLUSIVO", myConnection);
             myCommand.CommandType = CommandType.StoredProcedure;

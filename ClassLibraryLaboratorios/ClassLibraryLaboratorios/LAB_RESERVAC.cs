@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -14,60 +15,60 @@ namespace ClassLibraryLaboratorios
         public LAB_RESERVAC() { }
 
         public LAB_RESERVAC(
-            string _strCod_reser,
+            string _strCod_reserc,
             string _strCod_lab,
             string _strCod_Mate,
             string _cedula_alu,
             string _strCod_unidTem,
-            string _strTema_reser,
-            string _strProposito_reser,
-            bool _bitTipo_reser,
-            string _strDescripcion_reser,
-            string _strMateriales_reser,
-            DateTime _dtFechainicio_reser,
-            DateTime _dtFechaFin_reser,
-            int _intTotalAsistente_reser,
-            string _strColor_reser,
-            DateTime _dtFechaRegistro_reser,
-            bool _bitEstado_reser,
+            string _strTema_reserc,
+            string _strProposito_reserc,
+            bool _bitTipo_reserc,
+            string _strDescripcion_reserc,
+            string _strMateriales_reserc,
+            DateTime _dtFechainicio_reserc,
+            DateTime _dtFechaFin_reserc,
+            int _intTotalAsistente_reserc,
+            string _strColor_reserc,
+            DateTime _dtFechaRegistro_reserc,
+            bool _bitEstado_reserc,
             DateTime _dtFecha_log,
             string _strUser_log,
-            string _strObs1_reser,
-            string _strObs2_reser,
-            bool _bitObs1_reser,
-            bool _bitObs2_reser,
-            decimal _decObs1_reser,
-            decimal _decObs2_reser,
-            DateTime _dtObs1_reser,
-            DateTime _dtObs2_reser
-            )
+            string _strObs1_reserc,
+            string _strObs2_reserc,
+            bool _bitObs1_reserc,
+            bool _bitObs2_reserc,
+            decimal _decObs1_reserc,
+            decimal _decObs2_reserc,
+            DateTime _dtObs1_reserc,
+            DateTime _dtObs2_reserc
+        )
         {
-            strCod_reser = _strCod_reser;
+            strCod_reserc = _strCod_reserc;
             strCod_lab = _strCod_lab;
             strCod_Mate = _strCod_Mate;
             cedula_alu = _cedula_alu;
             strCod_unidTem = _strCod_unidTem;
-            strTema_reser = _strTema_reser;
-            strProposito_reser = _strProposito_reser;
-            bitTipo_reser = _bitTipo_reser;
-            strDescripcion_reser = _strDescripcion_reser;
-            strMateriales_reser = _strMateriales_reser;
-            dtFechainicio_reser = _dtFechainicio_reser;
-            dtFechaFin_reser = _dtFechaFin_reser;
-            intTotalAsistente_reser = _intTotalAsistente_reser;
-            strColor_reser = _strColor_reser;
-            dtFechaRegistro_reser = _dtFechaRegistro_reser;
-            bitEstado_reser = _bitEstado_reser;
+            strTema_reserc = _strTema_reserc;
+            strProposito_reserc = _strProposito_reserc;
+            bitTipo_reserc = _bitTipo_reserc;
+            strDescripcion_reserc = _strDescripcion_reserc;
+            strMateriales_reserc = _strMateriales_reserc;
+            dtFechainicio_reserc = _dtFechainicio_reserc;
+            dtFechaFin_reserc = _dtFechaFin_reserc;
+            intTotalAsistente_reserc = _intTotalAsistente_reserc;
+            strColor_reserc = _strColor_reserc;
+            dtFechaRegistro_reserc = _dtFechaRegistro_reserc;
+            bitEstado_reserc = _bitEstado_reserc;
             dtFecha_log = _dtFecha_log;
             strUser_log = _strUser_log;
-            strObs1_reser = _strObs1_reser;
-            strObs2_reser = _strObs2_reser;
-            bitObs1_reser = _bitObs1_reser;
-            bitObs2_reser = _bitObs2_reser;
-            decObs1_reser = _decObs1_reser;
-            decObs2_reser = _decObs2_reser;
-            dtObs1_reser = _dtObs1_reser;
-            dtObs2_reser = _dtObs2_reser;
+            strObs1_reserc = _strObs1_reserc;
+            strObs2_reserc = _strObs2_reserc;
+            bitObs1_reserc = _bitObs1_reserc;
+            bitObs2_reserc = _bitObs2_reserc;
+            decObs1_reserc = _decObs1_reserc;
+            decObs2_reserc = _decObs2_reserc;
+            dtObs1_reserc = _dtObs1_reserc;
+            dtObs2_reserc = _dtObs2_reserc;
 
 
             numerr = 0;
@@ -75,48 +76,46 @@ namespace ClassLibraryLaboratorios
             resultado = false;
         }
 
-        private string STRCOD_RESER;
+        private string STRCOD_RESERC;
         private string STRCOD_LAB;
         private string STRCOD_MATE;
         private string CEDULA_ALU;
         private string STRCOD_UNIDTEM;
-        private string STRTEMA_RESER;
-        private string STRPROPOSITO_RESER;
-        private bool BITTIPO_RESER;
-        private string STRDESCRIPCION_RESER;
-        private string STRMATERIALES_RESER;
-        private DateTime DTFECHAINICIO_RESER;
-        private DateTime DTFECHAFIN_RESER;
-        private int INTTOTALASISTENTE_RESER;
-        private string STRCOLOR_RESER;
-        private DateTime DTFECHAREGISTRO_RESER;
-        private bool BITESTADO_RESER;
+        private string STRTEMA_RESERC;
+        private string STRPROPOSITO_RESERC;
+        private bool BITTIPO_RESERC;
+        private string STRDESCRIPCION_RESERC;
+        private string STRMATERIALES_RESERC;
+        private DateTime DTFECHAINICIO_RESERC;
+        private DateTime DTFECHAFIN_RESERC;
+        private int INTTOTALASISTENTE_RESERC;
+        private string STRCOLOR_RESERC;
+        private DateTime DTFECHAREGISTRO_RESERC;
+        private bool BITESTADO_RESERC;
         private DateTime DTFECHA_LOG;
         private string STRUSER_LOG;
-        private string STROBS1_RESER;
-        private string STROBS2_RESER;
-        private bool BITOBS1_RESER;
-        private bool BITOBS2_RESER;
-        private decimal DECOBS1_RESER;
-        private decimal DECOBS2_RESER;
-        private DateTime DTOBS1_RESER;
-        private DateTime DTOBS2_RESER;
-
+        private string STROBS1_RESERC;
+        private string STROBS2_RESERC;
+        private bool BITOBS1_RESERC;
+        private bool BITOBS2_RESERC;
+        private decimal DECOBS1_RESERC;
+        private decimal DECOBS2_RESERC;
+        private DateTime DTOBS1_RESERC;
+        private DateTime DTOBS2_RESERC;
         private int NUMERR;
         private string MSG;
         private bool RESULTADO;
 
         ///////////////////// Generacion de propiedades/////////////////
-
-        public string strCod_reser
+        public string strCod_reserc
         {
             get
             {
-                return STRCOD_RESER;
+                return STRCOD_RESERC;
             }
             set
             {
-                STRCOD_RESER = value;
+                STRCOD_RESERC = value;
             }
         }
 
@@ -168,135 +167,135 @@ namespace ClassLibraryLaboratorios
             }
         }
 
-        public string strTema_reser
+        public string strTema_reserc
         {
             get
             {
-                return STRTEMA_RESER;
+                return STRTEMA_RESERC;
             }
             set
             {
-                STRTEMA_RESER = value;
+                STRTEMA_RESERC = value;
             }
         }
 
-        public string strProposito_reser
+        public string strProposito_reserc
         {
             get
             {
-                return STRPROPOSITO_RESER;
+                return STRPROPOSITO_RESERC;
             }
             set
             {
-                STRPROPOSITO_RESER = value;
+                STRPROPOSITO_RESERC = value;
             }
         }
 
-        public bool bitTipo_reser
+        public bool bitTipo_reserc
         {
             get
             {
-                return BITTIPO_RESER;
+                return BITTIPO_RESERC;
             }
             set
             {
-                BITTIPO_RESER = value;
+                BITTIPO_RESERC = value;
             }
         }
 
-        public string strDescripcion_reser
+        public string strDescripcion_reserc
         {
             get
             {
-                return STRDESCRIPCION_RESER;
+                return STRDESCRIPCION_RESERC;
             }
             set
             {
-                STRDESCRIPCION_RESER = value;
+                STRDESCRIPCION_RESERC = value;
             }
         }
 
-        public string strMateriales_reser
+        public string strMateriales_reserc
         {
             get
             {
-                return STRMATERIALES_RESER;
+                return STRMATERIALES_RESERC;
             }
             set
             {
-                STRMATERIALES_RESER = value;
+                STRMATERIALES_RESERC = value;
             }
         }
 
-        public DateTime dtFechainicio_reser
+        public DateTime dtFechainicio_reserc
         {
             get
             {
-                return DTFECHAINICIO_RESER;
+                return DTFECHAINICIO_RESERC;
             }
             set
             {
-                DTFECHAINICIO_RESER = value;
+                DTFECHAINICIO_RESERC = value;
             }
         }
 
-        public DateTime dtFechaFin_reser
+        public DateTime dtFechaFin_reserc
         {
             get
             {
-                return DTFECHAFIN_RESER;
+                return DTFECHAFIN_RESERC;
             }
             set
             {
-                DTFECHAFIN_RESER = value;
+                DTFECHAFIN_RESERC = value;
             }
         }
 
-        public int intTotalAsistente_reser
+        public int intTotalAsistente_reserc
         {
             get
             {
-                return INTTOTALASISTENTE_RESER;
+                return INTTOTALASISTENTE_RESERC;
             }
             set
             {
-                INTTOTALASISTENTE_RESER = value;
+                INTTOTALASISTENTE_RESERC = value;
             }
         }
 
-        public string strColor_reser
+        public string strColor_reserc
         {
             get
             {
-                return STRCOLOR_RESER;
+                return STRCOLOR_RESERC;
             }
             set
             {
-                STRCOLOR_RESER = value;
+                STRCOLOR_RESERC = value;
             }
         }
 
-        public DateTime dtFechaRegistro_reser
+        public DateTime dtFechaRegistro_reserc
         {
             get
             {
-                return DTFECHAREGISTRO_RESER;
+                return DTFECHAREGISTRO_RESERC;
             }
             set
             {
-                DTFECHAREGISTRO_RESER = value;
+                DTFECHAREGISTRO_RESERC = value;
             }
         }
 
-        public bool bitEstado_reser
+        public bool bitEstado_reserc
         {
             get
             {
-                return BITESTADO_RESER;
+                return BITESTADO_RESERC;
             }
             set
             {
-                BITESTADO_RESER = value;
+                BITESTADO_RESERC = value;
             }
         }
 
@@ -324,99 +323,99 @@ namespace ClassLibraryLaboratorios
             }
         }
 
-        public string strObs1_reser
+        public string strObs1_reserc
         {
             get
             {
-                return STROBS1_RESER;
+                return STROBS1_RESERC;
             }
             set
             {
-                STROBS1_RESER = value;
+                STROBS1_RESERC = value;
             }
         }
 
-        public string strObs2_reser
+        public string strObs2_reserc
         {
             get
             {
-                return STROBS2_RESER;
+                return STROBS2_RESERC;
             }
             set
             {
-                STROBS2_RESER = value;
+                STROBS2_RESERC = value;
             }
         }
 
-        public bool bitObs1_reser
+        public bool bitObs1_reserc
         {
             get
             {
-                return BITOBS1_RESER;
+                return BITOBS1_RESERC;
             }
             set
             {
-                BITOBS1_RESER = value;
+                BITOBS1_RESERC = value;
             }
         }
 
-        public bool bitObs2_reser
+        public bool bitObs2_reserc
         {
             get
             {
-                return BITOBS2_RESER;
+                return BITOBS2_RESERC;
             }
             set
             {
-                BITOBS2_RESER = value;
+                BITOBS2_RESERC = value;
             }
         }
 
-        public decimal decObs1_reser
+        public decimal decObs1_reserc
         {
             get
             {
-                return DECOBS1_RESER;
+                return DECOBS1_RESERC;
             }
             set
             {
-                DECOBS1_RESER = value;
+                DECOBS1_RESERC = value;
             }
         }
 
-        public decimal decObs2_reser
+        public decimal decObs2_reserc
         {
             get
             {
-                return DECOBS2_RESER;
+                return DECOBS2_RESERC;
             }
             set
             {
-                DECOBS2_RESER = value;
+                DECOBS2_RESERC = value;
             }
         }
 
-        public DateTime dtObs1_reser
+        public DateTime dtObs1_reserc
         {
             get
             {
-                return DTOBS1_RESER;
+                return DTOBS1_RESERC;
             }
             set
             {
-                DTOBS1_RESER = value;
+                DTOBS1_RESERC = value;
             }
         }
 
-        public DateTime dtObs2_reser
+        public DateTime dtObs2_reserc
         {
             get
             {
-                return DTOBS2_RESER;
+                return DTOBS2_RESERC;
             }
             set
             {
-                DTOBS2_RESER = value;
+                DTOBS2_RESERC = value;
             }
         }
 
@@ -456,15 +455,15 @@ namespace ClassLibraryLaboratorios
             }
         }
 
+
         ///////////////// Método Get /////////////////
-        public List<LAB_RESERVAC> LoadLAB_RESERVA(string comodin, string filtro1, string filtro2, string filtro3, string filtro4)
+        public List<LAB_RESERVAC> LoadLAB_RESERVAC(string comodin, string filtro1, string filtro2, string filtro3, string filtro4)
         {
             var listG = new List<LAB_RESERVAC>();
 
             using (SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]))
-            //using (SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["db_conexion"]))
             {
-                using (SqlCommand myCommand = new SqlCommand("SIGUTC_GetLAB_RESERVA", myConnection))
+                using (SqlCommand myCommand = new SqlCommand("SIGUTC_GetLAB_RESERVAC", myConnection))
                 {
                     myCommand.CommandType = CommandType.StoredProcedure;
                     SqlParameter prmComodin = new SqlParameter("@COMODIN", SqlDbType.VarChar);
@@ -496,42 +495,43 @@ namespace ClassLibraryLaboratorios
                             {
                                 LAB_RESERVAC miClase = new LAB_RESERVAC()
                                 {
-                                    strCod_reser = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strCod_reser"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strCod_reser"))),
-                                    strCod_lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strCod_lab"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strCod_lab"))),
-                                    strCod_Mate = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strCod_Mate"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strCod_Mate"))),
-                                    cedula_alu = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("cedula_alu"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("cedula_alu"))),
-                                    strCod_unidTem = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strCod_unidTem"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strCod_unidTem"))),
-                                    strTema_reser = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strTema_reser"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strTema_reser"))),
-                                    strProposito_reser = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strProposito_reser"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strProposito_reser"))),
-                                    bitTipo_reser = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("bitTipo_reser"))) == true ? false : Convert.ToBoolean(reader1.GetValue(reader1.GetOrdinal("bitTipo_reser"))),
-                                    strDescripcion_reser = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strDescripcion_reser"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strDescripcion_reser"))),
-                                    strMateriales_reser = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strMateriales_reser"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strMateriales_reser"))),
-                                    dtFechainicio_reser = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("dtFechainicio_reser"))) == true ? DateTime.MinValue : Convert.ToDateTime(reader1.GetValue(reader1.GetOrdinal("dtFechainicio_reser"))),
-                                    dtFechaFin_reser = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("dtFechaFin_reser"))) == true ? DateTime.MinValue : Convert.ToDateTime(reader1.GetValue(reader1.GetOrdinal("dtFechaFin_reser"))),
-                                    intTotalAsistente_reser = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("intTotalAsistente_reser"))) == true ? 0 : Convert.ToInt32(reader1.GetValue(reader1.GetOrdinal("intTotalAsistente_reser"))),
-                                    strColor_reser = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strColor_reser"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strColor_reser"))),
-                                    dtFechaRegistro_reser = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("dtFechaRegistro_reser"))) == true ? DateTime.MinValue : Convert.ToDateTime(reader1.GetValue(reader1.GetOrdinal("dtFechaRegistro_reser"))),
-                                    bitEstado_reser = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("bitEstado_reser"))) == true ? false : Convert.ToBoolean(reader1.GetValue(reader1.GetOrdinal("bitEstado_reser"))),
-                                    dtFecha_log = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("dtFecha_log"))) == true ? DateTime.MinValue : Convert.ToDateTime(reader1.GetValue(reader1.GetOrdinal("dtFecha_log"))),
-                                    strUser_log = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strUser_log"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strUser_log"))),
-                                    strObs1_reser = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strObs1_reser"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strObs1_reser"))),
-                                    strObs2_reser = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strObs2_reser"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strObs2_reser"))),
-                                    bitObs1_reser = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("bitObs1_reser"))) == true ? false : Convert.ToBoolean(reader1.GetValue(reader1.GetOrdinal("bitObs1_reser"))),
-                                    bitObs2_reser = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("bitObs2_reser"))) == true ? false : Convert.ToBoolean(reader1.GetValue(reader1.GetOrdinal("bitObs2_reser"))),
-                                    decObs1_reser = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("decObs1_reser"))) == true ? 0 : Convert.ToDecimal(reader1.GetValue(reader1.GetOrdinal("decObs1_reser"))),
-                                    decObs2_reser = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("decObs2_reser"))) == true ? 0 : Convert.ToDecimal(reader1.GetValue(reader1.GetOrdinal("decObs2_reser"))),
-                                    dtObs1_reser = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("dtObs1_reser"))) == true ? DateTime.MinValue : Convert.ToDateTime(reader1.GetValue(reader1.GetOrdinal("dtObs1_reser"))),
-                                    dtObs2_reser = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("dtObs2_reser"))) == true ? DateTime.MinValue : Convert.ToDateTime(reader1.GetValue(reader1.GetOrdinal("dtObs2_reser"))),
+                                    strCod_reserc = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strCod_reserc"))) ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strCod_reserc"))),
+                                    strCod_lab = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strCod_lab"))) ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strCod_lab"))),
+                                    strCod_Mate = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strCod_Mate"))) ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strCod_Mate"))),
+                                    cedula_alu = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("cedula_alu"))) ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("cedula_alu"))),
+                                    strCod_unidTem = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strCod_unidTem"))) ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strCod_unidTem"))),
+                                    strTema_reserc = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strTema_reserc"))) ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strTema_reserc"))),
+                                    strProposito_reserc = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strProposito_reserc"))) ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strProposito_reserc"))),
+                                    bitTipo_reserc = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("bitTipo_reserc"))) ? false : Convert.ToBoolean(reader1.GetValue(reader1.GetOrdinal("bitTipo_reserc"))),
+                                    strDescripcion_reserc = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strDescripcion_reserc"))) ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strDescripcion_reserc"))),
+                                    strMateriales_reserc = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strMateriales_reserc"))) ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strMateriales_reserc"))),
+                                    dtFechainicio_reserc = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("dtFechainicio_reserc"))) ? DateTime.MinValue : Convert.ToDateTime(reader1.GetValue(reader1.GetOrdinal("dtFechainicio_reserc"))),
+                                    dtFechaFin_reserc = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("dtFechaFin_reserc"))) ? DateTime.MinValue : Convert.ToDateTime(reader1.GetValue(reader1.GetOrdinal("dtFechaFin_reserc"))),
+                                    intTotalAsistente_reserc = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("intTotalAsistente_reserc"))) ? 0 : Convert.ToInt32(reader1.GetValue(reader1.GetOrdinal("intTotalAsistente_reserc"))),
+                                    strColor_reserc = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strColor_reserc"))) ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strColor_reserc"))),
+                                    dtFechaRegistro_reserc = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("dtFechaRegistro_reserc"))) ? DateTime.MinValue : Convert.ToDateTime(reader1.GetValue(reader1.GetOrdinal("dtFechaRegistro_reserc"))),
+                                    bitEstado_reserc = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("bitEstado_reserc"))) ? false : Convert.ToBoolean(reader1.GetValue(reader1.GetOrdinal("bitEstado_reserc"))),
+                                    dtFecha_log = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("dtFecha_log"))) ? DateTime.MinValue : Convert.ToDateTime(reader1.GetValue(reader1.GetOrdinal("dtFecha_log"))),
+                                    strUser_log = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strUser_log"))) ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strUser_log"))),
+                                    strObs1_reserc = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strObs1_reserc"))) ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strObs1_reserc"))),
+                                    strObs2_reserc = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strObs2_reserc"))) ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strObs2_reserc"))),
+                                    bitObs1_reserc = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("bitObs1_reserc"))) ? false : Convert.ToBoolean(reader1.GetValue(reader1.GetOrdinal("bitObs1_reserc"))),
+                                    bitObs2_reserc = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("bitObs2_reserc"))) ? false : Convert.ToBoolean(reader1.GetValue(reader1.GetOrdinal("bitObs2_reserc"))),
+                                    decObs1_reserc = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("decObs1_reserc"))) ? 0 : Convert.ToDecimal(reader1.GetValue(reader1.GetOrdinal("decObs1_reserc"))),
+                                    decObs2_reserc = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("decObs2_reserc"))) ? 0 : Convert.ToDecimal(reader1.GetValue(reader1.GetOrdinal("decObs2_reserc"))),
+                                    dtObs1_reserc = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("dtObs1_reserc"))) ? DateTime.MinValue : Convert.ToDateTime(reader1.GetValue(reader1.GetOrdinal("dtObs1_reserc"))),
+                                    dtObs2_reserc = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("dtObs2_reserc"))) ? DateTime.MinValue : Convert.ToDateTime(reader1.GetValue(reader1.GetOrdinal("dtObs2_reserc"))),
 
                                     numerr = 0,
                                     msg = "Datos extraidos satisfactoriamente...",
                                     resultado = true
-
                                 };
+
                                 listG.Add(miClase);
                             }
                         }
                         myConnection.Close();
+
                     }
                     catch (SqlException er)
                     {
@@ -545,20 +545,19 @@ namespace ClassLibraryLaboratorios
         }
 
         ///////////////// Método Add /////////////////
-        public int AddLAB_RESERVA(LAB_RESERVAC miClass)
+        public int AddLAB_RESERVAC(LAB_RESERVAC miClass)
         {
             //Conexion a bd
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
-            //SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["db_conexion"])
 
             //conexion SP
-            SqlCommand myCommand = new SqlCommand("SIGUTC_AddLAB_RESERVA", myConnection);
+            SqlCommand myCommand = new SqlCommand("SIGUTC_AddLAB_RESERVAC", myConnection);
             myCommand.CommandType = CommandType.StoredProcedure;
 
             //Creacion de parametros que se envian al SP
-            SqlParameter prmSTRCOD_RESER = new SqlParameter("@STRCOD_RESER", SqlDbType.NVarChar);
-            prmSTRCOD_RESER.Value = miClass.strCod_reser;
-            myCommand.Parameters.Add(prmSTRCOD_RESER);
+            SqlParameter prmSTRCOD_RESERC = new SqlParameter("@STRCOD_RESERC", SqlDbType.NVarChar);
+            prmSTRCOD_RESERC.Value = miClass.strCod_reserc;
+            myCommand.Parameters.Add(prmSTRCOD_RESERC);
 
             SqlParameter prmSTRCOD_LAB = new SqlParameter("@STRCOD_LAB", SqlDbType.NVarChar);
             prmSTRCOD_LAB.Value = miClass.strCod_lab;
@@ -576,49 +575,49 @@ namespace ClassLibraryLaboratorios
             prmSTRCOD_UNIDTEM.Value = miClass.strCod_unidTem;
             myCommand.Parameters.Add(prmSTRCOD_UNIDTEM);
 
-            SqlParameter prmSTRTEMA_RESER = new SqlParameter("@STRTEMA_RESER", SqlDbType.NVarChar);
-            prmSTRTEMA_RESER.Value = miClass.strTema_reser;
-            myCommand.Parameters.Add(prmSTRTEMA_RESER);
+            SqlParameter prmSTRTEMA_RESERC = new SqlParameter("@STRTEMA_RESERC", SqlDbType.NVarChar);
+            prmSTRTEMA_RESERC.Value = miClass.strTema_reserc;
+            myCommand.Parameters.Add(prmSTRTEMA_RESERC);
 
-            SqlParameter prmSTRPROPOSITO_RESER = new SqlParameter("@STRPROPOSITO_RESER", SqlDbType.NVarChar);
-            prmSTRPROPOSITO_RESER.Value = miClass.strProposito_reser;
-            myCommand.Parameters.Add(prmSTRPROPOSITO_RESER);
+            SqlParameter prmSTRPROPOSITO_RESERC = new SqlParameter("@STRPROPOSITO_RESERC", SqlDbType.NVarChar);
+            prmSTRPROPOSITO_RESERC.Value = miClass.strProposito_reserc;
+            myCommand.Parameters.Add(prmSTRPROPOSITO_RESERC);
 
-            SqlParameter prmBITTIPO_RESER = new SqlParameter("@BITTIPO_RESER", SqlDbType.Bit);
-            prmBITTIPO_RESER.Value = miClass.bitTipo_reser;
-            myCommand.Parameters.Add(prmBITTIPO_RESER);
+            SqlParameter prmBITTIPO_RESERC = new SqlParameter("@BITTIPO_RESERC", SqlDbType.Bit);
+            prmBITTIPO_RESERC.Value = miClass.bitTipo_reserc;
+            myCommand.Parameters.Add(prmBITTIPO_RESERC);
 
-            SqlParameter prmSTRDESCRIPCION_RESER = new SqlParameter("@STRDESCRIPCION_RESER", SqlDbType.NVarChar);
-            prmSTRDESCRIPCION_RESER.Value = miClass.strDescripcion_reser;
-            myCommand.Parameters.Add(prmSTRDESCRIPCION_RESER);
+            SqlParameter prmSTRDESCRIPCION_RESERC = new SqlParameter("@STRDESCRIPCION_RESERC", SqlDbType.NVarChar);
+            prmSTRDESCRIPCION_RESERC.Value = miClass.strDescripcion_reserc;
+            myCommand.Parameters.Add(prmSTRDESCRIPCION_RESERC);
 
-            SqlParameter prmSTRMATERIALES_RESER = new SqlParameter("@STRMATERIALES_RESER", SqlDbType.NVarChar);
-            prmSTRMATERIALES_RESER.Value = miClass.strMateriales_reser;
-            myCommand.Parameters.Add(prmSTRMATERIALES_RESER);
+            SqlParameter prmSTRMATERIALES_RESERC = new SqlParameter("@STRMATERIALES_RESERC", SqlDbType.NVarChar);
+            prmSTRMATERIALES_RESERC.Value = miClass.strMateriales_reserc;
+            myCommand.Parameters.Add(prmSTRMATERIALES_RESERC);
 
-            SqlParameter prmDTFECHAINICIO_RESER = new SqlParameter("@DTFECHAINICIO_RESER", SqlDbType.DateTime);
-            prmDTFECHAINICIO_RESER.Value = miClass.dtFechainicio_reser;
-            myCommand.Parameters.Add(prmDTFECHAINICIO_RESER);
+            SqlParameter prmDTFECHAINICIO_RESERC = new SqlParameter("@DTFECHAINICIO_RESERC", SqlDbType.DateTime);
+            prmDTFECHAINICIO_RESERC.Value = miClass.dtFechainicio_reserc;
+            myCommand.Parameters.Add(prmDTFECHAINICIO_RESERC);
 
-            SqlParameter prmDTFECHAFIN_RESER = new SqlParameter("@DTFECHAFIN_RESER", SqlDbType.DateTime);
-            prmDTFECHAFIN_RESER.Value = miClass.dtFechaFin_reser;
-            myCommand.Parameters.Add(prmDTFECHAFIN_RESER);
+            SqlParameter prmDTFECHAFIN_RESERC = new SqlParameter("@DTFECHAFIN_RESERC", SqlDbType.DateTime);
+            prmDTFECHAFIN_RESERC.Value = miClass.dtFechaFin_reserc;
+            myCommand.Parameters.Add(prmDTFECHAFIN_RESERC);
 
-            SqlParameter prmINTTOTALASISTENTE_RESER = new SqlParameter("@INTTOTALASISTENTE_RESER", SqlDbType.Int);
-            prmINTTOTALASISTENTE_RESER.Value = miClass.intTotalAsistente_reser;
-            myCommand.Parameters.Add(prmINTTOTALASISTENTE_RESER);
+            SqlParameter prmINTTOTALASISTENTE_RESERC = new SqlParameter("@INTTOTALASISTENTE_RESERC", SqlDbType.Int);
+            prmINTTOTALASISTENTE_RESERC.Value = miClass.intTotalAsistente_reserc;
+            myCommand.Parameters.Add(prmINTTOTALASISTENTE_RESERC);
 
-            SqlParameter prmSTRCOLOR_RESER = new SqlParameter("@STRCOLOR_RESER", SqlDbType.NVarChar);
-            prmSTRCOLOR_RESER.Value = miClass.strColor_reser;
-            myCommand.Parameters.Add(prmSTRCOLOR_RESER);
+            SqlParameter prmSTRCOLOR_RESERC = new SqlParameter("@STRCOLOR_RESERC", SqlDbType.NVarChar);
+            prmSTRCOLOR_RESERC.Value = miClass.strColor_reserc;
+            myCommand.Parameters.Add(prmSTRCOLOR_RESERC);
 
-            SqlParameter prmDTFECHAREGISTRO_RESER = new SqlParameter("@DTFECHAREGISTRO_RESER", SqlDbType.DateTime);
-            prmDTFECHAREGISTRO_RESER.Value = miClass.dtFechaRegistro_reser;
-            myCommand.Parameters.Add(prmDTFECHAREGISTRO_RESER);
+            SqlParameter prmDTFECHAREGISTRO_RESERC = new SqlParameter("@DTFECHAREGISTRO_RESERC", SqlDbType.DateTime);
+            prmDTFECHAREGISTRO_RESERC.Value = miClass.dtFechaRegistro_reserc;
+            myCommand.Parameters.Add(prmDTFECHAREGISTRO_RESERC);
 
-            SqlParameter prmBITESTADO_RESER = new SqlParameter("@BITESTADO_RESER", SqlDbType.Bit);
-            prmBITESTADO_RESER.Value = miClass.bitEstado_reser;
-            myCommand.Parameters.Add(prmBITESTADO_RESER);
+            SqlParameter prmBITESTADO_RESERC = new SqlParameter("@BITESTADO_RESERC", SqlDbType.Bit);
+            prmBITESTADO_RESERC.Value = miClass.bitEstado_reserc;
+            myCommand.Parameters.Add(prmBITESTADO_RESERC);
 
             SqlParameter prmDTFECHA_LOG = new SqlParameter("@DTFECHA_LOG", SqlDbType.DateTime);
             prmDTFECHA_LOG.Value = miClass.dtFecha_log;
@@ -628,37 +627,37 @@ namespace ClassLibraryLaboratorios
             prmSTRUSER_LOG.Value = miClass.strUser_log;
             myCommand.Parameters.Add(prmSTRUSER_LOG);
 
-            SqlParameter prmSTROBS1_RESER = new SqlParameter("@STROBS1_RESER", SqlDbType.NVarChar);
-            prmSTROBS1_RESER.Value = miClass.strObs1_reser;
-            myCommand.Parameters.Add(prmSTROBS1_RESER);
+            SqlParameter prmSTROBS1_RESERC = new SqlParameter("@STROBS1_RESERC", SqlDbType.NVarChar);
+            prmSTROBS1_RESERC.Value = miClass.strObs1_reserc;
+            myCommand.Parameters.Add(prmSTROBS1_RESERC);
 
-            SqlParameter prmSTROBS2_RESER = new SqlParameter("@STROBS2_RESER", SqlDbType.NVarChar);
-            prmSTROBS2_RESER.Value = miClass.strObs2_reser;
-            myCommand.Parameters.Add(prmSTROBS2_RESER);
+            SqlParameter prmSTROBS2_RESERC = new SqlParameter("@STROBS2_RESERC", SqlDbType.NVarChar);
+            prmSTROBS2_RESERC.Value = miClass.strObs2_reserc;
+            myCommand.Parameters.Add(prmSTROBS2_RESERC);
 
-            SqlParameter prmBITOBS1_RESER = new SqlParameter("@BITOBS1_RESER", SqlDbType.Bit);
-            prmBITOBS1_RESER.Value = miClass.bitObs1_reser;
-            myCommand.Parameters.Add(prmBITOBS1_RESER);
+            SqlParameter prmBITOBS1_RESERC = new SqlParameter("@BITOBS1_RESERC", SqlDbType.Bit);
+            prmBITOBS1_RESERC.Value = miClass.bitObs1_reserc;
+            myCommand.Parameters.Add(prmBITOBS1_RESERC);
 
-            SqlParameter prmBITOBS2_RESER = new SqlParameter("@BITOBS2_RESER", SqlDbType.Bit);
-            prmBITOBS2_RESER.Value = miClass.bitObs2_reser;
-            myCommand.Parameters.Add(prmBITOBS2_RESER);
+            SqlParameter prmBITOBS2_RESERC = new SqlParameter("@BITOBS2_RESERC", SqlDbType.Bit);
+            prmBITOBS2_RESERC.Value = miClass.bitObs2_reserc;
+            myCommand.Parameters.Add(prmBITOBS2_RESERC);
 
-            SqlParameter prmDECOBS1_RESER = new SqlParameter("@DECOBS1_RESER", SqlDbType.Decimal);
-            prmDECOBS1_RESER.Value = miClass.decObs1_reser;
-            myCommand.Parameters.Add(prmDECOBS1_RESER);
+            SqlParameter prmDECOBS1_RESERC = new SqlParameter("@DECOBS1_RESERC", SqlDbType.Decimal);
+            prmDECOBS1_RESERC.Value = miClass.decObs1_reserc;
+            myCommand.Parameters.Add(prmDECOBS1_RESERC);
 
-            SqlParameter prmDECOBS2_RESER = new SqlParameter("@DECOBS2_RESER", SqlDbType.Decimal);
-            prmDECOBS2_RESER.Value = miClass.decObs2_reser;
-            myCommand.Parameters.Add(prmDECOBS2_RESER);
+            SqlParameter prmDECOBS2_RESERC = new SqlParameter("@DECOBS2_RESERC", SqlDbType.Decimal);
+            prmDECOBS2_RESERC.Value = miClass.decObs2_reserc;
+            myCommand.Parameters.Add(prmDECOBS2_RESERC);
 
-            SqlParameter prmDTOBS1_RESER = new SqlParameter("@DTOBS1_RESER", SqlDbType.DateTime);
-            prmDTOBS1_RESER.Value = miClass.dtObs1_reser;
-            myCommand.Parameters.Add(prmDTOBS1_RESER);
+            SqlParameter prmDTOBS1_RESERC = new SqlParameter("@DTOBS1_RESERC", SqlDbType.DateTime);
+            prmDTOBS1_RESERC.Value = miClass.dtObs1_reserc;
+            myCommand.Parameters.Add(prmDTOBS1_RESERC);
 
-            SqlParameter prmDTOBS2_RESER = new SqlParameter("@DTOBS2_RESER", SqlDbType.DateTime);
-            prmDTOBS2_RESER.Value = miClass.dtObs2_reser;
-            myCommand.Parameters.Add(prmDTOBS2_RESER);
+            SqlParameter prmDTOBS2_RESERC = new SqlParameter("@DTOBS2_RESERC", SqlDbType.DateTime);
+            prmDTOBS2_RESERC.Value = miClass.dtObs2_reserc;
+            myCommand.Parameters.Add(prmDTOBS2_RESERC);
 
             int intReturb = 0;
             try
@@ -690,48 +689,48 @@ namespace ClassLibraryLaboratorios
             return intReturb;
         }
 
+
         ///////////////// Método Add SobreCargado /////////////////
-        public int AddLAB_RESERVA(
-            string _strCod_reser,
+        public int AddLAB_RESERVAC(
+            string _strCod_reserc,
             string _strCod_lab,
             string _strCod_Mate,
             string _cedula_alu,
             string _strCod_unidTem,
-            string _strTema_reser,
-            string _strProposito_reser,
-            bool _bitTipo_reser,
-            string _strDescripcion_reser,
-            string _strMateriales_reser,
-            DateTime _dtFechainicio_reser,
-            DateTime _dtFechaFin_reser,
-            int _intTotalAsistente_reser,
-            string _strColor_reser,
-            DateTime _dtFechaRegistro_reser,
-            bool _bitEstado_reser,
+            string _strTema_reserc,
+            string _strProposito_reserc,
+            bool _bitTipo_reserc,
+            string _strDescripcion_reserc,
+            string _strMateriales_reserc,
+            DateTime _dtFechainicio_reserc,
+            DateTime _dtFechaFin_reserc,
+            int _intTotalAsistente_reserc,
+            string _strColor_reserc,
+            DateTime _dtFechaRegistro_reserc,
+            bool _bitEstado_reserc,
             DateTime _dtFecha_log,
             string _strUser_log,
-            string _strObs1_reser,
-            string _strObs2_reser,
-            bool _bitObs1_reser,
-            bool _bitObs2_reser,
-            decimal _decObs1_reser,
-            decimal _decObs2_reser,
-            DateTime _dtObs1_reser,
-            DateTime _dtObs2_reser
-            )
+            string _strObs1_reserc,
+            string _strObs2_reserc,
+            bool _bitObs1_reserc,
+            bool _bitObs2_reserc,
+            decimal _decObs1_reserc,
+            decimal _decObs2_reserc,
+            DateTime _dtObs1_reserc,
+            DateTime _dtObs2_reserc
+        )
         {
-            //Conexion a bd
+
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
-            //SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["db_conexion"])
 
             //conexion SP
-            SqlCommand myCommand = new SqlCommand("SIGUTC_AddLAB_RESERVA", myConnection);
+            SqlCommand myCommand = new SqlCommand("SIGUTC_AddLAB_RESERVAC", myConnection);
             myCommand.CommandType = CommandType.StoredProcedure;
 
             //Creacion de parametros que se envian al SP
-            SqlParameter prmSTRCOD_RESER = new SqlParameter("@STRCOD_RESER", SqlDbType.NVarChar);
-            prmSTRCOD_RESER.Value = _strCod_reser;
-            myCommand.Parameters.Add(prmSTRCOD_RESER);
+            SqlParameter prmSTRCOD_RESERC = new SqlParameter("@STRCOD_RESERC", SqlDbType.NVarChar);
+            prmSTRCOD_RESERC.Value = _strCod_reserc;
+            myCommand.Parameters.Add(prmSTRCOD_RESERC);
 
             SqlParameter prmSTRCOD_LAB = new SqlParameter("@STRCOD_LAB", SqlDbType.NVarChar);
             prmSTRCOD_LAB.Value = _strCod_lab;
@@ -749,49 +748,49 @@ namespace ClassLibraryLaboratorios
             prmSTRCOD_UNIDTEM.Value = _strCod_unidTem;
             myCommand.Parameters.Add(prmSTRCOD_UNIDTEM);
 
-            SqlParameter prmSTRTEMA_RESER = new SqlParameter("@STRTEMA_RESER", SqlDbType.NVarChar);
-            prmSTRTEMA_RESER.Value = _strTema_reser;
-            myCommand.Parameters.Add(prmSTRTEMA_RESER);
+            SqlParameter prmSTRTEMA_RESERC = new SqlParameter("@STRTEMA_RESERC", SqlDbType.NVarChar);
+            prmSTRTEMA_RESERC.Value = _strTema_reserc;
+            myCommand.Parameters.Add(prmSTRTEMA_RESERC);
 
-            SqlParameter prmSTRPROPOSITO_RESER = new SqlParameter("@STRPROPOSITO_RESER", SqlDbType.NVarChar);
-            prmSTRPROPOSITO_RESER.Value = _strProposito_reser;
-            myCommand.Parameters.Add(prmSTRPROPOSITO_RESER);
+            SqlParameter prmSTRPROPOSITO_RESERC = new SqlParameter("@STRPROPOSITO_RESERC", SqlDbType.NVarChar);
+            prmSTRPROPOSITO_RESERC.Value = _strProposito_reserc;
+            myCommand.Parameters.Add(prmSTRPROPOSITO_RESERC);
 
-            SqlParameter prmBITTIPO_RESER = new SqlParameter("@BITTIPO_RESER", SqlDbType.Bit);
-            prmBITTIPO_RESER.Value = _bitTipo_reser;
-            myCommand.Parameters.Add(prmBITTIPO_RESER);
+            SqlParameter prmBITTIPO_RESERC = new SqlParameter("@BITTIPO_RESERC", SqlDbType.Bit);
+            prmBITTIPO_RESERC.Value = _bitTipo_reserc;
+            myCommand.Parameters.Add(prmBITTIPO_RESERC);
 
-            SqlParameter prmSTRDESCRIPCION_RESER = new SqlParameter("@STRDESCRIPCION_RESER", SqlDbType.NVarChar);
-            prmSTRDESCRIPCION_RESER.Value = _strDescripcion_reser;
-            myCommand.Parameters.Add(prmSTRDESCRIPCION_RESER);
+            SqlParameter prmSTRDESCRIPCION_RESERC = new SqlParameter("@STRDESCRIPCION_RESERC", SqlDbType.NVarChar);
+            prmSTRDESCRIPCION_RESERC.Value = _strDescripcion_reserc;
+            myCommand.Parameters.Add(prmSTRDESCRIPCION_RESERC);
 
-            SqlParameter prmSTRMATERIALES_RESER = new SqlParameter("@STRMATERIALES_RESER", SqlDbType.NVarChar);
-            prmSTRMATERIALES_RESER.Value = _strMateriales_reser;
-            myCommand.Parameters.Add(prmSTRMATERIALES_RESER);
+            SqlParameter prmSTRMATERIALES_RESERC = new SqlParameter("@STRMATERIALES_RESERC", SqlDbType.NVarChar);
+            prmSTRMATERIALES_RESERC.Value = _strMateriales_reserc;
+            myCommand.Parameters.Add(prmSTRMATERIALES_RESERC);
 
-            SqlParameter prmDTFECHAINICIO_RESER = new SqlParameter("@DTFECHAINICIO_RESER", SqlDbType.DateTime);
-            prmDTFECHAINICIO_RESER.Value = _dtFechainicio_reser;
-            myCommand.Parameters.Add(prmDTFECHAINICIO_RESER);
+            SqlParameter prmDTFECHAINICIO_RESERC = new SqlParameter("@DTFECHAINICIO_RESERC", SqlDbType.DateTime);
+            prmDTFECHAINICIO_RESERC.Value = _dtFechainicio_reserc;
+            myCommand.Parameters.Add(prmDTFECHAINICIO_RESERC);
 
-            SqlParameter prmDTFECHAFIN_RESER = new SqlParameter("@DTFECHAFIN_RESER", SqlDbType.DateTime);
-            prmDTFECHAFIN_RESER.Value = _dtFechaFin_reser;
-            myCommand.Parameters.Add(prmDTFECHAFIN_RESER);
+            SqlParameter prmDTFECHAFIN_RESERC = new SqlParameter("@DTFECHAFIN_RESERC", SqlDbType.DateTime);
+            prmDTFECHAFIN_RESERC.Value = _dtFechaFin_reserc;
+            myCommand.Parameters.Add(prmDTFECHAFIN_RESERC);
 
-            SqlParameter prmINTTOTALASISTENTE_RESER = new SqlParameter("@INTTOTALASISTENTE_RESER", SqlDbType.Int);
-            prmINTTOTALASISTENTE_RESER.Value = _intTotalAsistente_reser;
-            myCommand.Parameters.Add(prmINTTOTALASISTENTE_RESER);
+            SqlParameter prmINTTOTALASISTENTE_RESERC = new SqlParameter("@INTTOTALASISTENTE_RESERC", SqlDbType.Int);
+            prmINTTOTALASISTENTE_RESERC.Value = _intTotalAsistente_reserc;
+            myCommand.Parameters.Add(prmINTTOTALASISTENTE_RESERC);
 
-            SqlParameter prmSTRCOLOR_RESER = new SqlParameter("@STRCOLOR_RESER", SqlDbType.NVarChar);
-            prmSTRCOLOR_RESER.Value = _strColor_reser;
-            myCommand.Parameters.Add(prmSTRCOLOR_RESER);
+            SqlParameter prmSTRCOLOR_RESERC = new SqlParameter("@STRCOLOR_RESERC", SqlDbType.NVarChar);
+            prmSTRCOLOR_RESERC.Value = _strColor_reserc;
+            myCommand.Parameters.Add(prmSTRCOLOR_RESERC);
 
-            SqlParameter prmDTFECHAREGISTRO_RESER = new SqlParameter("@DTFECHAREGISTRO_RESER", SqlDbType.DateTime);
-            prmDTFECHAREGISTRO_RESER.Value = _dtFechaRegistro_reser;
-            myCommand.Parameters.Add(prmDTFECHAREGISTRO_RESER);
+            SqlParameter prmDTFECHAREGISTRO_RESERC = new SqlParameter("@DTFECHAREGISTRO_RESERC", SqlDbType.DateTime);
+            prmDTFECHAREGISTRO_RESERC.Value = _dtFechaRegistro_reserc;
+            myCommand.Parameters.Add(prmDTFECHAREGISTRO_RESERC);
 
-            SqlParameter prmBITESTADO_RESER = new SqlParameter("@BITESTADO_RESER", SqlDbType.Bit);
-            prmBITESTADO_RESER.Value = _bitEstado_reser;
-            myCommand.Parameters.Add(prmBITESTADO_RESER);
+            SqlParameter prmBITESTADO_RESERC = new SqlParameter("@BITESTADO_RESERC", SqlDbType.Bit);
+            prmBITESTADO_RESERC.Value = _bitEstado_reserc;
+            myCommand.Parameters.Add(prmBITESTADO_RESERC);
 
             SqlParameter prmDTFECHA_LOG = new SqlParameter("@DTFECHA_LOG", SqlDbType.DateTime);
             prmDTFECHA_LOG.Value = _dtFecha_log;
@@ -801,39 +800,39 @@ namespace ClassLibraryLaboratorios
             prmSTRUSER_LOG.Value = _strUser_log;
             myCommand.Parameters.Add(prmSTRUSER_LOG);
 
-            SqlParameter prmSTROBS1_RESER = new SqlParameter("@STROBS1_RESER", SqlDbType.NVarChar);
-            prmSTROBS1_RESER.Value = _strObs1_reser;
-            myCommand.Parameters.Add(prmSTROBS1_RESER);
+            SqlParameter prmSTROBS1_RESERC = new SqlParameter("@STROBS1_RESERC", SqlDbType.NVarChar);
+            prmSTROBS1_RESERC.Value = _strObs1_reserc;
+            myCommand.Parameters.Add(prmSTROBS1_RESERC);
 
-            SqlParameter prmSTROBS2_RESER = new SqlParameter("@STROBS2_RESER", SqlDbType.NVarChar);
-            prmSTROBS2_RESER.Value = _strObs2_reser;
-            myCommand.Parameters.Add(prmSTROBS2_RESER);
+            SqlParameter prmSTROBS2_RESERC = new SqlParameter("@STROBS2_RESERC", SqlDbType.NVarChar);
+            prmSTROBS2_RESERC.Value = _strObs2_reserc;
+            myCommand.Parameters.Add(prmSTROBS2_RESERC);
 
-            SqlParameter prmBITOBS1_RESER = new SqlParameter("@BITOBS1_RESER", SqlDbType.Bit);
-            prmBITOBS1_RESER.Value = _bitObs1_reser;
-            myCommand.Parameters.Add(prmBITOBS1_RESER);
+            SqlParameter prmBITOBS1_RESERC = new SqlParameter("@BITOBS1_RESERC", SqlDbType.Bit);
+            prmBITOBS1_RESERC.Value = _bitObs1_reserc;
+            myCommand.Parameters.Add(prmBITOBS1_RESERC);
 
-            SqlParameter prmBITOBS2_RESER = new SqlParameter("@BITOBS2_RESER", SqlDbType.Bit);
-            prmBITOBS2_RESER.Value = _bitObs2_reser;
-            myCommand.Parameters.Add(prmBITOBS2_RESER);
+            SqlParameter prmBITOBS2_RESERC = new SqlParameter("@BITOBS2_RESERC", SqlDbType.Bit);
+            prmBITOBS2_RESERC.Value = _bitObs2_reserc;
+            myCommand.Parameters.Add(prmBITOBS2_RESERC);
 
-            SqlParameter prmDECOBS1_RESER = new SqlParameter("@DECOBS1_RESER", SqlDbType.Decimal);
-            prmDECOBS1_RESER.Value = _decObs1_reser;
-            myCommand.Parameters.Add(prmDECOBS1_RESER);
+            SqlParameter prmDECOBS1_RESERC = new SqlParameter("@DECOBS1_RESERC", SqlDbType.Decimal);
+            prmDECOBS1_RESERC.Value = _decObs1_reserc;
+            myCommand.Parameters.Add(prmDECOBS1_RESERC);
 
-            SqlParameter prmDECOBS2_RESER = new SqlParameter("@DECOBS2_RESER", SqlDbType.Decimal);
-            prmDECOBS2_RESER.Value = _decObs2_reser;
-            myCommand.Parameters.Add(prmDECOBS2_RESER);
+            SqlParameter prmDECOBS2_RESERC = new SqlParameter("@DECOBS2_RESERC", SqlDbType.Decimal);
+            prmDECOBS2_RESERC.Value = _decObs2_reserc;
+            myCommand.Parameters.Add(prmDECOBS2_RESERC);
 
-            SqlParameter prmDTOBS1_RESER = new SqlParameter("@DTOBS1_RESER", SqlDbType.DateTime);
-            prmDTOBS1_RESER.Value = _dtObs1_reser;
-            myCommand.Parameters.Add(prmDTOBS1_RESER);
+            SqlParameter prmDTOBS1_RESERC = new SqlParameter("@DTOBS1_RESERC", SqlDbType.DateTime);
+            prmDTOBS1_RESERC.Value = _dtObs1_reserc;
+            myCommand.Parameters.Add(prmDTOBS1_RESERC);
 
-            SqlParameter prmDTOBS2_RESER = new SqlParameter("@DTOBS2_RESER", SqlDbType.DateTime);
-            prmDTOBS2_RESER.Value = _dtObs2_reser;
-            myCommand.Parameters.Add(prmDTOBS2_RESER);
+            SqlParameter prmDTOBS2_RESERC = new SqlParameter("@DTOBS2_RESERC", SqlDbType.DateTime);
+            prmDTOBS2_RESERC.Value = _dtObs2_reserc;
+            myCommand.Parameters.Add(prmDTOBS2_RESERC);
 
-            int intReturb = -1;
+            int intReturb = 0;
             try
             {
                 myConnection.Open();
@@ -863,53 +862,49 @@ namespace ClassLibraryLaboratorios
             return intReturb;
         }
 
+
         ///////////////// Método Update /////////////////
-        public int UpdateLAB_RESERVA(LAB_RESERVAC miClass)
+        public int UpdateLAB_RESERVAC(LAB_RESERVAC miClass)
         {
             //Conexion a bd
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
-            //SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["db_conexion"])
 
             //conexion SP
-            SqlCommand myCommand = new SqlCommand("SIGUTC_UpdateLAB_RESERVA", myConnection);
+            SqlCommand myCommand = new SqlCommand("SIGUTC_UpdateLAB_RESERVAC", myConnection);
             myCommand.CommandType = CommandType.StoredProcedure;
 
             //Creacion de parametros que se envian al SP
-            SqlParameter prmSTRCOD_RESER = new SqlParameter("@STRCOD_RESER", SqlDbType.NVarChar);
-            prmSTRCOD_RESER.Value = miClass.strCod_reser;
-            myCommand.Parameters.Add(prmSTRCOD_RESER);
-
-            SqlParameter prmCEDULA_ALU = new SqlParameter("@CEDULA_ALU", SqlDbType.NVarChar);
-            prmCEDULA_ALU.Value = miClass.cedula_alu;
-            myCommand.Parameters.Add(prmCEDULA_ALU);
+            SqlParameter prmSTRCOD_RESERC = new SqlParameter("@STRCOD_RESERC", SqlDbType.NVarChar);
+            prmSTRCOD_RESERC.Value = miClass.strCod_reserc;
+            myCommand.Parameters.Add(prmSTRCOD_RESERC);
 
             SqlParameter prmSTRCOD_UNIDTEM = new SqlParameter("@STRCOD_UNIDTEM", SqlDbType.NVarChar);
             prmSTRCOD_UNIDTEM.Value = miClass.strCod_unidTem;
             myCommand.Parameters.Add(prmSTRCOD_UNIDTEM);
 
-            SqlParameter prmSTRTEMA_RESER = new SqlParameter("@STRTEMA_RESER", SqlDbType.NVarChar);
-            prmSTRTEMA_RESER.Value = miClass.strTema_reser;
-            myCommand.Parameters.Add(prmSTRTEMA_RESER);
+            SqlParameter prmSTRTEMA_RESERC = new SqlParameter("@STRTEMA_RESERC", SqlDbType.NVarChar);
+            prmSTRTEMA_RESERC.Value = miClass.strTema_reserc;
+            myCommand.Parameters.Add(prmSTRTEMA_RESERC);
 
-            SqlParameter prmSTRPROPOSITO_RESER = new SqlParameter("@STRPROPOSITO_RESER", SqlDbType.NVarChar);
-            prmSTRPROPOSITO_RESER.Value = miClass.strProposito_reser;
-            myCommand.Parameters.Add(prmSTRPROPOSITO_RESER);
+            SqlParameter prmSTRPROPOSITO_RESERC = new SqlParameter("@STRPROPOSITO_RESERC", SqlDbType.NVarChar);
+            prmSTRPROPOSITO_RESERC.Value = miClass.strProposito_reserc;
+            myCommand.Parameters.Add(prmSTRPROPOSITO_RESERC);
 
-            SqlParameter prmSTRDESCRIPCION_RESER = new SqlParameter("@STRDESCRIPCION_RESER", SqlDbType.NVarChar);
-            prmSTRDESCRIPCION_RESER.Value = miClass.strDescripcion_reser;
-            myCommand.Parameters.Add(prmSTRDESCRIPCION_RESER);
+            SqlParameter prmSTRDESCRIPCION_RESERC = new SqlParameter("@STRDESCRIPCION_RESERC", SqlDbType.NVarChar);
+            prmSTRDESCRIPCION_RESERC.Value = miClass.strDescripcion_reserc;
+            myCommand.Parameters.Add(prmSTRDESCRIPCION_RESERC);
 
-            SqlParameter prmSTRMATERIALES_RESER = new SqlParameter("@STRMATERIALES_RESER", SqlDbType.NVarChar);
-            prmSTRMATERIALES_RESER.Value = miClass.strMateriales_reser;
-            myCommand.Parameters.Add(prmSTRMATERIALES_RESER);
+            SqlParameter prmSTRMATERIALES_RESERC = new SqlParameter("@STRMATERIALES_RESERC", SqlDbType.NVarChar);
+            prmSTRMATERIALES_RESERC.Value = miClass.strMateriales_reserc;
+            myCommand.Parameters.Add(prmSTRMATERIALES_RESERC);
 
-            SqlParameter prmSTRCOLOR_RESER = new SqlParameter("@STRCOLOR_RESER", SqlDbType.NVarChar);
-            prmSTRCOLOR_RESER.Value = miClass.strColor_reser;
-            myCommand.Parameters.Add(prmSTRCOLOR_RESER);
+            SqlParameter prmSTRCOLOR_RESERC = new SqlParameter("@STRCOLOR_RESERC", SqlDbType.NVarChar);
+            prmSTRCOLOR_RESERC.Value = miClass.strColor_reserc;
+            myCommand.Parameters.Add(prmSTRCOLOR_RESERC);
 
-            SqlParameter prmBITESTADO_RESER = new SqlParameter("@BITESTADO_RESER", SqlDbType.Bit);
-            prmBITESTADO_RESER.Value = miClass.bitEstado_reser;
-            myCommand.Parameters.Add(prmBITESTADO_RESER);
+            SqlParameter prmBITESTADO_RESERC = new SqlParameter("@BITESTADO_RESERC", SqlDbType.Bit);
+            prmBITESTADO_RESERC.Value = miClass.bitEstado_reserc;
+            myCommand.Parameters.Add(prmBITESTADO_RESERC);
 
             SqlParameter prmDTFECHA_LOG = new SqlParameter("@DTFECHA_LOG", SqlDbType.DateTime);
             prmDTFECHA_LOG.Value = miClass.dtFecha_log;
@@ -919,6 +914,14 @@ namespace ClassLibraryLaboratorios
             prmSTRUSER_LOG.Value = miClass.strUser_log;
             myCommand.Parameters.Add(prmSTRUSER_LOG);
 
+            SqlParameter prmSTROBS1_RESERC = new SqlParameter("@STROBS1_RESERC", SqlDbType.NVarChar);
+            prmSTROBS1_RESERC.Value = miClass.strObs1_reserc;
+            myCommand.Parameters.Add(prmSTROBS1_RESERC);
+
+            SqlParameter prmSTROBS2_RESERC = new SqlParameter("@STROBS2_RESERC", SqlDbType.NVarChar);
+            prmSTROBS2_RESERC.Value = miClass.strObs2_reserc;
+            myCommand.Parameters.Add(prmSTROBS2_RESERC);
+
             int intReturb = -1;
             try
             {
@@ -958,65 +961,62 @@ namespace ClassLibraryLaboratorios
             return intReturb;
         }
 
+
         ///////////////// Método Update SobreCargado  /////////////////
-        public int UpdateLAB_RESERVA(
-            string _strCod_reser,
-            string _cedula_alu,
+        public int UpdateLAB_RESERVAC(
+            string _strCod_reserc,
             string _strCod_unidTem,
-            string _strTema_reser,
-            string _strTipo_reser,
-            string _strDescripcion_reser,
-            string _strMateriales_reser,
-            string _strColor_reser,
-            bool _bitEstado_reser,
+            string _strTema_reserc,
+            string _strProposito_reserc,
+            string _strDescripcion_reserc,
+            string _strMateriales_reserc,
+            string _strColor_reserc,
+            bool _bitEstado_reserc,
             DateTime _dtFecha_log,
-            string _strUser_log
-            )
+            string _strUser_log,
+            string _strObs1_reserc,
+            string _strObs2_reserc
+        )
         {
             //Conexion a bd
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
-            //SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["db_conexion"])
 
             //conexion SP
-            SqlCommand myCommand = new SqlCommand("SIGUTC_UpdateLAB_RESERVA", myConnection);
+            SqlCommand myCommand = new SqlCommand("SIGUTC_UpdateLAB_RESERVAC", myConnection);
             myCommand.CommandType = CommandType.StoredProcedure;
 
             //Creacion de parametros que se envian al SP
-            SqlParameter prmSTRCOD_RESER = new SqlParameter("@STRCOD_RESER", SqlDbType.NVarChar);
-            prmSTRCOD_RESER.Value = _strCod_reser;
-            myCommand.Parameters.Add(prmSTRCOD_RESER);
-
-            SqlParameter prmCEDULA_ALU = new SqlParameter("@CEDULA_ALU", SqlDbType.NVarChar);
-            prmCEDULA_ALU.Value = _cedula_alu;
-            myCommand.Parameters.Add(prmCEDULA_ALU);
+            SqlParameter prmSTRCOD_RESERC = new SqlParameter("@STRCOD_RESERC", SqlDbType.NVarChar);
+            prmSTRCOD_RESERC.Value = _strCod_reserc;
+            myCommand.Parameters.Add(prmSTRCOD_RESERC);
 
             SqlParameter prmSTRCOD_UNIDTEM = new SqlParameter("@STRCOD_UNIDTEM", SqlDbType.NVarChar);
             prmSTRCOD_UNIDTEM.Value = _strCod_unidTem;
             myCommand.Parameters.Add(prmSTRCOD_UNIDTEM);
 
-            SqlParameter prmSTRTEMA_RESER = new SqlParameter("@STRTEMA_RESER", SqlDbType.NVarChar);
-            prmSTRTEMA_RESER.Value = _strTema_reser;
-            myCommand.Parameters.Add(prmSTRTEMA_RESER);
+            SqlParameter prmSTRTEMA_RESERC = new SqlParameter("@STRTEMA_RESERC", SqlDbType.NVarChar);
+            prmSTRTEMA_RESERC.Value = _strTema_reserc;
+            myCommand.Parameters.Add(prmSTRTEMA_RESERC);
 
-            SqlParameter prmSTRPROPOSITO_RESER = new SqlParameter("@STRPROPOSITO_RESER", SqlDbType.NVarChar);
-            prmSTRPROPOSITO_RESER.Value = _strTipo_reser;
-            myCommand.Parameters.Add(prmSTRPROPOSITO_RESER);
+            SqlParameter prmSTRPROPOSITO_RESERC = new SqlParameter("@STRPROPOSITO_RESERC", SqlDbType.NVarChar);
+            prmSTRPROPOSITO_RESERC.Value = _strProposito_reserc;
+            myCommand.Parameters.Add(prmSTRPROPOSITO_RESERC);
 
-            SqlParameter prmSTRDESCRIPCION_RESER = new SqlParameter("@STRDESCRIPCION_RESER", SqlDbType.NVarChar);
-            prmSTRDESCRIPCION_RESER.Value = _strDescripcion_reser;
-            myCommand.Parameters.Add(prmSTRDESCRIPCION_RESER);
+            SqlParameter prmSTRDESCRIPCION_RESERC = new SqlParameter("@STRDESCRIPCION_RESERC", SqlDbType.NVarChar);
+            prmSTRDESCRIPCION_RESERC.Value = _strDescripcion_reserc;
+            myCommand.Parameters.Add(prmSTRDESCRIPCION_RESERC);
 
-            SqlParameter prmSTRMATERIALES_RESER = new SqlParameter("@STRMATERIALES_RESER", SqlDbType.NVarChar);
-            prmSTRMATERIALES_RESER.Value = _strMateriales_reser;
-            myCommand.Parameters.Add(prmSTRMATERIALES_RESER);
+            SqlParameter prmSTRMATERIALES_RESERC = new SqlParameter("@STRMATERIALES_RESERC", SqlDbType.NVarChar);
+            prmSTRMATERIALES_RESERC.Value = _strMateriales_reserc;
+            myCommand.Parameters.Add(prmSTRMATERIALES_RESERC);
 
-            SqlParameter prmSTRCOLOR_RESER = new SqlParameter("@STRCOLOR_RESER", SqlDbType.NVarChar);
-            prmSTRCOLOR_RESER.Value = _strColor_reser;
-            myCommand.Parameters.Add(prmSTRCOLOR_RESER);
+            SqlParameter prmSTRCOLOR_RESERC = new SqlParameter("@STRCOLOR_RESERC", SqlDbType.NVarChar);
+            prmSTRCOLOR_RESERC.Value = _strColor_reserc;
+            myCommand.Parameters.Add(prmSTRCOLOR_RESERC);
 
-            SqlParameter prmBITESTADO_RESER = new SqlParameter("@BITESTADO_RESER", SqlDbType.Bit);
-            prmBITESTADO_RESER.Value = _bitEstado_reser;
-            myCommand.Parameters.Add(prmBITESTADO_RESER);
+            SqlParameter prmBITESTADO_RESERC = new SqlParameter("@BITESTADO_RESERC", SqlDbType.Bit);
+            prmBITESTADO_RESERC.Value = _bitEstado_reserc;
+            myCommand.Parameters.Add(prmBITESTADO_RESERC);
 
             SqlParameter prmDTFECHA_LOG = new SqlParameter("@DTFECHA_LOG", SqlDbType.DateTime);
             prmDTFECHA_LOG.Value = _dtFecha_log;
@@ -1026,8 +1026,15 @@ namespace ClassLibraryLaboratorios
             prmSTRUSER_LOG.Value = _strUser_log;
             myCommand.Parameters.Add(prmSTRUSER_LOG);
 
-            int intReturb = -1;
+            SqlParameter prmSTROBS1_RESERC = new SqlParameter("@STROBS1_RESERC", SqlDbType.NVarChar);
+            prmSTROBS1_RESERC.Value = _strObs1_reserc;
+            myCommand.Parameters.Add(prmSTROBS1_RESERC);
 
+            SqlParameter prmSTROBS2_RESERC = new SqlParameter("@STROBS2_RESERC", SqlDbType.NVarChar);
+            prmSTROBS2_RESERC.Value = _strObs2_reserc;
+            myCommand.Parameters.Add(prmSTROBS2_RESERC);
+
+            int intReturb = -1;
             try
             {
                 myConnection.Open();
@@ -1066,15 +1073,16 @@ namespace ClassLibraryLaboratorios
             return intReturb;
         }
 
+
         ///////////////// Método Delete /////////////////
-        public int DeleteLAB_RESERVA(string comodin, string filtro1, string filtro2, string filtro3, string filtro4)
+
+        public int DeleteLAB_RESERVAC(string comodin, string filtro1, string filtro2, string filtro3, string filtro4)
         {
             //Conexion a bd
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
-            //SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["db_conexion"])
 
             //conexion SP
-            SqlCommand myCommand = new SqlCommand("SIGUTC_DelLAB_RESERVA", myConnection);
+            SqlCommand myCommand = new SqlCommand("SIGUTC_DelLAB_RESERVAC", myConnection);
             myCommand.CommandType = CommandType.StoredProcedure;
 
             //Creacion de parametros que se envian al SP
@@ -1136,6 +1144,5 @@ namespace ClassLibraryLaboratorios
             }
             return intReturb;
         }
-
     }
 }
