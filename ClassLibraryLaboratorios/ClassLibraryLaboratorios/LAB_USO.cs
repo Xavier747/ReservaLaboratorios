@@ -14,42 +14,46 @@ namespace ClassLibraryLaboratorios
         public LAB_USO() { }
 
         public LAB_USO(
-            string _strCod_uso,
-            string _strCod_reser,
-            DateTime _dtHoraInicio_uso,
-            string _strObservacion_uso,
-            DateTime _dtFechaRegistro_uso,
-            DateTime _dtFecha_log,
-            string _strUser_log,
-            string _strObs1_exter,
-            string _strObs2_exter,
-            bool _bitObs1_exter,
-            bool _bitObs2_exter,
-            decimal _decObs1_exter,
-            decimal _decObs2_exter,
-            DateTime _dtObs1_exter,
-            DateTime _dtObs2_exter)
+            string _strcod_uso,
+            string _strcod_reser,
+            DateTime _dthorainicio_uso,
+            string _strobservacion_uso,
+            DateTime _dtfecharegistro_uso,
+            bool _bitestado_uso,
+            DateTime _dtfecha_log,
+            string _struser_log,
+            string _strobs1_uso,
+            string _strobs2_uso,
+            bool _bitobs1_uso,
+            bool _bitobs2_uso,
+            decimal _decobs1_uso,
+            decimal _decobs2_uso,
+            DateTime _dtobs1_uso,
+            DateTime _dtobs2_uso
+            )
         {
-            strCod_uso = _strCod_uso;
-            strCod_reser = _strCod_reser;
-            dtHoraInicio_uso = _dtHoraInicio_uso;
-            strObservacion_uso = _strObservacion_uso;
-            dtFechaRegistro_uso = _dtFechaRegistro_uso;
-            dtFecha_log = _dtFecha_log;
-            strUser_log = _strUser_log;
-            strObs1_exter = _strObs1_exter;
-            strObs2_exter = _strObs2_exter;
-            bitObs1_exter = _bitObs1_exter;
-            bitObs2_exter = _bitObs2_exter;
-            decObs1_exter = _decObs1_exter;
-            decObs2_exter = _decObs2_exter;
-            dtObs1_exter = _dtObs1_exter;
-            dtObs2_exter = _dtObs2_exter;
+            strcod_uso = _strcod_uso;
+            strcod_reser = _strcod_reser;
+            dthorainicio_uso = _dthorainicio_uso;
+            strobservacion_uso = _strobservacion_uso;
+            dtfecharegistro_uso = _dtfecharegistro_uso;
+            bitestado_uso = _bitestado_uso;
+            dtfecha_log = _dtfecha_log;
+            struser_log = _struser_log;
+            strobs1_uso = _strobs1_uso;
+            strobs2_uso = _strobs2_uso;
+            bitobs1_uso = _bitobs1_uso;
+            bitobs2_uso = _bitobs2_uso;
+            decobs1_uso = _decobs1_uso;
+            decobs2_uso = _decobs2_uso;
+            dtobs1_uso = _dtobs1_uso;
+            dtobs2_uso = _dtobs2_uso;
 
             numerr = 0;
             msg = string.Empty;
             resultado = false;
         }
+
 
         // Campos privados
         private string STRCOD_USO;
@@ -57,23 +61,25 @@ namespace ClassLibraryLaboratorios
         private DateTime DTHORAINICIO_USO;
         private string STROBERVACION_USO;
         private DateTime DTFECHAREGISTRO_USO;
+        private bool BITESTADO_USO;
         private DateTime DTFECHA_LOG;
         private string STRUSER_LOG;
-        private string STROBS1_EXTER;
-        private string STROBS2_EXTER;
-        private bool BITOBS1_EXTER;
-        private bool BITOBS2_EXTER;
-        private decimal DECOBS1_EXTER;
-        private decimal DECOBS2_EXTER;
-        private DateTime DTOBS1_EXTER;
-        private DateTime DTOBS2_EXTER;
+        private string STROBS1_USO;
+        private string STROBS2_USO;
+        private bool BITOBS1_USO;
+        private bool BITOBS2_USO;
+        private decimal DECOBS1_USO;
+        private decimal DECOBS2_USO;
+        private DateTime DTOBS1_USO;
+        private DateTime DTOBS2_USO;
+
 
         private int NUMERR;
         private string MSG;
         private bool RESULTADO;
 
         ///////////////////// Generacion de propiedades/////////////////
-        public string strCod_uso
+        public string strcod_uso
         {
             get
             {
@@ -85,7 +91,7 @@ namespace ClassLibraryLaboratorios
             }
         }
 
-        public string strCod_reser
+        public string strcod_reser
         {
             get
             {
@@ -97,7 +103,7 @@ namespace ClassLibraryLaboratorios
             }
         }
 
-        public DateTime dtHoraInicio_uso
+        public DateTime dthorainicio_uso
         {
             get
             {
@@ -109,7 +115,7 @@ namespace ClassLibraryLaboratorios
             }
         }
 
-        public string strObservacion_uso
+        public string strobservacion_uso
         {
             get
             {
@@ -121,7 +127,7 @@ namespace ClassLibraryLaboratorios
             }
         }
 
-        public DateTime dtFechaRegistro_uso
+        public DateTime dtfecharegistro_uso
         {
             get
             {
@@ -133,7 +139,19 @@ namespace ClassLibraryLaboratorios
             }
         }
 
-        public DateTime dtFecha_log
+        public bool bitestado_uso
+        {
+            get
+            {
+                return BITESTADO_USO;
+            }
+            set
+            {
+                BITESTADO_USO = value;
+            }
+        }
+
+        public DateTime dtfecha_log
         {
             get
             {
@@ -145,7 +163,7 @@ namespace ClassLibraryLaboratorios
             }
         }
 
-        public string strUser_log
+        public string struser_log
         {
             get
             {
@@ -157,99 +175,99 @@ namespace ClassLibraryLaboratorios
             }
         }
 
-        public string strObs1_exter
+        public string strobs1_uso
         {
             get
             {
-                return STROBS1_EXTER;
+                return STROBS1_USO;
             }
             set
             {
-                STROBS1_EXTER = value;
+                STROBS1_USO = value;
             }
         }
 
-        public string strObs2_exter
+        public string strobs2_uso
         {
             get
             {
-                return STROBS2_EXTER;
+                return STROBS2_USO;
             }
             set
             {
-                STROBS2_EXTER = value;
+                STROBS2_USO = value;
             }
         }
 
-        public bool bitObs1_exter
+        public bool bitobs1_uso
         {
             get
             {
-                return BITOBS1_EXTER;
+                return BITOBS1_USO;
             }
             set
             {
-                BITOBS1_EXTER = value;
+                BITOBS1_USO = value;
             }
         }
 
-        public bool bitObs2_exter
+        public bool bitobs2_uso
         {
             get
             {
-                return BITOBS2_EXTER;
+                return BITOBS2_USO;
             }
             set
             {
-                BITOBS2_EXTER = value;
+                BITOBS2_USO = value;
             }
         }
 
-        public decimal decObs1_exter
+        public decimal decobs1_uso
         {
             get
             {
-                return DECOBS1_EXTER;
+                return DECOBS1_USO;
             }
             set
             {
-                DECOBS1_EXTER = value;
+                DECOBS1_USO = value;
             }
         }
 
-        public decimal decObs2_exter
+        public decimal decobs2_uso
         {
             get
             {
-                return DECOBS2_EXTER;
+                return DECOBS2_USO;
             }
             set
             {
-                DECOBS2_EXTER = value;
+                DECOBS2_USO = value;
             }
         }
 
-        public DateTime dtObs1_exter
+        public DateTime dtobs1_uso
         {
             get
             {
-                return DTOBS1_EXTER;
+                return DTOBS1_USO;
             }
             set
             {
-                DTOBS1_EXTER = value;
+                DTOBS1_USO = value;
             }
         }
 
-        public DateTime dtObs2_exter
+        public DateTime dtobs2_uso
         {
             get
             {
-                return DTOBS2_EXTER;
+                return DTOBS2_USO;
             }
             set
             {
-                DTOBS2_EXTER = value;
+                DTOBS2_USO = value;
             }
         }
 
@@ -328,21 +346,22 @@ namespace ClassLibraryLaboratorios
                             {
                                 LAB_USO miClase = new LAB_USO()
                                 {
-                                    strCod_uso = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strCod_uso"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strCod_uso"))),
-                                    strCod_reser = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strCod_reser"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strCod_reser"))),
-                                    dtHoraInicio_uso = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("dtHoraInicio_uso"))) == true ? DateTime.MinValue : Convert.ToDateTime(reader1.GetValue(reader1.GetOrdinal("dtHoraInicio_uso"))),
-                                    strObservacion_uso = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strObservacion_uso"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strObservacion_uso"))),
-                                    dtFechaRegistro_uso = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("dtFechaRegistro_uso"))) == true ? DateTime.MinValue : Convert.ToDateTime(reader1.GetValue(reader1.GetOrdinal("dtFechaRegistro_uso"))),
-                                    dtFecha_log = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("dtFecha_log"))) == true ? DateTime.MinValue : Convert.ToDateTime(reader1.GetValue(reader1.GetOrdinal("dtFecha_log"))),
-                                    strUser_log = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strUser_log"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strUser_log"))),
-                                    strObs1_exter = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strObs1_exter"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strObs1_exter"))),
-                                    strObs2_exter = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strObs2_exter"))) == true ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strObs2_exter"))),
-                                    bitObs1_exter = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("bitObs1_exter"))) == true ? false : Convert.ToBoolean(reader1.GetValue(reader1.GetOrdinal("bitObs1_exter"))),
-                                    bitObs2_exter = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("bitObs2_exter"))) == true ? false : Convert.ToBoolean(reader1.GetValue(reader1.GetOrdinal("bitObs2_exter"))),
-                                    decObs1_exter = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("decObs1_exter"))) == true ? 0 : Convert.ToDecimal(reader1.GetValue(reader1.GetOrdinal("decObs1_exter"))),
-                                    decObs2_exter = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("decObs2_exter"))) == true ? 0 : Convert.ToDecimal(reader1.GetValue(reader1.GetOrdinal("decObs2_exter"))),
-                                    dtObs1_exter = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("dtObs1_exter"))) == true ? DateTime.MinValue : Convert.ToDateTime(reader1.GetValue(reader1.GetOrdinal("dtObs1_exter"))),
-                                    dtObs2_exter = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("dtObs2_exter"))) == true ? DateTime.MinValue : Convert.ToDateTime(reader1.GetValue(reader1.GetOrdinal("dtObs2_exter"))),
+                                    strcod_uso = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strCod_uso"))) ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strCod_uso"))),
+                                    strcod_reser = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strCod_reser"))) ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strCod_reser"))),
+                                    dthorainicio_uso = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("dtHoraInicio_uso"))) ? DateTime.MinValue : Convert.ToDateTime(reader1.GetValue(reader1.GetOrdinal("dtHoraInicio_uso"))),
+                                    strobservacion_uso = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strObservacion_uso"))) ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strObservacion_uso"))),
+                                    dtfecharegistro_uso = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("dtFechaRegistro_uso"))) ? DateTime.MinValue : Convert.ToDateTime(reader1.GetValue(reader1.GetOrdinal("dtFechaRegistro_uso"))),
+                                    bitestado_uso = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("bitEstado_uso"))) ? false : Convert.ToBoolean(reader1.GetValue(reader1.GetOrdinal("bitEstado_uso"))),
+                                    dtfecha_log = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("dtFecha_log"))) ? DateTime.MinValue : Convert.ToDateTime(reader1.GetValue(reader1.GetOrdinal("dtFecha_log"))),
+                                    struser_log = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strUser_log"))) ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strUser_log"))),
+                                    strobs1_uso = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strObs1_uso"))) ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strObs1_uso"))),
+                                    strobs2_uso = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("strObs2_uso"))) ? string.Empty : Convert.ToString(reader1.GetValue(reader1.GetOrdinal("strObs2_uso"))),
+                                    bitobs1_uso = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("bitObs1_uso"))) ? false : Convert.ToBoolean(reader1.GetValue(reader1.GetOrdinal("bitObs1_uso"))),
+                                    bitobs2_uso = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("bitObs2_uso"))) ? false : Convert.ToBoolean(reader1.GetValue(reader1.GetOrdinal("bitObs2_uso"))),
+                                    decobs1_uso = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("decObs1_uso"))) ? 0 : Convert.ToDecimal(reader1.GetValue(reader1.GetOrdinal("decObs1_uso"))),
+                                    decobs2_uso = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("decObs2_uso"))) ? 0 : Convert.ToDecimal(reader1.GetValue(reader1.GetOrdinal("decObs2_uso"))),
+                                    dtobs1_uso = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("dtObs1_uso"))) ? DateTime.MinValue : Convert.ToDateTime(reader1.GetValue(reader1.GetOrdinal("dtObs1_uso"))),
+                                    dtobs2_uso = Convert.IsDBNull(reader1.GetValue(reader1.GetOrdinal("dtObs2_uso"))) ? DateTime.MinValue : Convert.ToDateTime(reader1.GetValue(reader1.GetOrdinal("dtObs2_uso"))),
 
 
                                     numerr = 0,
@@ -370,7 +389,6 @@ namespace ClassLibraryLaboratorios
         {
             // Conexion a bd
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
-            //SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"])
 
             // Conexion SP
             SqlCommand myCommand = new SqlCommand("SIGUTC_AddLAB_USO", myConnection);
@@ -378,64 +396,69 @@ namespace ClassLibraryLaboratorios
 
             // Creacion de parametros que se envian al SP
             SqlParameter prmSTRCOD_USO = new SqlParameter("@STRCOD_USO", SqlDbType.NVarChar);
-            prmSTRCOD_USO.Value = miClass.strCod_uso;
+            prmSTRCOD_USO.Value = miClass.strcod_uso;
             myCommand.Parameters.Add(prmSTRCOD_USO);
 
             SqlParameter prmSTRCOD_RESER = new SqlParameter("@STRCOD_RESER", SqlDbType.NVarChar);
-            prmSTRCOD_RESER.Value = miClass.strCod_reser;
+            prmSTRCOD_RESER.Value = miClass.strcod_reser;
             myCommand.Parameters.Add(prmSTRCOD_RESER);
 
             SqlParameter prmDTHORAINICIO_USO = new SqlParameter("@DTHORAINICIO_USO", SqlDbType.DateTime);
-            prmDTHORAINICIO_USO.Value = miClass.dtHoraInicio_uso;
+            prmDTHORAINICIO_USO.Value = miClass.dthorainicio_uso;
             myCommand.Parameters.Add(prmDTHORAINICIO_USO);
 
-            SqlParameter prmSTROBERVACION_USO = new SqlParameter("@STROBERVACION_USO", SqlDbType.NVarChar);
-            prmSTROBERVACION_USO.Value = miClass.strObservacion_uso;
-            myCommand.Parameters.Add(prmSTROBERVACION_USO);
+            SqlParameter prmSTROBSERVACION_USO = new SqlParameter("@STROBSERVACION_USO", SqlDbType.NVarChar);
+            prmSTROBSERVACION_USO.Value = miClass.strobservacion_uso;
+            myCommand.Parameters.Add(prmSTROBSERVACION_USO);
 
             SqlParameter prmDTFECHAREGISTRO_USO = new SqlParameter("@DTFECHAREGISTRO_USO", SqlDbType.DateTime);
-            prmDTFECHAREGISTRO_USO.Value = miClass.dtFechaRegistro_uso;
+            prmDTFECHAREGISTRO_USO.Value = miClass.dtfecharegistro_uso;
             myCommand.Parameters.Add(prmDTFECHAREGISTRO_USO);
 
+            SqlParameter prmBITESTADO_USO = new SqlParameter("@BITESTADO_USO", SqlDbType.Bit);
+            prmBITESTADO_USO.Value = miClass.bitestado_uso;
+            myCommand.Parameters.Add(prmBITESTADO_USO);
+
             SqlParameter prmDTFECHA_LOG = new SqlParameter("@DTFECHA_LOG", SqlDbType.DateTime);
-            prmDTFECHA_LOG.Value = miClass.dtFecha_log;
+            prmDTFECHA_LOG.Value = miClass.dtfecha_log;
             myCommand.Parameters.Add(prmDTFECHA_LOG);
 
             SqlParameter prmSTRUSER_LOG = new SqlParameter("@STRUSER_LOG", SqlDbType.NVarChar);
-            prmSTRUSER_LOG.Value = miClass.strUser_log;
+            prmSTRUSER_LOG.Value = miClass.struser_log;
             myCommand.Parameters.Add(prmSTRUSER_LOG);
 
-            SqlParameter prmSTROBS1_EXTER = new SqlParameter("@STROBS1_EXTER", SqlDbType.NVarChar);
-            prmSTROBS1_EXTER.Value = miClass.strObs1_exter;
-            myCommand.Parameters.Add(prmSTROBS1_EXTER);
+            SqlParameter prmSTROBS1_USO = new SqlParameter("@STROBS1_USO", SqlDbType.NVarChar);
+            prmSTROBS1_USO.Value = miClass.strobs1_uso;
+            myCommand.Parameters.Add(prmSTROBS1_USO);
 
-            SqlParameter prmSTROBS2_EXTER = new SqlParameter("@STROBS2_EXTER", SqlDbType.NVarChar);
-            prmSTROBS2_EXTER.Value = miClass.strObs2_exter;
-            myCommand.Parameters.Add(prmSTROBS2_EXTER);
+            SqlParameter prmSTROBS2_USO = new SqlParameter("@STROBS2_USO", SqlDbType.NVarChar);
+            prmSTROBS2_USO.Value = miClass.strobs2_uso;
+            myCommand.Parameters.Add(prmSTROBS2_USO);
 
-            SqlParameter prmBITOBS1_EXTER = new SqlParameter("@BITOBS1_EXTER", SqlDbType.Bit);
-            prmBITOBS1_EXTER.Value = miClass.bitObs1_exter;
-            myCommand.Parameters.Add(prmBITOBS1_EXTER);
+            SqlParameter prmBITOBS1_USO = new SqlParameter("@BITOBS1_USO", SqlDbType.Bit);
+            prmBITOBS1_USO.Value = miClass.bitobs1_uso;
+            myCommand.Parameters.Add(prmBITOBS1_USO);
 
-            SqlParameter prmBITOBS2_EXTER = new SqlParameter("@BITOBS2_EXTER", SqlDbType.Bit);
-            prmBITOBS2_EXTER.Value = miClass.bitObs2_exter;
-            myCommand.Parameters.Add(prmBITOBS2_EXTER);
+            SqlParameter prmBITOBS2_USO = new SqlParameter("@BITOBS2_USO", SqlDbType.Bit);
+            prmBITOBS2_USO.Value = miClass.bitobs2_uso;
+            myCommand.Parameters.Add(prmBITOBS2_USO);
 
-            SqlParameter prmDECOBS1_EXTER = new SqlParameter("@DECOBS1_EXTER", SqlDbType.Decimal);
-            prmDECOBS1_EXTER.Value = miClass.decObs1_exter;
-            myCommand.Parameters.Add(prmDECOBS1_EXTER);
+            SqlParameter prmDECOBS1_USO = new SqlParameter("@DECOBS1_USO", SqlDbType.Decimal);
+            prmDECOBS1_USO.Value = miClass.decobs1_uso;
+            myCommand.Parameters.Add(prmDECOBS1_USO);
 
-            SqlParameter prmDECOBS2_EXTER = new SqlParameter("@DECOBS2_EXTER", SqlDbType.Decimal);
-            prmDECOBS2_EXTER.Value = miClass.decObs2_exter;
-            myCommand.Parameters.Add(prmDECOBS2_EXTER);
+            SqlParameter prmDECOBS2_USO = new SqlParameter("@DECOBS2_USO", SqlDbType.Decimal);
+            prmDECOBS2_USO.Value = miClass.decobs2_uso;
+            myCommand.Parameters.Add(prmDECOBS2_USO);
 
-            SqlParameter prmDTOBS1_EXTER = new SqlParameter("@DTOBS1_EXTER", SqlDbType.DateTime);
-            prmDTOBS1_EXTER.Value = miClass.dtObs1_exter;
-            myCommand.Parameters.Add(prmDTOBS1_EXTER);
+            SqlParameter prmDTOBS1_USO = new SqlParameter("@DTOBS1_USO", SqlDbType.DateTime);
+            prmDTOBS1_USO.Value = miClass.dtobs1_uso;
+            myCommand.Parameters.Add(prmDTOBS1_USO);
 
-            SqlParameter prmDTOBS2_EXTER = new SqlParameter("@DTOBS2_EXTER", SqlDbType.DateTime);
-            prmDTOBS2_EXTER.Value = miClass.dtObs2_exter;
-            myCommand.Parameters.Add(prmDTOBS2_EXTER);
+            SqlParameter prmDTOBS2_USO = new SqlParameter("@DTOBS2_USO", SqlDbType.DateTime);
+            prmDTOBS2_USO.Value = miClass.dtobs2_uso;
+            myCommand.Parameters.Add(prmDTOBS2_USO);
+
 
             int intReturn = -1;
             try
@@ -464,94 +487,99 @@ namespace ClassLibraryLaboratorios
                 myConnection.Close();
                 myConnection.Dispose();
             }
-
             return intReturn;
         }
 
-        ///////////////// Método Add SobreCargado /////////////////
 
+        ///////////////// Método Add SobreCargado /////////////////
         public int AddLAB_USO(
-            string _strCod_uso,
-            string _strCod_reser,
-            DateTime _dtHoraInicio_uso,
-            string _strObservacion_uso,
-            DateTime _dtFechaRegistro_uso,
-            DateTime _dtFecha_log,
-            string _strUser_log,
-            string _strObs1_exter,
-            string _strObs2_exter,
-            bool _bitObs1_exter,
-            bool _bitObs2_exter,
-            decimal _decObs1_exter,
-            decimal _decObs2_exter,
-            DateTime _dtObs1_exter,
-            DateTime _dtObs2_exter)
+            string _strcod_uso,
+            string _strcod_reser,
+            DateTime _dthorainicio_uso,
+            string _strobservacion_uso,
+            DateTime _dtfecharegistro_uso,
+            bool _bitestado_uso,
+            DateTime _dtfecha_log,
+            string _struser_log,
+            string _strobs1_uso,
+            string _strobs2_uso,
+            bool _bitobs1_uso,
+            bool _bitobs2_uso,
+            decimal _decobs1_uso,
+            decimal _decobs2_uso,
+            DateTime _dtobs1_uso,
+            DateTime _dtobs2_uso
+            )
         {
             SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
-            //SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"])
 
             SqlCommand myCommand = new SqlCommand("SIGUTC_AddLAB_USO", myConnection);
             myCommand.CommandType = CommandType.StoredProcedure;
 
             SqlParameter prmSTRCOD_USO = new SqlParameter("@STRCOD_USO", SqlDbType.NVarChar);
-            prmSTRCOD_USO.Value = _strCod_uso;
+            prmSTRCOD_USO.Value = _strcod_uso;
             myCommand.Parameters.Add(prmSTRCOD_USO);
 
             SqlParameter prmSTRCOD_RESER = new SqlParameter("@STRCOD_RESER", SqlDbType.NVarChar);
-            prmSTRCOD_RESER.Value = _strCod_reser;
+            prmSTRCOD_RESER.Value = _strcod_reser;
             myCommand.Parameters.Add(prmSTRCOD_RESER);
 
             SqlParameter prmDTHORAINICIO_USO = new SqlParameter("@DTHORAINICIO_USO", SqlDbType.DateTime);
-            prmDTHORAINICIO_USO.Value = _dtHoraInicio_uso;
+            prmDTHORAINICIO_USO.Value = _dthorainicio_uso;
             myCommand.Parameters.Add(prmDTHORAINICIO_USO);
 
-            SqlParameter prmSTROBERVACION_USO = new SqlParameter("@STROBERVACION_USO", SqlDbType.NVarChar);
-            prmSTROBERVACION_USO.Value = _strObservacion_uso;
-            myCommand.Parameters.Add(prmSTROBERVACION_USO);
+            SqlParameter prmSTROBSERVACION_USO = new SqlParameter("@STROBSERVACION_USO", SqlDbType.NVarChar);
+            prmSTROBSERVACION_USO.Value = _strobservacion_uso;
+            myCommand.Parameters.Add(prmSTROBSERVACION_USO);
 
             SqlParameter prmDTFECHAREGISTRO_USO = new SqlParameter("@DTFECHAREGISTRO_USO", SqlDbType.DateTime);
-            prmDTFECHAREGISTRO_USO.Value = _dtFechaRegistro_uso;
+            prmDTFECHAREGISTRO_USO.Value = _dtfecharegistro_uso;
             myCommand.Parameters.Add(prmDTFECHAREGISTRO_USO);
 
+            SqlParameter prmBITESTADO_USO = new SqlParameter("@BITESTADO_USO", SqlDbType.Bit);
+            prmBITESTADO_USO.Value = _bitestado_uso;
+            myCommand.Parameters.Add(prmBITESTADO_USO);
+
             SqlParameter prmDTFECHA_LOG = new SqlParameter("@DTFECHA_LOG", SqlDbType.DateTime);
-            prmDTFECHA_LOG.Value = _dtFecha_log;
+            prmDTFECHA_LOG.Value = _dtfecha_log;
             myCommand.Parameters.Add(prmDTFECHA_LOG);
 
             SqlParameter prmSTRUSER_LOG = new SqlParameter("@STRUSER_LOG", SqlDbType.NVarChar);
-            prmSTRUSER_LOG.Value = _strUser_log;
+            prmSTRUSER_LOG.Value = _struser_log;
             myCommand.Parameters.Add(prmSTRUSER_LOG);
 
-            SqlParameter prmSTROBS1_EXTER = new SqlParameter("@STROBS1_EXTER", SqlDbType.NVarChar);
-            prmSTROBS1_EXTER.Value = _strObs1_exter;
-            myCommand.Parameters.Add(prmSTROBS1_EXTER);
+            SqlParameter prmSTROBS1_USO = new SqlParameter("@STROBS1_USO", SqlDbType.NVarChar);
+            prmSTROBS1_USO.Value = _strobs1_uso;
+            myCommand.Parameters.Add(prmSTROBS1_USO);
 
-            SqlParameter prmSTROBS2_EXTER = new SqlParameter("@STROBS2_EXTER", SqlDbType.NVarChar);
-            prmSTROBS2_EXTER.Value = _strObs2_exter;
-            myCommand.Parameters.Add(prmSTROBS2_EXTER);
+            SqlParameter prmSTROBS2_USO = new SqlParameter("@STROBS2_USO", SqlDbType.NVarChar);
+            prmSTROBS2_USO.Value = _strobs2_uso;
+            myCommand.Parameters.Add(prmSTROBS2_USO);
 
-            SqlParameter prmBITOBS1_EXTER = new SqlParameter("@BITOBS1_EXTER", SqlDbType.Bit);
-            prmBITOBS1_EXTER.Value = _bitObs1_exter;
-            myCommand.Parameters.Add(prmBITOBS1_EXTER);
+            SqlParameter prmBITOBS1_USO = new SqlParameter("@BITOBS1_USO", SqlDbType.Bit);
+            prmBITOBS1_USO.Value = _bitobs1_uso;
+            myCommand.Parameters.Add(prmBITOBS1_USO);
 
-            SqlParameter prmBITOBS2_EXTER = new SqlParameter("@BITOBS2_EXTER", SqlDbType.Bit);
-            prmBITOBS2_EXTER.Value = _bitObs2_exter;
-            myCommand.Parameters.Add(prmBITOBS2_EXTER);
+            SqlParameter prmBITOBS2_USO = new SqlParameter("@BITOBS2_USO", SqlDbType.Bit);
+            prmBITOBS2_USO.Value = _bitobs2_uso;
+            myCommand.Parameters.Add(prmBITOBS2_USO);
 
-            SqlParameter prmDECOBS1_EXTER = new SqlParameter("@DECOBS1_EXTER", SqlDbType.Decimal);
-            prmDECOBS1_EXTER.Value = _decObs1_exter;
-            myCommand.Parameters.Add(prmDECOBS1_EXTER);
+            SqlParameter prmDECOBS1_USO = new SqlParameter("@DECOBS1_USO", SqlDbType.Decimal);
+            prmDECOBS1_USO.Value = _decobs1_uso;
+            myCommand.Parameters.Add(prmDECOBS1_USO);
 
-            SqlParameter prmDECOBS2_EXTER = new SqlParameter("@DECOBS2_EXTER", SqlDbType.Decimal);
-            prmDECOBS2_EXTER.Value = _decObs2_exter;
-            myCommand.Parameters.Add(prmDECOBS2_EXTER);
+            SqlParameter prmDECOBS2_USO = new SqlParameter("@DECOBS2_USO", SqlDbType.Decimal);
+            prmDECOBS2_USO.Value = _decobs2_uso;
+            myCommand.Parameters.Add(prmDECOBS2_USO);
 
-            SqlParameter prmDTOBS1_EXTER = new SqlParameter("@DTOBS1_EXTER", SqlDbType.DateTime);
-            prmDTOBS1_EXTER.Value = _dtObs1_exter;
-            myCommand.Parameters.Add(prmDTOBS1_EXTER);
+            SqlParameter prmDTOBS1_USO = new SqlParameter("@DTOBS1_USO", SqlDbType.DateTime);
+            prmDTOBS1_USO.Value = _dtobs1_uso;
+            myCommand.Parameters.Add(prmDTOBS1_USO);
 
-            SqlParameter prmDTOBS2_EXTER = new SqlParameter("@DTOBS2_EXTER", SqlDbType.DateTime);
-            prmDTOBS2_EXTER.Value = _dtObs2_exter;
-            myCommand.Parameters.Add(prmDTOBS2_EXTER);
+            SqlParameter prmDTOBS2_USO = new SqlParameter("@DTOBS2_USO", SqlDbType.DateTime);
+            prmDTOBS2_USO.Value = _dtobs2_uso;
+            myCommand.Parameters.Add(prmDTOBS2_USO);
+
 
             int intReturn = -1;
             try
@@ -566,6 +594,289 @@ namespace ClassLibraryLaboratorios
                 if (er.Number == 2627)
                 {
                     msg = "Este registro de datos ya existe, no se realizó ningún cambio...";
+                }
+                else
+                {
+                    msg = er.Message;
+                }
+                numerr = er.Number;
+                resultado = false;
+            }
+            finally
+            {
+                myCommand.Dispose();
+                myConnection.Close();
+                myConnection.Dispose();
+            }
+            return intReturn;
+        }
+
+        ///////////////// Método Update /////////////////
+        public int UpdateLAB_USO(LAB_USO miClass)
+        {
+            SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
+
+            SqlCommand myCommand = new SqlCommand("SIGUTC_UpdateLAB_USO", myConnection);
+            myCommand.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter prmSTRCOD_USO = new SqlParameter("@STRCOD_USO", SqlDbType.NVarChar);
+            prmSTRCOD_USO.Value = miClass.strcod_uso;
+            myCommand.Parameters.Add(prmSTRCOD_USO);
+
+            SqlParameter prmSTRCOD_RESER = new SqlParameter("@STRCOD_RESER", SqlDbType.NVarChar);
+            prmSTRCOD_RESER.Value = miClass.strcod_reser;
+            myCommand.Parameters.Add(prmSTRCOD_RESER);
+
+            SqlParameter prmDTHORAINICIO_USO = new SqlParameter("@DTHORAINICIO_USO", SqlDbType.DateTime);
+            prmDTHORAINICIO_USO.Value = miClass.dthorainicio_uso;
+            myCommand.Parameters.Add(prmDTHORAINICIO_USO);
+
+            SqlParameter prmSTROBSERVACION_USO = new SqlParameter("@STROBSERVACION_USO", SqlDbType.NVarChar);
+            prmSTROBSERVACION_USO.Value = miClass.strobservacion_uso;
+            myCommand.Parameters.Add(prmSTROBSERVACION_USO);
+
+            SqlParameter prmDTFECHAREGISTRO_USO = new SqlParameter("@DTFECHAREGISTRO_USO", SqlDbType.DateTime);
+            prmDTFECHAREGISTRO_USO.Value = miClass.dtfecharegistro_uso;
+            myCommand.Parameters.Add(prmDTFECHAREGISTRO_USO);
+
+            SqlParameter prmBITESTADO_USO = new SqlParameter("@BITESTADO_USO", SqlDbType.Bit);
+            prmBITESTADO_USO.Value = miClass.bitestado_uso;
+            myCommand.Parameters.Add(prmBITESTADO_USO);
+
+            SqlParameter prmDTFECHA_LOG = new SqlParameter("@DTFECHA_LOG", SqlDbType.DateTime);
+            prmDTFECHA_LOG.Value = miClass.dtfecha_log;
+            myCommand.Parameters.Add(prmDTFECHA_LOG);
+
+            SqlParameter prmSTRUSER_LOG = new SqlParameter("@STRUSER_LOG", SqlDbType.NVarChar);
+            prmSTRUSER_LOG.Value = miClass.struser_log;
+            myCommand.Parameters.Add(prmSTRUSER_LOG);
+
+            SqlParameter prmSTROBS1_USO = new SqlParameter("@STROBS1_USO", SqlDbType.NVarChar);
+            prmSTROBS1_USO.Value = miClass.strobs1_uso;
+            myCommand.Parameters.Add(prmSTROBS1_USO);
+
+            SqlParameter prmSTROBS2_USO = new SqlParameter("@STROBS2_USO", SqlDbType.NVarChar);
+            prmSTROBS2_USO.Value = miClass.strobs2_uso;
+            myCommand.Parameters.Add(prmSTROBS2_USO);
+
+            SqlParameter prmBITOBS1_USO = new SqlParameter("@BITOBS1_USO", SqlDbType.Bit);
+            prmBITOBS1_USO.Value = miClass.bitobs1_uso;
+            myCommand.Parameters.Add(prmBITOBS1_USO);
+
+            SqlParameter prmBITOBS2_USO = new SqlParameter("@BITOBS2_USO", SqlDbType.Bit);
+            prmBITOBS2_USO.Value = miClass.bitobs2_uso;
+            myCommand.Parameters.Add(prmBITOBS2_USO);
+
+            SqlParameter prmDECOBS1_USO = new SqlParameter("@DECOBS1_USO", SqlDbType.Decimal);
+            prmDECOBS1_USO.Value = miClass.decobs1_uso;
+            myCommand.Parameters.Add(prmDECOBS1_USO);
+
+            SqlParameter prmDECOBS2_USO = new SqlParameter("@DECOBS2_USO", SqlDbType.Decimal);
+            prmDECOBS2_USO.Value = miClass.decobs2_uso;
+            myCommand.Parameters.Add(prmDECOBS2_USO);
+
+            SqlParameter prmDTOBS1_USO = new SqlParameter("@DTOBS1_USO", SqlDbType.DateTime);
+            prmDTOBS1_USO.Value = miClass.dtobs1_uso;
+            myCommand.Parameters.Add(prmDTOBS1_USO);
+
+            SqlParameter prmDTOBS2_USO = new SqlParameter("@DTOBS2_USO", SqlDbType.DateTime);
+            prmDTOBS2_USO.Value = miClass.dtobs2_uso;
+            myCommand.Parameters.Add(prmDTOBS2_USO);
+
+
+
+            int intReturn = -1;
+            try
+            {
+                myConnection.Open();
+                intReturn = myCommand.ExecuteNonQuery(); // Devuelve el número de registros afectados en la bd
+                resultado = true;
+                msg = "Los datos se actualizaron satisfactoriamente...";
+            }
+            catch (SqlException er)
+            {
+                if (er.Number == 2627)
+                {
+                    msg = "Este registro de datos ya existe, no se realizó ningún cambio...";
+                }
+                else
+                {
+                    msg = er.Message;
+                }
+                numerr = er.Number;
+                resultado = false;
+            }
+            finally
+            {
+                myCommand.Dispose();
+                myConnection.Close();
+                myConnection.Dispose();
+            }
+            return intReturn;
+        }
+
+        ///////////////// Método Update SobreCargado /////////////////
+        public int UpdateLAB_USO(
+            string _strcod_uso,
+            string _strcod_reser,
+            DateTime _dthorainicio_uso,
+            string _strobservacion_uso,
+            DateTime _dtfecharegistro_uso,
+            bool _bitestado_uso,
+            DateTime _dtfecha_log,
+            string _struser_log,
+            string _strobs1_uso,
+            string _strobs2_uso,
+            bool _bitobs1_uso,
+            bool _bitobs2_uso,
+            decimal _decobs1_uso,
+            decimal _decobs2_uso,
+            DateTime _dtobs1_uso,
+            DateTime _dtobs2_uso
+            )
+        {
+            SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
+
+            SqlCommand myCommand = new SqlCommand("SIGUTC_UpdateLAB_USO", myConnection);
+            myCommand.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter prmSTRCOD_USO = new SqlParameter("@STRCOD_USO", SqlDbType.NVarChar);
+            prmSTRCOD_USO.Value = _strcod_uso;
+            myCommand.Parameters.Add(prmSTRCOD_USO);
+
+            SqlParameter prmSTRCOD_RESER = new SqlParameter("@STRCOD_RESER", SqlDbType.NVarChar);
+            prmSTRCOD_RESER.Value = _strcod_reser;
+            myCommand.Parameters.Add(prmSTRCOD_RESER);
+
+            SqlParameter prmDTHORAINICIO_USO = new SqlParameter("@DTHORAINICIO_USO", SqlDbType.DateTime);
+            prmDTHORAINICIO_USO.Value = _dthorainicio_uso;
+            myCommand.Parameters.Add(prmDTHORAINICIO_USO);
+
+            SqlParameter prmSTROBSERVACION_USO = new SqlParameter("@STROBSERVACION_USO", SqlDbType.NVarChar);
+            prmSTROBSERVACION_USO.Value = _strobservacion_uso;
+            myCommand.Parameters.Add(prmSTROBSERVACION_USO);
+
+            SqlParameter prmDTFECHAREGISTRO_USO = new SqlParameter("@DTFECHAREGISTRO_USO", SqlDbType.DateTime);
+            prmDTFECHAREGISTRO_USO.Value = _dtfecharegistro_uso;
+            myCommand.Parameters.Add(prmDTFECHAREGISTRO_USO);
+
+            SqlParameter prmBITESTADO_USO = new SqlParameter("@BITESTADO_USO", SqlDbType.Bit);
+            prmBITESTADO_USO.Value = _bitestado_uso;
+            myCommand.Parameters.Add(prmBITESTADO_USO);
+
+            SqlParameter prmDTFECHA_LOG = new SqlParameter("@DTFECHA_LOG", SqlDbType.DateTime);
+            prmDTFECHA_LOG.Value = _dtfecha_log;
+            myCommand.Parameters.Add(prmDTFECHA_LOG);
+
+            SqlParameter prmSTRUSER_LOG = new SqlParameter("@STRUSER_LOG", SqlDbType.NVarChar);
+            prmSTRUSER_LOG.Value = _struser_log;
+            myCommand.Parameters.Add(prmSTRUSER_LOG);
+
+            SqlParameter prmSTROBS1_USO = new SqlParameter("@STROBS1_USO", SqlDbType.NVarChar);
+            prmSTROBS1_USO.Value = _strobs1_uso;
+            myCommand.Parameters.Add(prmSTROBS1_USO);
+
+            SqlParameter prmSTROBS2_USO = new SqlParameter("@STROBS2_USO", SqlDbType.NVarChar);
+            prmSTROBS2_USO.Value = _strobs2_uso;
+            myCommand.Parameters.Add(prmSTROBS2_USO);
+
+            SqlParameter prmBITOBS1_USO = new SqlParameter("@BITOBS1_USO", SqlDbType.Bit);
+            prmBITOBS1_USO.Value = _bitobs1_uso;
+            myCommand.Parameters.Add(prmBITOBS1_USO);
+
+            SqlParameter prmBITOBS2_USO = new SqlParameter("@BITOBS2_USO", SqlDbType.Bit);
+            prmBITOBS2_USO.Value = _bitobs2_uso;
+            myCommand.Parameters.Add(prmBITOBS2_USO);
+
+            SqlParameter prmDECOBS1_USO = new SqlParameter("@DECOBS1_USO", SqlDbType.Decimal);
+            prmDECOBS1_USO.Value = _decobs1_uso;
+            myCommand.Parameters.Add(prmDECOBS1_USO);
+
+            SqlParameter prmDECOBS2_USO = new SqlParameter("@DECOBS2_USO", SqlDbType.Decimal);
+            prmDECOBS2_USO.Value = _decobs2_uso;
+            myCommand.Parameters.Add(prmDECOBS2_USO);
+
+            SqlParameter prmDTOBS1_USO = new SqlParameter("@DTOBS1_USO", SqlDbType.DateTime);
+            prmDTOBS1_USO.Value = _dtobs1_uso;
+            myCommand.Parameters.Add(prmDTOBS1_USO);
+
+            SqlParameter prmDTOBS2_USO = new SqlParameter("@DTOBS2_USO", SqlDbType.DateTime);
+            prmDTOBS2_USO.Value = _dtobs2_uso;
+            myCommand.Parameters.Add(prmDTOBS2_USO);
+
+
+
+            int intReturn = -1;
+            try
+            {
+                myConnection.Open();
+                intReturn = myCommand.ExecuteNonQuery(); // Devuelve el número de registros afectados en la bd
+                resultado = true;
+                msg = "Los datos se actualizaron satisfactoriamente...";
+            }
+            catch (SqlException er)
+            {
+                if (er.Number == 2627)
+                {
+                    msg = "Este registro de datos ya existe, no se realizó ningún cambio...";
+                }
+                else
+                {
+                    msg = er.Message;
+                }
+                numerr = er.Number;
+                resultado = false;
+            }
+            finally
+            {
+                myCommand.Dispose();
+                myConnection.Close();
+                myConnection.Dispose();
+            }
+            return intReturn;
+        }
+
+        ///////////////// Método Delete /////////////////
+        public int DeleteLAB_USO(string comodin, string filtro1, string filtro2, string filtro3, string filtro4)
+        {
+            SqlConnection myConnection = new SqlConnection(WebConfigurationManager.AppSettings["conexionBddProductos"]);
+            SqlCommand myCommand = new SqlCommand("SIGUTC_DeleteLAB_USO", myConnection);
+            myCommand.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter prmComodin = new SqlParameter("@COMODIN", SqlDbType.VarChar);
+            prmComodin.Value = comodin;
+            myCommand.Parameters.Add(prmComodin);
+
+            SqlParameter prmFiltro1 = new SqlParameter("@FILTRO1", SqlDbType.VarChar);
+            prmFiltro1.Value = filtro1;
+            myCommand.Parameters.Add(prmFiltro1);
+
+            SqlParameter prmFiltro2 = new SqlParameter("@FILTRO2", SqlDbType.VarChar);
+            prmFiltro2.Value = filtro2;
+            myCommand.Parameters.Add(prmFiltro2);
+
+            SqlParameter prmFiltro3 = new SqlParameter("@FILTRO3", SqlDbType.VarChar);
+            prmFiltro3.Value = filtro3;
+            myCommand.Parameters.Add(prmFiltro3);
+
+            SqlParameter prmFiltro4 = new SqlParameter("@FILTRO4", SqlDbType.VarChar);
+            prmFiltro4.Value = filtro4;
+            myCommand.Parameters.Add(prmFiltro4);
+
+
+            int intReturn = -1;
+            try
+            {
+                myConnection.Open();
+                intReturn = myCommand.ExecuteNonQuery(); // Devuelve el número de registros afectados en la bd
+                resultado = true;
+                msg = "Los datos se eliminaron satisfactoriamente...";
+            }
+            catch (SqlException er)
+            {
+                if (er.Number == 547)
+                {
+                    msg = "Este registro no se puede eliminar porque está siendo utilizado por otro proceso...";
                 }
                 else
                 {
